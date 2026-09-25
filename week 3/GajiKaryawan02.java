@@ -4,15 +4,15 @@ public class GajiKaryawan02 {
 
     public static void main(String[] args) {
         
-        int gajiPokok, totalGaji;
-        double bonus, hasilBonus;
+        double gajiPokok;
+        double bonus, hasilBonus, totalGaji;
         double tunjanganTransparan;
         double tunjanganMakan;
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Masukkan Gaji Pokok Anda");
-        gajiPokok = sc.nextInt();
+        gajiPokok = sc.nextDouble();
         System.out.println("Masukkan Bonus Gaji Pokok Anda Dalam Persen");
         bonus = sc.nextDouble();
         System.out.println("Masukkan Tunjangan Transparan Anda");
@@ -21,10 +21,10 @@ public class GajiKaryawan02 {
         tunjanganMakan = sc.nextDouble();
         
         hasilBonus = bonus*gajiPokok;
-        totalGaji = (int)(gajiPokok+tunjanganTransparan+tunjanganMakan+hasilBonus-(0.1*gajiPokok));
+        totalGaji =(gajiPokok+tunjanganTransparan+tunjanganMakan+hasilBonus-(0.1*gajiPokok));
 
-        System.out.println("Ini Adalah Bonus Anda :" +hasilBonus);
-        System.out.println("Ini Adalah Total Gaji Anda :" +totalGaji);
+        System.out.println("\nIni Adalah Total Gaji Anda :" + (int) totalGaji);
+        System.out.println("\nIni Adalah Bonus Anda :" +hasilBonus);
 
     }
 }

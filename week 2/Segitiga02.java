@@ -12,7 +12,7 @@ public class Segitiga02 {
     System.out.println("Masukkan alas: ");
     alas = sc.nextByte();
     
-    luas = (float) (alas * tinggi * 0.5);
+    luas =(int) (alas * tinggi * 0.5);
     System.out.println("Hasil Dari Perkalian Segita Adalah: " +luas);
 
     }

@@ -24,7 +24,9 @@ public class Tugas01Week3 {
         cicilan = selisihHarga/bulan;
         hasilSetelahBunga = cicilan+hasilBunga;
 
-        System.out.println("Ini Adalah Cicilan :" +cicilan);
-        System.out.println("Ini Adalah Hasil Harga Dengan Bunga :" +hasilSetelahBunga);
+        System.out.println("\nIni Adalah Selisih Harga :" +selisihHarga);
+        System.out.println("\nIni Adalah Bunga Anda:" +hasilBunga);
+        System.out.println("\nIni Adalah Cicilan :" +cicilan);
+        System.out.println("\nIni Adalah Hasil Harga Dengan Bunga Plus Cicilan :" +hasilSetelahBunga);
     }
 }

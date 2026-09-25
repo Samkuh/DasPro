@@ -5,7 +5,7 @@ public class StudiKasus02 {
     public static void main(String[] args) {
 
         int lebarTanah, panjangTanah, diameterKolam, panjangTaman;
-        double persentaseJari =0.5, phiJari =3.14, luasTanah, luasKolam, luasTaman, luasTanahAkhir;
+        double phiJari =3.14, luasTanah, luasKolam, luasTaman, luasTanahAkhir;
 
         System.out.println("Perhitungan Sisa Luas Tanah Yang Telah Dibaut Kolam Dan Taman ");
 
@@ -20,7 +20,7 @@ public class StudiKasus02 {
         panjangTaman = sc.nextInt();
 
         luasTanah = lebarTanah*panjangTanah;
-        luasKolam = (((diameterKolam*persentaseJari)*diameterKolam*persentaseJari)*phiJari);
+        luasKolam = (((diameterKolam/2)*(diameterKolam/2))*phiJari);
         luasTaman = panjangTaman*panjangTaman;
         luasTanahAkhir = (luasTanah-(luasKolam+luasTaman));
 
