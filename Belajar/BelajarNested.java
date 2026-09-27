@@ -11,7 +11,19 @@ public class BelajarNested {
         System.out.println("Pemilihan Jenjang Dan Prodi Kuliah Anda");
 
         System.out.print("Masukkan Jenjang Kuliah Anda: ");
-        jenjang = sc.next();
+        jenjang = sc.nextLine();
+        System.out.print("Masukkan Jenjang Prodi Kuliah Anda: ");
+        prodi = sc.nextLine();
+
+        if (jenjang.equalsIgnoreCase("D3")) {
+            if (prodi.equalsIgnoreCase("MI")) {
+                System.out.println("Jenjang : D3");
+                System.out.println("Prodi : Manajemen Informatika");
+            } else if (prodi.equalsIgnoreCase("KA")) {
+                System.out.println("Jenjang : D3");
+                System.out.println("Prodi : Komputasi Akutansi");
+            }
+        }
 
     }
 }
