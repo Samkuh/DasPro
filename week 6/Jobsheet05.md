@@ -135,7 +135,7 @@ public class operatorLogikaWifi02 {
 #### 2.2.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
+![Gambar Output Percobaan 2](/week%206/Foto/hasil%20operator%20logika%20wifi.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jelaskan fungsi operator ||, &&, dan ! pada kondisi program tersebut.
@@ -199,7 +199,7 @@ public class nesdetAksesLab02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
+![Gambar Output Percobaan 3](/week%206/Foto/hasil%20neted%20akses%20lab.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Mengapa pemeriksaan punyaIzinDosen || asistenLab ditempatkan di dalam IF pertama?
@@ -328,6 +328,14 @@ public class Tugas2SeleksiAsisten02 {
 
 ```
 
+#### 3.2 Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+* **Hasil Kode Program Nomor 01**
+![Gambar Output Percobaan 1 Tugas Mandiri](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+
+* **Hasil Kode Program Nomor 01**
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%206/Foto/hasil%20tugas%202%20seleksi%20asisten.PNG)
 
 
 ## 4: KESIMPULAN
