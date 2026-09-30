@@ -1,9 +1,9 @@
-# JOBSHEET 4 - PEMILIHAN 1
+# JOBSHEET 5 - PEMILIHAN BERSARANG
 
 **Identitas Mahasiswa:**
-* **Nama:** [Nama Mahasiswa]
-* **NIM:** [NIM Mahasiswa]
-* **Kelas / No. Presensi:** [1A / 01]
+* **Nama:** [ Achmad Labib Zainullah ]
+* **NIM:** [ 264107020149 ]
+* **Kelas / No. Presensi:** [ TI - 1D / 02 ]
 
 ---
 
