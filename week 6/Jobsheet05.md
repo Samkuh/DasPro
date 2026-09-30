@@ -32,6 +32,7 @@ dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke
 pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan alasan kegagalan. 
 
 #### 2.1.1 Kode Program Java
+```java
 
 import java.util.Scanner;
 
@@ -67,7 +68,6 @@ public class nestedUjianSkripsi02 {
         System.out.println(pesan);
     }
 }
-
 ```
 
 #### 2.1.2 Hasil Running / Screenshot Output
@@ -78,12 +78,18 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
 Mengapa demikian?
-  * **Jawab:** Perintah `if` digunakan untuk mengeksekusi sebuah blok kode hanya jika kondisi bernilai `true`.
+  * **Jawab:** Jika kita memasukkan input `no` maka program akan membaca bahwa nilai dari input tersebut adalah `false` karena yang kita    tulis pada program bada bagian `if string` kita memasukkan input `yes` maka hasil yang dihasilkan akan masuk pada program bagian `else`   langsung.
 * **Pertanyaan 2:** Jelaskan maksud dari potongan kode berikut!?
-  * **Jawab:** Program akan melewati blok `if` dan mengeksekusi blok `else` (jika ada).
+  * **Jawab:** Perintah tersebut masuk pada `If Else` yang mempunyai makna `true` Jika kondisi didalam kurung terpenuhi. yaitu jika
+    jumlah bimbingan P1 lebih dari sama dengan 8 dan P2 lebih dari sama dengan 4.
 * **Pertanyaan 3:** Bagaimana alur pemeriksaan syarat mahasiswa dari awal sampai akhir? Jelaskan secara
 runtut untuk semua kondisi!
-  * **Jawab:** Program akan melewati blok `if` dan mengeksekusi blok `else` (jika ada).
+  * **Jawab:** Sistem SIMTA akan memeriksa syarat
+administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
+sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
+harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
+dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
+pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan output gagal dengan alasan yang berbeda sesuai tahap berapa yang gagal .
 
 ---
 
