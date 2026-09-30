@@ -73,7 +73,7 @@ public class nestedUjianSkripsi02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](week-6/Foto/hasil-neted-akses-lab.PNG)
+![Gambar Output Percobaan 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
