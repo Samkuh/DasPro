@@ -32,23 +32,42 @@ dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke
 pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan alasan kegagalan. 
 
 #### 2.1.1 Kode Program Java
-```java
-// Contoh kode program dummy Percobaan 1
+
 import java.util.Scanner;
 
-public class Percobaan1 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai: ");
-        int nilai = sc.nextInt();
+public class nestedUjianSkripsi02 {
 
-        if (nilai >= 75) {
-            System.out.println("Status: LULUS");
-        } else {
-            System.out.println("Status: TIDAK LULUS");
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String pesan;
+
+        System.out.print("Apakah Mahasiswa Sudah Bebas Kompen ? (Ya/Tidak): ");
+        String bebasKompen = sc.nextLine().trim();
+
+        System.out.print("Masukkan jumlah log bimbingan Pembimbing 1: ");
+        int bimbinganP1 = sc.nextInt();
+        System.out.print("Masukkan jumlah log bimbingan Pembimbing 2: ");
+        int bimbinganP2 = sc.nextInt();
+
+        if (bebasKompen.equalsIgnoreCase("Ya")) {
+            if (bimbinganP1 >= 8 && bimbinganP2 >=4) {
+            pesan = "Semua syarat terpenuhi. Mahasiswa boleh mendaftar ujian skripsi";
+            } else if (bimbinganP1 < 8 && bimbinganP2 < 4) {
+            pesan = "Gagal! Log bimbingan P1 Kurang dari 8 Kali dan P2 Kurang dari 4 kali";
+            } else if (bimbinganP1 < 8) {
+            pesan = "Gagal log bimbingan P1 belum mencapai 8 kali";
+            } else {
+            pesan = "Gagal log bimbingan P2 belum mencapai 4 kali";
+            }
+        }else {
+            pesan = "Gagal mahasiswa masih memiliki tanggungan kompen";
         }
+        System.out.println(pesan);
     }
 }
+
 ```
 
 #### 2.1.2 Hasil Running / Screenshot Output
@@ -57,16 +76,24 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Apa fungsi dari perintah `if`?
+* **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
+Mengapa demikian?
   * **Jawab:** Perintah `if` digunakan untuk mengeksekusi sebuah blok kode hanya jika kondisi bernilai `true`.
-* **Pertanyaan 2:** Apa yang terjadi jika kondisi bernilai `false`?
+* **Pertanyaan 2:** Jelaskan maksud dari potongan kode berikut!?
+  * **Jawab:** Program akan melewati blok `if` dan mengeksekusi blok `else` (jika ada).
+* **Pertanyaan 3:** Bagaimana alur pemeriksaan syarat mahasiswa dari awal sampai akhir? Jelaskan secara
+runtut untuk semua kondisi!
   * **Jawab:** Program akan melewati blok `if` dan mengeksekusi blok `else` (jika ada).
 
 ---
 
-### 2.2 Percobaan 2: Penerapan Structure SWITCH-CASE
+### 2.2 Percobaan 2: Operator Logika untuk Menentukan Akses WiFi Kampus
 
-Paragraf ini menjelaskan ringkasan Percobaan 2. Percobaan ini berfokus pada penggunaan `switch-case` untuk memilih menu atau opsi berdasarkan nilai yang bersifat spesifik.
+Sistem WiFi kampus hanya dapat digunakan oleh mahasiswa atau dosen yang akunnya
+tidak diblokir. Program menerima informasi apakah pengguna merupakan mahasiswa, dosen,
+dan apakah akun pengguna sedang diblokir. Akses diberikan apabila pengguna merupakan
+mahasiswa atau dosen, dan akun pengguna tidak diblokir. Percobaan ini digunakan untuk
+mempraktikkan operator logika && (AND), || (OR), dan ! (NOT).
 
 #### 2.2.1 Tabel Pengujian Parameter Output
 
