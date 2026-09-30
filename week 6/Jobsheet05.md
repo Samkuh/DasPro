@@ -11,17 +11,25 @@
 
 Berikut adalah tujuan pelaksanaan praktikum pada bab ini:
 
-1. Mahasiswa mampu memahami konsep dasar struktur pemilihan (*conditional statement*).
-2. Mahasiswa mampu mengimplementasikan perintah `if`, `if-else`, dan `switch-case` pada Java.
-3. Mahasiswa mampu menganalisis alur eksekusi logika percabangan.
+1. Mahasiswa mampu menyelesaikan permasalahan/studi kasus menggunakan sintaks
+pemilihan bersarang
+2. Mahasiswa mampu menerapkan sintaks pemilihan bersarang ke dalam program Jawa
+3. Mahasiswa mampu menerapkan operator logika &&, ||, dan ! pada struktur pemilihan
+
 
 ---
 
 ## 2: HASIL PERCOBAAN & ANALISIS
 
-### 2.1 Percobaan 1: Penerapan Struktur IF-ELSE
+### 2.1 Percobaan 1: Nested IF untuk Mengecek Syarat Ujian Skripsi
 
-Ini adalah paragraf contoh yang menjelaskan gambaran singkat mengenai percobaan pertama. Pada bagian ini, mahasiswa diminta untuk menerapkan kondisi `if-else` sederhana.
+
+Seorang mahasiswa akan mendaftar ujian skripsi. Sistem SIMTA akan memeriksa syarat
+administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
+sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
+harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
+dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
+pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan alasan kegagalan. 
 
 #### 2.1.1 Kode Program Java
 ```java
