@@ -226,6 +226,10 @@ sistem perlu menampilkan alasan penolakan yang berbeda?
 * **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
 satu kombinasi yang menyebabkan akses ditolak pada level kedua.
     * **Jawab:**
+    * **Kombinasi 01**
+      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+    * **Kombinasi 02**
+      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
 
     
 ## 3: TUGAS MANDIRI
