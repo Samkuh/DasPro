@@ -227,9 +227,9 @@ sistem perlu menampilkan alasan penolakan yang berbeda?
 satu kombinasi yang menyebabkan akses ditolak pada level kedua.
     * **Jawab:**
     * **Kombinasi 01**
-      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20kombinasi%2001.PNG)
     * **Kombinasi 02**
-      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20kombinasi%2002.PNG)
 
     
 ## 3: TUGAS MANDIRI
