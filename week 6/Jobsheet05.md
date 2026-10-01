@@ -1,4 +1,4 @@
-# JOBSHEET 5 - PEMILIHAN BERSARANG
+# JOBSHEET 6 - PEMILIHAN BERSARANG
 
 **Identitas Mahasiswa:**
 * **Nama:** [ Achmad Labib Zainullah ]
@@ -73,7 +73,7 @@ public class nestedUjianSkripsi02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
+![Gambar Output Percobaan 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
@@ -135,19 +135,19 @@ public class operatorLogikaWifi02 {
 #### 2.2.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
+![Gambar Output Percobaan 2](/week%206/Foto/hasil%20operator%20logika%20wifi.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jelaskan fungsi operator ||, &&, dan ! pada kondisi program tersebut.
-    * **Jawab:**
+    * **Jawab:** Fungsi operator `||` memiliki arti OR yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka otomatis kondisi yang satunya lagi akan `true` juga pada program diatas digunakan untuk mengetahui apakah anda dosen atau mahasiswa. Fungsi operator `&&` memiliki arti `AND` yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka kondisi satunya lagi akan di cek juga jika `true` maka kondisi bernilai `true` jika false maka kondisi akan bernilai `false` pada program diatas digunakan untuk mengecek apakah anda dosen/mahasiswa dan akun anda tidak diblokir. Fungsi operator `!` memiliki arti Negasi yaitu jika kita ingin membuat kondisi `true` maka kita harus memasukkan input sebaliknya contohnya jika kita ingin output `true` kita harus input nilai `false` pada program diatas digunakan untuk mengetahui apakah akun anda diblokir 
 * **Pertanyaan 2:** Mengapa pengguna dosen tetap dapat memperoleh akses ketika nilai mahasiswa = false?
-    * **Jawab:**
+    * **Jawab:** Karena pada program diatas menggunakan perintah `||` yang memiliki arti atau makna sebagai `OR` jika satu`true` maka yang lain juga ikut `true` meskipun yang lain bernilai `false`
 * **Pertanyaan 3:** Ubah operator || menjadi &&. Jalankan kembali program menggunakan data uji 1 dan 2. Apa yang terjadi dan mengapa?
-    * **Jawab:**
+    * **Jawab:** Jika operator || pada (mahasiswa || dosen) diubah menjadi &&, maka akses WiFi hanya diberikan jika pengguna adalah mahasiswa DAN dosen sekaligus, serta akun tidak sedang diblokir. Jadi, jika data uji 1 atau 2 hanya memiliki salah satu dari mahasiswa atau dosen bernilai true, hasilnya berubah menjadi `Akses Wifi Ditolak`
 * **Pertanyaan 4:** Pada ekspresi mahasiswa || dosen, kapan kondisi dosen tidak perlu dievaluasi? Jelaskan berdasarkan short-circuit          evaluation.
-    * **Jawab:**
+    * **Jawab:** Kondisi dosen tidak perlu dievaluasi ketika mahasiswa bernilai `true`. Hal ini karena operator `||` berarti `OR` (atau). Jika bagian pertama sudah `true`, hasil keseluruhan pasti `true`, sehingga Java tidak perlu memeriksa kondisi kedua.
 * **Pertanyaan 5:** Pada ekspresi (mahasiswa || dosen) && !akunDiblokir, kapan kondisi !akunDiblokir tidak perlu dievaluasi? Jelaskan.
-    * **Jawab:**
+    * **Jawab:** Kondisi `!akunDiblokir` tidak perlu dievaluasi ketika (mahasiswa || dosen) bernilai `false`. Hal ini karena operator `&&` berarti `AND` (dan). Jika kondisi pertama sudah `false`, hasil keseluruhan pasti `false`, sehingga Java tidak perlu mengevaluasi kondisi kedua.
  
 ### 2.3 Percobaan 3: Nested IF dan Operator Logika untuk Menentukan Akses Laboratorium
 
@@ -199,22 +199,37 @@ public class nesdetAksesLab02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Contoh Gambar Output Percobaan 1](/contoh-gambar.png)
+![Gambar Output Percobaan 3](/week%206/Foto/hasil%20neted%20akses%20lab.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Mengapa pemeriksaan punyaIzinDosen || asistenLab ditempatkan di dalam IF pertama?
-    * **Jawab:**
+    * **Jawab:** Karena mahasiswa harus memenuhi syarat utama terlebih dahulu, yaitu mahasiswa aktif dan tidak sedang disanksi. Setelah syarat tersebut terpenuhi, barulah program memeriksa apakah mahasiswa memiliki izin dosen atau merupakan asisten lab.
+      Urutanya :
+      * mahasiswaAktif && !sedangDisaksi → syarat utama.
+      * punyaIzinDosen || asistenLab → syarat tambahan.
+      * Jika semua terpenuhi → akses laboratorium diberikan.
 * **Pertanyaan 2:** Jelaskan fungsi operator &&, ||, dan ! pada program tersebut.
     * **Jawab:**
-* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif && !sedangDisanksi && (punyaIzinDosen ||           asistenLab)? Jelaskan apakah keputusan akses
-    akhirnya sama.
-    * **Jawab:**
+      * && -- AND -- Kedua kondisi harus bernilai true. Digunakan untuk memastikan mahasiswa aktif dan tidak sedang disanksi
+      * ! -- NOT -- Membalik nilai boolean. !sedangDisaksi berarti mahasiswa tidak sedang disanksi.
+* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif &&
+!sedangDisanksi && (punyaIzinDosen || asistenLab)? Jelaskan apakah keputusan akses
+akhirnya sama.
+    * **Jawab:** Ya, dapat. Keputusan akses akhirnya sama, karena kedua bentuk program memiliki syarat logika yang sama. Syarat akses adalah:
+      * Mahasiswa aktif -- AND
+      * tidak sedang disanksi -- AND
+      * (punya izin dosen OR asisten lab).
+    * Perbedaannya adalah Nested IF lebih mudah digunakan jika ingin memberikan alasan penolakan yang berbeda.
 * **Pertanyaan 4:** Apa keuntungan menggunakan Nested IF pada kasus ini dibandingkan hanya satu IF jika
-    sistem perlu menampilkan alasan penolakan yang berbeda?
-    * **Jawab:**
+sistem perlu menampilkan alasan penolakan yang berbeda?
+    * **Jawab:** Keuntungan `Nested IF` adalah program dapat membedakan alasan penolakan berdasarkan tahap pemeriksaan. Dengan `satu if` saja, logika tetap bisa dibuat, tetapi untuk membedakan alasan penolakan biasanya diperlukan kondisi tambahan sehingga kode dapat menjadi kurang terstruktur.
 * **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
-    satu kombinasi yang menyebabkan akses ditolak pada level kedua
+satu kombinasi yang menyebabkan akses ditolak pada level kedua.
     * **Jawab:**
+    * **Kombinasi 01**
+      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+    * **Kombinasi 02**
+      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
 
     
 ## 3: TUGAS MANDIRI
@@ -328,6 +343,14 @@ public class Tugas2SeleksiAsisten02 {
 
 ```
 
+#### 3.2 Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+* **Hasil Kode Program Nomor 01**
+![Gambar Output Percobaan 1 Tugas Mandiri](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
+
+* **Hasil Kode Program Nomor 01**
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%206/Foto/hasil%20tugas%202%20seleksi%20asisten.PNG)
 
 
 ## 4: KESIMPULAN
