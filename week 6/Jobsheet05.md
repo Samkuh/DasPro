@@ -203,16 +203,26 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Mengapa pemeriksaan punyaIzinDosen || asistenLab ditempatkan di dalam IF pertama?
-    * **Jawab:**
+    * **Jawab:** Karena mahasiswa harus memenuhi syarat utama terlebih dahulu, yaitu mahasiswa aktif dan tidak sedang disanksi. Setelah syarat tersebut terpenuhi, barulah program memeriksa apakah mahasiswa memiliki izin dosen atau merupakan asisten lab.
+      Urutanya :
+      * mahasiswaAktif && !sedangDisaksi → syarat utama.
+      * punyaIzinDosen || asistenLab → syarat tambahan.
+      * Jika semua terpenuhi → akses laboratorium diberikan.
 * **Pertanyaan 2:** Jelaskan fungsi operator &&, ||, dan ! pada program tersebut.
     * **Jawab:**
+      * && -- AND -- Kedua kondisi harus bernilai true. Digunakan untuk memastikan mahasiswa aktif dan tidak sedang disanksi
+      * ! -- NOT -- Membalik nilai boolean. !sedangDisaksi berarti mahasiswa tidak sedang disanksi.
 * **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif &&
 !sedangDisanksi && (punyaIzinDosen || asistenLab)? Jelaskan apakah keputusan akses
 akhirnya sama.
-    * **Jawab:**
+    * **Jawab:** Ya, dapat. Keputusan akses akhirnya sama, karena kedua bentuk program memiliki syarat logika yang sama. Syarat akses adalah:
+      * Mahasiswa aktif -- AND
+      * tidak sedang disanksi -- AND
+      * (punya izin dosen OR asisten lab).
+    * Perbedaannya adalah Nested IF lebih mudah digunakan jika ingin memberikan alasan penolakan yang berbeda.
 * **Pertanyaan 4:** Apa keuntungan menggunakan Nested IF pada kasus ini dibandingkan hanya satu IF jika
 sistem perlu menampilkan alasan penolakan yang berbeda?
-    * **Jawab:**
+    * **Jawab:** Keuntungan `Nested IF` adalah program dapat membedakan alasan penolakan berdasarkan tahap pemeriksaan. Dengan `satu if` saja, logika tetap bisa dibuat, tetapi untuk membedakan alasan penolakan biasanya diperlukan kondisi tambahan sehingga kode dapat menjadi kurang terstruktur.
 * **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
 satu kombinasi yang menyebabkan akses ditolak pada level kedua.
     * **Jawab:**
