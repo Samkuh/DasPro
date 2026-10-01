@@ -206,14 +206,15 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
     * **Jawab:**
 * **Pertanyaan 2:** Jelaskan fungsi operator &&, ||, dan ! pada program tersebut.
     * **Jawab:**
-* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif && !sedangDisanksi && (punyaIzinDosen ||           asistenLab)? Jelaskan apakah keputusan akses
-    akhirnya sama.
+* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif &&
+!sedangDisanksi && (punyaIzinDosen || asistenLab)? Jelaskan apakah keputusan akses
+akhirnya sama.
     * **Jawab:**
 * **Pertanyaan 4:** Apa keuntungan menggunakan Nested IF pada kasus ini dibandingkan hanya satu IF jika
-    sistem perlu menampilkan alasan penolakan yang berbeda?
+sistem perlu menampilkan alasan penolakan yang berbeda?
     * **Jawab:**
 * **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
-    satu kombinasi yang menyebabkan akses ditolak pada level kedua
+satu kombinasi yang menyebabkan akses ditolak pada level kedua.
     * **Jawab:**
 
     
