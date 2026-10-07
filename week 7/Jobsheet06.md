@@ -187,7 +187,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Studi Kasus 2](/week%207/foto/Hasil%20StudiKasus%2002.PNG)
 
 
-## 4: KESIMPULAN
+## 3: KESIMPULAN
 
 **Kesimpulan**
 * Berdasarkan Jobsheet 6 Dasar Pemrograman 2026, dapat disimpulkan bahwa praktikum ini membahas penerapan struktur pemilihan dasar dan pemilihan bersarang (nested if) dalam pemrograman Java melalui beberapa studi kasus. Mahasiswa dilatih untuk membuat program yang mampu mengambil keputusan berdasarkan kondisi tertentu, seperti pemberian diskon, perhitungan pembayaran, serta penentuan hak dana penghargaan mahasiswa
