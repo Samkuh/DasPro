@@ -22,6 +22,8 @@ melalui Visual Studio Code
 
 ## 2: HASIL PERCOBAAN & ANALISIS
 
+### 2.1 Persiapan Awal (dilakukan sekali di setiap laptop/PC)
+### 2.2 Percobaan 1: Menyiapkan Repository 
 ### 2.3 Percobaan 2: Studi Kasus 1 – Pemilihan Dasar
 
 Kedai Kopi Senja menjual Kopi Susu Gula Aren seharga Rp18.000 per cup dan memberikan
@@ -186,6 +188,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 ![Gambar Output Studi Kasus 2](/week%207/foto/Hasil%20StudiKasus%2002.PNG)
 
+### 2.5 Percobaan 4: Uji Silang Program Teman
 
 ## 3: KESIMPULAN
 
