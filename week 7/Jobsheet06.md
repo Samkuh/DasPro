@@ -77,290 +77,120 @@ public class StudiKasus102 {
 }
 ```
 
-#### 2.1.2 Hasil Running / Screenshot Output
+#### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Studi Kasus 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
-
-#### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
-Mengapa demikian?
-    * **Jawab:** Jika kita memasukkan input `no` maka program akan membaca bahwa nilai dari input tersebut adalah `false` karena yang kita    tulis pada program bada bagian `if string` kita memasukkan input `yes` maka hasil yang dihasilkan akan masuk pada program bagian `else`   langsung.
-* **Pertanyaan 2:** Jelaskan maksud dari potongan kode berikut!?
-    * **Jawab:** Perintah tersebut masuk pada `If Else` yang mempunyai makna `true` Jika kondisi didalam kurung terpenuhi. yaitu jika
-jumlah bimbingan P1 lebih dari sama dengan 8 dan P2 lebih dari sama dengan 4.
-* **Pertanyaan 3:** Bagaimana alur pemeriksaan syarat mahasiswa dari awal sampai akhir? Jelaskan secara
-runtut untuk semua kondisi!
-    * **Jawab:** Sistem SIMTA akan memeriksa syarat
-administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
-sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
-harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
-dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
-pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan output gagal dengan alasan yang berbeda sesuai tahap berapa yang gagal .
+![Gambar Output Studi Kasus 1](/week%207/foto/Hasil%20StudiKasus%2001.PNG)
 
 ---
 
-### 2.2 Percobaan 2: Operator Logika untuk Menentukan Akses WiFi Kampus
+### 2.4 Percobaan 3: Studi Kasus 2 – Pemilihan Bersarang
 
-Sistem WiFi kampus hanya dapat digunakan oleh mahasiswa atau dosen yang akunnya
-tidak diblokir. Program menerima informasi apakah pengguna merupakan mahasiswa, dosen,
-dan apakah akun pengguna sedang diblokir. Akses diberikan apabila pengguna merupakan
-mahasiswa atau dosen, dan akun pengguna tidak diblokir. Percobaan ini digunakan untuk
-mempraktikkan operator logika && (AND), || (OR), dan ! (NOT).
+* Bagian Kemahasiswaan Politeknik Negeri Malang menerbitkan surat mengenai validasi
+kelengkapan dokumen prestasi mahasiswa Tahun Kegiatan 2026 Tahap I. Berdasarkan ketentuan
+dalam surat tersebut, dana penghargaan dari institusi diberikan kepada mahasiswa dengan ketentuan
+sebagai berikut:
+    * a. Untuk perlombaan yang diselenggarakan oleh BELMAWA, BAKORMA, atau Mandiri, dana
+penghargaan hanya diberikan kepada peraih Juara 1, 2, atau 3. Juara Harapan atau peserta tidak
+memperoleh dana penghargaan.
+    * b. Untuk Program Kreativitas Mahasiswa (PKM), dana penghargaan diberikan kepada tim yang
+lolos pendanaan.
+    * c. Kegiatan di luar kedua ketentuan di atas (Lainnya) tidak memperoleh dana penghargaan.
+    
+* Kegiatan di luar kedua ketentuan di atas (Lainnya) tidak memperoleh dana penghargaan.
+Selain itu, mahasiswa yang memenuhi ketentuan a atau b wajib mengupload 4 dokumen secara
+lengkap di SIAKAD, yaitu Surat Tugas, Sertifikat, Foto Kegiatan, dan Poster Kegiatan. Jika dokumen
+yang diupload kurang dari 4, data dianggap tidak lengkap dan dana penghargaan tidak diberikan.
 
-#### 2.2.1 Kode Program Java
+* Buatlah program untuk membantu Admin Kemahasiswaan mengecek status dana penghargaan
+mahasiswa. Program hanya menanyakan data yang diperlukan sesuai jenis kegiatan, lalu menampilkan
+status dana penghargaan beserta alasannya. Jika dokumen tidak lengkap, tampilkan juga jumlah
+dokumen yang masih kurang. Selesaikan menggunakan pemilihan bersarang (nested IF) dengan
+kedalaman maksimal 3 tingkat. Gunakan ketentuan data masukan berikut:
+
+![Gambar Output Tabel Studi Kasus 2](/week%207/foto/Tabel%20Studi%20Kasus%2002.PNG)
+
+#### 2.4.1 Kode Program Java
 
 ```java
 
 import java.util.Scanner;
 
-public class operatorLogikaWifi02 {
+public class StudiKasus202 {
 
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
 
-        boolean mahasiswa, dosen, akunDiblokir;
+        String namaMahasiswa;
+        String jenisKegiatan, statusPendanaan;
+        int jumlahDokumen, peringkatJuara;
 
-        System.out.print("Apakah pengguna mahasiswa? (true/false): ");
-        mahasiswa = sc.nextBoolean();
-        System.out.print("Apakah pengguna dosen? (true/false): ");
-        dosen = sc.nextBoolean();
-        System.out.print("Apakah akun sedang diblokir? (true/false): ");
-        akunDiblokir = sc.nextBoolean();
+        System.out.print("Masukkan Nama Mahasiswa: ");
+        namaMahasiswa = sc.nextLine();
+        System.out.print("Masukkan Jenis Kegiatan (Belmawa/Bakorma/Mandiri/PKM/Lainnya): ");
+        jenisKegiatan = sc.nextLine();
+        System.out.print("Masukkan Status Pendanaan Tim (Lulus/Tidak Lulus): ");
+        statusPendanaan = sc.nextLine();
+        System.out.print("Masukkan Peringkat Juara (1/2/3): ");
+        peringkatJuara = sc.nextInt();
+        System.out.print("Masukkan Jumlah Dokumen Yang Sudah Diupload (1/2/3/4): ");
+        jumlahDokumen = sc.nextInt();
 
-        if ((mahasiswa || dosen) && !akunDiblokir) {
-            System.out.println("Akses Wifi Diberikan");
-        } else {
-            System.out.println("Akses Wifi Ditolak");
-        }
-    }
-}
+        System.out.println("------------------------------");
+        System.out.println("Nama Mahasiswa: " + namaMahasiswa);
+        System.out.println("Jenis Kegiatan (Belmawa/Bakorma/Mandiri/Pkm/Lainnya) : " + jenisKegiatan);
+        System.out.println("Jumlah Dokumen: " + jumlahDokumen);
+        System.out.println("Peringkat Juara: " + peringkatJuara);
 
-```
-
-#### 2.2.2 Hasil Running / Screenshot Output
-Berikut adalah contoh tampilan *output* setelah program dijalankan:
-
-![Gambar Output Percobaan 2](/week%206/Foto/hasil%20operator%20logika%20wifi.PNG)
-
-#### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Jelaskan fungsi operator ||, &&, dan ! pada kondisi program tersebut.
-    * **Jawab:** Fungsi operator `||` memiliki arti OR yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka otomatis kondisi yang satunya lagi akan `true` juga pada program diatas digunakan untuk mengetahui apakah anda dosen atau mahasiswa. Fungsi operator `&&` memiliki arti `AND` yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka kondisi satunya lagi akan di cek juga jika `true` maka kondisi bernilai `true` jika false maka kondisi akan bernilai `false` pada program diatas digunakan untuk mengecek apakah anda dosen/mahasiswa dan akun anda tidak diblokir. Fungsi operator `!` memiliki arti Negasi yaitu jika kita ingin membuat kondisi `true` maka kita harus memasukkan input sebaliknya contohnya jika kita ingin output `true` kita harus input nilai `false` pada program diatas digunakan untuk mengetahui apakah akun anda diblokir 
-* **Pertanyaan 2:** Mengapa pengguna dosen tetap dapat memperoleh akses ketika nilai mahasiswa = false?
-    * **Jawab:** Karena pada program diatas menggunakan perintah `||` yang memiliki arti atau makna sebagai `OR` jika satu`true` maka yang lain juga ikut `true` meskipun yang lain bernilai `false`
-* **Pertanyaan 3:** Ubah operator || menjadi &&. Jalankan kembali program menggunakan data uji 1 dan 2. Apa yang terjadi dan mengapa?
-    * **Jawab:** Jika operator || pada (mahasiswa || dosen) diubah menjadi &&, maka akses WiFi hanya diberikan jika pengguna adalah mahasiswa DAN dosen sekaligus, serta akun tidak sedang diblokir. Jadi, jika data uji 1 atau 2 hanya memiliki salah satu dari mahasiswa atau dosen bernilai true, hasilnya berubah menjadi `Akses Wifi Ditolak`
-* **Pertanyaan 4:** Pada ekspresi mahasiswa || dosen, kapan kondisi dosen tidak perlu dievaluasi? Jelaskan berdasarkan short-circuit          evaluation.
-    * **Jawab:** Kondisi dosen tidak perlu dievaluasi ketika mahasiswa bernilai `true`. Hal ini karena operator `||` berarti `OR` (atau). Jika bagian pertama sudah `true`, hasil keseluruhan pasti `true`, sehingga Java tidak perlu memeriksa kondisi kedua.
-* **Pertanyaan 5:** Pada ekspresi (mahasiswa || dosen) && !akunDiblokir, kapan kondisi !akunDiblokir tidak perlu dievaluasi? Jelaskan.
-    * **Jawab:** Kondisi `!akunDiblokir` tidak perlu dievaluasi ketika (mahasiswa || dosen) bernilai `false`. Hal ini karena operator `&&` berarti `AND` (dan). Jika kondisi pertama sudah `false`, hasil keseluruhan pasti `false`, sehingga Java tidak perlu mengevaluasi kondisi kedua.
- 
-### 2.3 Percobaan 3: Nested IF dan Operator Logika untuk Menentukan Akses Laboratorium
-
-Mahasiswa dapat menggunakan laboratorium di luar jadwal kuliah apabila statusnya aktif
-dan tidak sedang mendapatkan sanksi. Jika syarat tersebut terpenuhi, sistem melakukan
-pemeriksaan kedua. Akses laboratorium diberikan apabila mahasiswa memiliki izin dosen
-atau merupakan asisten laboratorium. Kasus ini menggabungkan pemilihan bersarang dengan
-operator logika.
-
-#### 2.3.1 Kode Program Java
-
-```java
-
-import java.util.Scanner;
-
-public class nesdetAksesLab02 {
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        boolean mahasiswaAktif, sedangDisaksi, punyaIzinDosen, asistenLab;
-
-        System.out.println("Jawab lah True Atau False");
-
-        System.out.print("Apakah mahasiswa aktif: ");
-        mahasiswaAktif = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa sedang di sakasi: ");
-        sedangDisaksi = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa punya izin dosen: ");
-        punyaIzinDosen = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa merupakan asisten Lab: ");
-        asistenLab = sc.nextBoolean();
-
-        if (mahasiswaAktif && !sedangDisaksi) {
-            if (punyaIzinDosen || asistenLab) {
-                System.out.println("Akses labolatorium diberikan");
-            } else {
-                System.out.println("Akses ditolak : membutuhkan izin dosen atau status asisten Lab");
-            }
-        } else {
-            System.out.println("Akses ditolak : status mahasiswa tidak memenuhi syarat");
-        }
-    }
-}
-
-```
-
-#### 2.3.2 Hasil Running / Screenshot Output
-Berikut adalah contoh tampilan *output* setelah program dijalankan:
-
-![Gambar Output Percobaan 3](/week%206/Foto/hasil%20neted%20akses%20lab.PNG)
-
-#### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Mengapa pemeriksaan punyaIzinDosen || asistenLab ditempatkan di dalam IF pertama?
-    * **Jawab:** Karena mahasiswa harus memenuhi syarat utama terlebih dahulu, yaitu mahasiswa aktif dan tidak sedang disanksi. Setelah syarat tersebut terpenuhi, barulah program memeriksa apakah mahasiswa memiliki izin dosen atau merupakan asisten lab.
-      Urutanya :
-      * mahasiswaAktif && !sedangDisaksi → syarat utama.
-      * punyaIzinDosen || asistenLab → syarat tambahan.
-      * Jika semua terpenuhi → akses laboratorium diberikan.
-* **Pertanyaan 2:** Jelaskan fungsi operator &&, ||, dan ! pada program tersebut.
-    * **Jawab:**
-      * && -- AND -- Kedua kondisi harus bernilai true. Digunakan untuk memastikan mahasiswa aktif dan tidak sedang disanksi
-      * ! -- NOT -- Membalik nilai boolean. !sedangDisaksi berarti mahasiswa tidak sedang disanksi.
-* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif &&
-!sedangDisanksi && (punyaIzinDosen || asistenLab)? Jelaskan apakah keputusan akses
-akhirnya sama.
-    * **Jawab:** Ya, dapat. Keputusan akses akhirnya sama, karena kedua bentuk program memiliki syarat logika yang sama. Syarat akses adalah:
-      * Mahasiswa aktif -- AND
-      * tidak sedang disanksi -- AND
-      * (punya izin dosen OR asisten lab).
-    * Perbedaannya adalah Nested IF lebih mudah digunakan jika ingin memberikan alasan penolakan yang berbeda.
-* **Pertanyaan 4:** Apa keuntungan menggunakan Nested IF pada kasus ini dibandingkan hanya satu IF jika
-sistem perlu menampilkan alasan penolakan yang berbeda?
-    * **Jawab:** Keuntungan `Nested IF` adalah program dapat membedakan alasan penolakan berdasarkan tahap pemeriksaan. Dengan `satu if` saja, logika tetap bisa dibuat, tetapi untuk membedakan alasan penolakan biasanya diperlukan kondisi tambahan sehingga kode dapat menjadi kurang terstruktur.
-* **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
-satu kombinasi yang menyebabkan akses ditolak pada level kedua.
-    * **Jawab:**
-    * **Kombinasi 01**
-      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20kombinasi%2001.PNG)
-    * **Kombinasi 02**
-      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20kombinasi%2002.PNG)
-
-    
-## 3: TUGAS MANDIRI
-
-* **Tugas No 01** Implementasikan flowchart yang telah Anda buat pada Latihan 2 Pertemuan 6 terkait
-    sistem diskon toko buku ke dalam program Java. Program wajib menerapkan struktur
-    pemilihan bersarang (Nested IF). Gunakan operator logika apabila diperlukan
-* **Tugas No 01** Buatlah program Java untuk sistem seleksi calon asisten praktikum berdasarkan ketentuan berikut:
-  * Mahasiswa dapat mengikuti seleksi apabila berstatus aktif dan tidak sedang
-    mendapatkan sanksi akademik.
-  * Jika syarat tersebut terpenuhi, mahasiswa harus memenuhi syarat berikutnya yaitu
-    nilai Dasar Pemrograman minimal 80 atau memiliki sertifikat kompetensi
-    pemrograman.
-  * Jika lolos 2 syarat tersebut, mahasiswa akan dipanggil untuk mengikuti wawancara.
-    Mahasiswa diterima sebagai asisten apabila nilai wawancara minimal 75.
-  * Program harus menampilkan alasan apabila mahasiswa gagal pada setiap tahap
-    seleksi.
-  * Gunakan pemilihan bersarang dan operator logika. Simpan file dengan nama
-    tugas2SeleksiAsistenNoPresensi.java.
-
-### 3.1 Implementasi Kode Tugas
-
-* **Kode Program No 01**
-
-```java
-
-import java.util.Scanner;
-
-public class DiskonTokoBuku {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        String hariApa, jenisBuku;
-        int diskonKamus, diskonNovel, diskonSelainBuku, jumlahBuku, diskonNovel2;
-
-        System.out.print("Hari apa anda membeli buku di sini ? ");
-        hariApa = sc.nextLine();
-        System.out.print("Jenis buku yang anda beli: ");
-        jenisBuku = sc.nextLine();
-        System.out.print("Berapa buku yang anda beli: ");
-        jumlahBuku = sc.nextInt();
-
-        diskonKamus = 10 + 2;
-        diskonNovel = 7 + 2;
-        diskonNovel2 = 7 + 1;
-        diskonSelainBuku = 5;
-
-        if (hariApa.equalsIgnoreCase("RABU")) {
-            if (jenisBuku.equalsIgnoreCase("KAMUS")) {
-                System.out.println("diskon: " + diskonKamus + " %");
-            } else if (jenisBuku.equalsIgnoreCase("NOVEL")) {
-                if (jumlahBuku > 3) {
-                    System.out.println("diskon: " + diskonNovel + " %");
-                } else if (jumlahBuku <= 3) {
-                    System.out.println("diskon: " + diskonNovel2 + " %");
-                }
-            } else {
-                if (jumlahBuku > 3) {
-                    System.out.println("Diskon: " + diskonSelainBuku + " %");
+        if (jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") 
+            || jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
+            if (peringkatJuara >= 1 && peringkatJuara <= 3) {
+                if (jumlahDokumen == 1) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Di Berikan");
+                } else if (jumlahDokumen == 2) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Di Berikan");
+                } else if (jumlahDokumen == 3) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else {
-                    System.out.println("Tidak ada diskon");
-                }
-            }
-        }
-    }
-}
-  
-```
-
-* **Kode Program No 02**
-
-```java
-
-import java.util.Scanner;
-
-public class Tugas2SeleksiAsisten02 {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        boolean status, sanksi, memilikiSertif;
-        int nilaiDasar, nilaiWawancara;
-
-        System.out.print("Apakah mahasiswa berstatus aktif ? (true/false) ");
-        status = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa sedang mendapatkan sanksi ? (true/false) ");
-        sanksi = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa memiliki sertifikat kompetensi pemrograman ? (true/false) ");
-        memilikiSertif = sc.nextBoolean();
-        System.out.print("Berapa nilai dasar pemrograman mahasiswa : ");
-        nilaiDasar = sc.nextInt();
-        System.out.print("Berapa nilai wawancara mahasiswa : ");
-        nilaiWawancara = sc.nextInt();
-
-        if (status && !sanksi) {
-            if (nilaiDasar >= 80 || memilikiSertif) {
-                if (nilaiWawancara >= 75) {
-                    System.out.println("Mahasiswa Diterima Menjadi Asisten");
-                } else {
-                    System.out.println("Mahasiswa gagal pada tahap wawancara. karena nilai kurang dari 75 ");
+                    System.out.println("Status: Dokumen Lengkap Dan Juara 1/2/3. Dana Penghargaan Di Berikan");
                 }
             } else {
-                System.out.println("Mahasiswa gagal menjadi asisten. karena gagal pada tahap nilai dan sertifikat ");
+                System.out.println("Status: Juara Harapan Atau Peserta.Tidak Memperoleh Dana Penghargaan");
+            }
+        } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+            System.out.println("");
+            if (statusPendanaan.equalsIgnoreCase("LULUS")) {
+                if (jumlahDokumen == 1) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Di Berikan");
+                } else if (jumlahDokumen == 2) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Di Berikan");
+                } else if (jumlahDokumen == 3) {
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Di Berikan");
+                } else {
+                    System.out.println("Status: Dokumen Lengkap Dan Status Pendanaan lulus. Dana Penghargaan Di Berikan");
+                }
+            } else {
+                System.out.println("Status: Status Pendanaan Tidak Lulus.Tidak Memperoleh Dana Penghargaan");
             }
         } else {
-            System.out.println("Mahasiswa gagal pada tahap pertama. Mahasisa tidak aktif dan terkena sanksi");
+            System.out.println("Status: Mengikuti Kegiatan Yang Tidak Diakui Kampus.Tidak Memperoleh Dana Penghargaan");
         }
     }
 }
 
 ```
 
-#### 3.2 Hasil Running / Screenshot Output
+#### 2.4.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-* **Hasil Kode Program Nomor 01**
-![Gambar Output Percobaan 1 Tugas Mandiri](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
-
-* **Hasil Kode Program Nomor 01**
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%206/Foto/hasil%20tugas%202%20seleksi%20asisten.PNG)
+![Gambar Output Studi Kasus 2](/week%207/foto/Hasil%20StudiKasus%2002.PNG)
 
 
 ## 4: KESIMPULAN
 
-* **Kesimpulan** obsheet 6 Dasar Pemrograman 2026 dari Politeknik Negeri Malang ini berisi panduan praktikum mengenai struktur pemilihan bersarang (Nested IF) dan operator logika (&&, ||, !) dalam bahasa Java. Melalui tiga modul percobaan—yaitu pengecekan syarat ujian skripsi, akses WiFi kampus, dan izin laboratorium—mahasiswa dilatih untuk menyusun logika kondisi yang kompleks.
+**Kesimpulan**
+* Berdasarkan Jobsheet 6 Dasar Pemrograman 2026, dapat disimpulkan bahwa praktikum ini membahas penerapan struktur pemilihan dasar dan pemilihan bersarang (nested if) dalam pemrograman Java melalui beberapa studi kasus. Mahasiswa dilatih untuk membuat program yang mampu mengambil keputusan berdasarkan kondisi tertentu, seperti pemberian diskon, perhitungan pembayaran, serta penentuan hak dana penghargaan mahasiswa
+* Selain kemampuan pemrograman, jobsheet ini juga memberikan pemahaman mengenai penggunaan Git dan GitHub melalui Visual Studio Code, mulai dari membuat repository, melakukan clone, add, commit, push, pull, dan sync. Mahasiswa juga belajar melakukan kolaborasi dengan teman melalui fitur repository dan melakukan uji silang terhadap program yang dibuat.
+* Dengan demikian, praktikum ini tidak hanya meningkatkan kemampuan dalam membuat program Java menggunakan percabangan, tetapi juga membiasakan mahasiswa menerapkan version control, pengelolaan kode, pengujian program, dan kolaborasi menggunakan GitHub dalam proses pengembangan perangkat lunak.
 
