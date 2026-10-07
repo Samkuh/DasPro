@@ -29,43 +29,50 @@ diskon 10% untuk pembelian minimal Rp100.000. Pemilik kedai membutuhkan program 
 sederhana untuk menghitung total bayar dan kembalian. Buatlah program Java berdasarkan flowchart
 berikut.
 
-![Gambar FlowChart]()
+![Gambar FlowChart](/week%207/foto/Foto%20FlowChart.PNG)
 
 #### 2.3.1 Kode Program Java
 ```java
-
 import java.util.Scanner;
 
-public class nestedUjianSkripsi02 {
+public class StudiKasus102 {
 
     public static void main(String[] args) {
 
+        int jumlahCup, hargaBayar;
+        int totalHarga, diskon, totalBayar;
+        int kembalian, kurang, hargaCup;
+        
         Scanner sc = new Scanner(System.in);
 
-        String pesan;
+        System.out.print("Masukkan Harga Per Cup: ");
+        hargaCup = sc.nextInt();
+        System.out.print("Masukkan Jumlah Cup: ");
+        jumlahCup = sc.nextInt();
+        System.out.print("Masukkan Nominal Uang Bayar: ");
+        hargaBayar = sc.nextInt();
 
-        System.out.print("Apakah Mahasiswa Sudah Bebas Kompen ? (Ya/Tidak): ");
-        String bebasKompen = sc.nextLine().trim();
+        totalHarga = jumlahCup * hargaCup;
+        diskon = 0;
 
-        System.out.print("Masukkan jumlah log bimbingan Pembimbing 1: ");
-        int bimbinganP1 = sc.nextInt();
-        System.out.print("Masukkan jumlah log bimbingan Pembimbing 2: ");
-        int bimbinganP2 = sc.nextInt();
-
-        if (bebasKompen.equalsIgnoreCase("Ya")) {
-            if (bimbinganP1 >= 8 && bimbinganP2 >=4) {
-            pesan = "Semua syarat terpenuhi. Mahasiswa boleh mendaftar ujian skripsi";
-            } else if (bimbinganP1 < 8 && bimbinganP2 < 4) {
-            pesan = "Gagal! Log bimbingan P1 Kurang dari 8 Kali dan P2 Kurang dari 4 kali";
-            } else if (bimbinganP1 < 8) {
-            pesan = "Gagal log bimbingan P1 belum mencapai 8 kali";
-            } else {
-            pesan = "Gagal log bimbingan P2 belum mencapai 4 kali";
-            }
-        }else {
-            pesan = "Gagal mahasiswa masih memiliki tanggungan kompen";
+        if (totalHarga >= 100000) {
+            diskon = totalHarga * 10 / 100;
+            totalBayar = totalHarga - diskon;
+        } else {
+            totalBayar = totalHarga - diskon;
         }
-        System.out.println(pesan);
+
+        System.out.println("Total Harga: Rp." + totalHarga);
+        System.out.println("diskon: Rp." + diskon);
+        System.out.println("Total Bayar: Rp." + totalBayar);
+
+        if (hargaBayar >= totalBayar) {
+            kembalian = hargaBayar - totalBayar;
+            System.out.println("Kembalian: Rp." + kembalian);
+        } else {
+            kurang = totalBayar - hargaBayar;
+            System.out.println("Kurang: Rp" + kurang);
+        }
     }
 }
 ```
@@ -73,7 +80,7 @@ public class nestedUjianSkripsi02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
+![Gambar Output Studi Kasus 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
