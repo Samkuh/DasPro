@@ -11,27 +11,27 @@
 
 Berikut adalah tujuan pelaksanaan praktikum pada bab ini:
 
-1. Mahasiswa mampu menyelesaikan permasalahan/studi kasus menggunakan sintaks
+1. Mahasiswa mampu menyelesaikan studi kasus menggunakan struktur pemilihan dasar dan
 pemilihan bersarang
-2. Mahasiswa mampu menerapkan sintaks pemilihan bersarang ke dalam program Jawa
-3. Mahasiswa mampu menerapkan operator logika &&, ||, dan ! pada struktur pemilihan
+2. Mahasiswa mampu menyimpan dan mengumpulkan pekerjaan menggunakan Git dan GitHub
+melalui Visual Studio Code
+3. Mahasiswa mampu berkolaborasi dengan teman menggunakan GitHub
 
 
 ---
 
 ## 2: HASIL PERCOBAAN & ANALISIS
 
-### 2.1 Percobaan 1: Nested IF untuk Mengecek Syarat Ujian Skripsi
+### 2.3 Percobaan 2: Studi Kasus 1 – Pemilihan Dasar
 
+Kedai Kopi Senja menjual Kopi Susu Gula Aren seharga Rp18.000 per cup dan memberikan
+diskon 10% untuk pembelian minimal Rp100.000. Pemilik kedai membutuhkan program kasir
+sederhana untuk menghitung total bayar dan kembalian. Buatlah program Java berdasarkan flowchart
+berikut.
 
-Seorang mahasiswa akan mendaftar ujian skripsi. Sistem SIMTA akan memeriksa syarat
-administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
-sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
-harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
-dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
-pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan alasan kegagalan. 
+![Gambar FlowChart]()
 
-#### 2.1.1 Kode Program Java
+#### 2.3.1 Kode Program Java
 ```java
 
 import java.util.Scanner;
