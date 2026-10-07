@@ -31,11 +31,11 @@ public class StudiKasus202 {
             || jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
             if (peringkatJuara >= 1 && peringkatJuara <= 3) {
                 if (jumlahDokumen == 1) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else if (jumlahDokumen == 2) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else if (jumlahDokumen == 3) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else {
                     System.out.println("Status: Dokumen Lengkap Dan Juara 1/2/3. Dana Penghargaan Di Berikan");
                 }
@@ -46,11 +46,11 @@ public class StudiKasus202 {
             System.out.println("");
             if (statusPendanaan.equalsIgnoreCase("LULUS")) {
                 if (jumlahDokumen == 1) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 3 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else if (jumlahDokumen == 2) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 2 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else if (jumlahDokumen == 3) {
-                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Berikan");
+                    System.out.println("Status: Dokumen Tidak Lengkap (Kurang 1 Dokumen). Dana Penghargaan Tidak Di Berikan");
                 } else {
                     System.out.println("Status: Dokumen Lengkap Dan Status Pendanaan lulus. Dana Penghargaan Di Berikan");
                 }
