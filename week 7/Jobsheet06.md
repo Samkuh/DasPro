@@ -23,7 +23,9 @@ melalui Visual Studio Code
 ## 2: HASIL PERCOBAAN & ANALISIS
 
 ### 2.1 Persiapan Awal (dilakukan sekali di setiap laptop/PC)
+* Sebelumnya Saya Sudah Mendownload GitHub Dan Menghubungkannya Dengan VSCode Saya 
 ### 2.2 Percobaan 1: Menyiapkan Repository 
+* Sebelumnya Saya Sudah Menghubungkan Antara GitHub Dan VSCode Saya
 ### 2.3 Percobaan 2: Studi Kasus 1 – Pemilihan Dasar
 
 Kedai Kopi Senja menjual Kopi Susu Gula Aren seharga Rp18.000 per cup dan memberikan
@@ -189,6 +191,13 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Studi Kasus 2](/week%207/foto/Hasil%20StudiKasus%2002.PNG)
 
 ### 2.5 Percobaan 4: Uji Silang Program Teman
+Selain sebagai repository pribadi, GitHub sering dimanfaatkan sebagai sarana kolaborasi untuk
+mengerjakan project bersama tim. Kerjakan bagian ini berpasangan dan bergantian, Anda menguji
+program teman, dan teman menguji program Anda.
+* **Mahasiswa Yang Saya Ajak Kolaborasi : Muhammad Akbar TI - 1D**
+![Gambar Kolaborasi](/week%207/foto/AkbarUjiCoba.PNG)
+* **Hasil Yang Diberikan Akbar Saat Kolaborasi**
+![Gambar Hasil Kolaborasi](/week%207/foto/hasilAkbarUjiCoba.PNG)
 
 ## 3: KESIMPULAN
 
