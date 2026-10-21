@@ -1,4 +1,4 @@
-# JOBSHEET 6 - PEMILIHAN BERSARANG
+# JOBSHEET 7 WEEK 9- PERULANGAN 01
 
 **Identitas Mahasiswa:**
 * **Nama:** [ Achmad Labib Zainullah ]
@@ -11,25 +11,26 @@
 
 Berikut adalah tujuan pelaksanaan praktikum pada bab ini:
 
-1. Mahasiswa mampu menyelesaikan permasalahan/studi kasus menggunakan sintaks
-pemilihan bersarang
-2. Mahasiswa mampu menerapkan sintaks pemilihan bersarang ke dalam program Jawa
-3. Mahasiswa mampu menerapkan operator logika &&, ||, dan ! pada struktur pemilihan
+1. Mahasiswa dapat menjelaskan format penulisan program perulangan (for, while,
+dan do-while)
+2.  Mahasiswa dapat mengimplementasikan flowchart perulangan menggunakan
+bahasa pemrograman Java 
 
 
 ---
 
-## 2: HASIL PERCOBAAN & ANALISIS
+## 2: PRAKTIKUM
 
-### 2.1 Percobaan 1: Nested IF untuk Mengecek Syarat Ujian Skripsi
+### 2.1 Percobaan 1:  Studi Kasus Nilai Mahasiswa di SIAKAD – Perulangan FOR
 
 
-Seorang mahasiswa akan mendaftar ujian skripsi. Sistem SIMTA akan memeriksa syarat
-administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
-sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
-harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
-dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
-pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan alasan kegagalan. 
+Di dalam Sistem Informasi Akademik (SIAKAD), dosen mengisi nilai mata kuliah Praktikum
+Dasar Pemrograman yang ditempuh oleh mahasiswa. Dosen tersebut ingin mencari nilai
+tertinggi dan terendah Kuis dari 10 mahasiswa di dalam satu kelas. Dosen tersebut harus
+memasukkan nilai dari setiap siswa, kemudian menentukan dan menampilkan nilai tertinggi
+dan terendah. Perhatikan flowchart berikut ini:
+
+![Gambar Output Percobaan 1](/week%209/foto/FlowChart%20Tugas%2001.PNG)
 
 #### 2.1.1 Kode Program Java
 ```java
