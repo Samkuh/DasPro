@@ -9,6 +9,11 @@ public class Tugas1PertemuanSembilan02 {
         int tiket, totalTiket = 0, hargaTiket = 50000, i = 0, jmlPelanggan;
         double diskonSepuluh = 0.10, diskonLimaBelas = 0.15, diskonNol = 0, totalHarga = 0;
 
+        System.out.println("Harga Tiket: Rp.50.000");
+        System.out.println("Diskon 10% Untuk Pembelian Tiket 4 Sampai 10");
+        System.out.println("Diskon 15% Untuk Pembelian Tiket lebih dari 10");
+        System.out.println("");
+
         System.out.print("Masukkan jumlah pelanggan: ");
         jmlPelanggan = sc.nextInt();
         System.out.print("");

@@ -10,6 +10,11 @@ public class KafeDoWhile {
         String namaPelanggan;
         int hargaKopi = 12000, hargaTeh = 7000, hargaRoti = 20000;
 
+        System.out.println("==== MENU ====");
+        System.out.println("KOPI : 12.000");
+        System.out.println("TEH : 7.000");
+        System.out.println("ROTI : 20.000");
+
         do {
             System.out.println("");
             System.out.print("Masukkan Nama Pelanggan ( Ketik batal untuk keluar ): ");
