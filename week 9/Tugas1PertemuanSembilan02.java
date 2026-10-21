@@ -13,6 +13,11 @@ public class Tugas1PertemuanSembilan02 {
         jmlPelanggan = sc.nextInt();
         System.out.print("");
 
+        if (jmlPelanggan < 0) {
+            System.out.println("");
+            System.out.println("Input Tidak Valid");
+        } 
+
         while (i < jmlPelanggan) {
             System.out.println("");
             System.out.println("===== JUMLAH TIKET =====");
