@@ -37,36 +37,28 @@ dan terendah. Perhatikan flowchart berikut ini:
 
 import java.util.Scanner;
 
-public class nestedUjianSkripsi02 {
+public class SiakadFor02 {
 
     public static void main(String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+    double nilai, tertinggi = 0, terendah = 100;
 
-        String pesan;
-
-        System.out.print("Apakah Mahasiswa Sudah Bebas Kompen ? (Ya/Tidak): ");
-        String bebasKompen = sc.nextLine().trim();
-
-        System.out.print("Masukkan jumlah log bimbingan Pembimbing 1: ");
-        int bimbinganP1 = sc.nextInt();
-        System.out.print("Masukkan jumlah log bimbingan Pembimbing 2: ");
-        int bimbinganP2 = sc.nextInt();
-
-        if (bebasKompen.equalsIgnoreCase("Ya")) {
-            if (bimbinganP1 >= 8 && bimbinganP2 >=4) {
-            pesan = "Semua syarat terpenuhi. Mahasiswa boleh mendaftar ujian skripsi";
-            } else if (bimbinganP1 < 8 && bimbinganP2 < 4) {
-            pesan = "Gagal! Log bimbingan P1 Kurang dari 8 Kali dan P2 Kurang dari 4 kali";
-            } else if (bimbinganP1 < 8) {
-            pesan = "Gagal log bimbingan P1 belum mencapai 8 kali";
-            } else {
-            pesan = "Gagal log bimbingan P2 belum mencapai 4 kali";
+        for (int i = 1; i <= 10; i++) {
+        System.out.print("Masukkan nilai mahasiswa ( 1 - 100 ) ke- " + i + ": ");
+        nilai = sc.nextDouble();
+            if (nilai > tertinggi) {
+            tertinggi = nilai;
             }
-        }else {
-            pesan = "Gagal mahasiswa masih memiliki tanggungan kompen";
+            if (nilai < terendah) {
+            terendah = nilai;
+            }
         }
-        System.out.println(pesan);
+        System.out.println("");
+        System.out.println("============================");
+        System.out.println("Nilai Tertinggi: " + tertinggi);    
+        System.out.println("Nilai Terendah: " + terendah);    
     }
 }
 ```
@@ -74,59 +66,109 @@ public class nestedUjianSkripsi02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%206/Foto/hasil%20nested%20skripsi.PNG)
+![Gambar Output Percobaan 1](/week%209/foto/SiakadaFor.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen?
-Mengapa demikian?
-    * **Jawab:** Jika kita memasukkan input `no` maka program akan membaca bahwa nilai dari input tersebut adalah `false` karena yang kita    tulis pada program bada bagian `if string` kita memasukkan input `yes` maka hasil yang dihasilkan akan masuk pada program bagian `else`   langsung.
-* **Pertanyaan 2:** Jelaskan maksud dari potongan kode berikut!?
+* **Pertanyaan 1:** Sebutkan dan tunjukkan masing-masing komponen perulangan FOR pada kode program
+Percobaan 1!
+    * **Jawab** 1. INISIALISASI : `int i = 1`, 2. KONDISI : `i <= 10` , 3. UPDATE : `I++`
+* **Pertanyaan 2:** Mengapa variabel tertinggi diinisialisasi 0 dan terendah diinisialisasi 100? Apa yang
+terjadi jika variabel tertinggi diinisialisasi 100 dan terendah diinisialisasi 0?
     * **Jawab:** Perintah tersebut masuk pada `If Else` yang mempunyai makna `true` Jika kondisi didalam kurung terpenuhi. yaitu jika
 jumlah bimbingan P1 lebih dari sama dengan 8 dan P2 lebih dari sama dengan 4.
-* **Pertanyaan 3:** Bagaimana alur pemeriksaan syarat mahasiswa dari awal sampai akhir? Jelaskan secara
-runtut untuk semua kondisi!
+
+![Gambar Soal Nomor 01](/week%209/foto/soal%20nomor%2001.PNG)
+* **Pertanyaan 3:** Jelaskan fungsi dan alur kerja dari potongan kode di atas!
     * **Jawab:** Sistem SIMTA akan memeriksa syarat
 administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
 sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
 harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
 dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
 pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan output gagal dengan alasan yang berbeda sesuai tahap berapa yang gagal .
+* **Pertanyaan 4:** Modifikasi kode program sehingga terdapat perhitungan untuk menentukan berapa
+mahasiswa yang lulus dan yang tidak lulus berdasarkan batas kelulusan (nilai minimal 60).
+Tampilkan jumlah mahasiswa lulus dan tidak lulus setelah menampilkan nilai tertinggi
+dan terendah!
+* **Jawab:** 
+
 
 ---
 
-### 2.2 Percobaan 2: Operator Logika untuk Menentukan Akses WiFi Kampus
+### 2.2 Percobaan 2: Studi Kasus Nilai Mahasiswa di SIAKAD – Perulangan WHILE
 
-Sistem WiFi kampus hanya dapat digunakan oleh mahasiswa atau dosen yang akunnya
-tidak diblokir. Program menerima informasi apakah pengguna merupakan mahasiswa, dosen,
-dan apakah akun pengguna sedang diblokir. Akses diberikan apabila pengguna merupakan
-mahasiswa atau dosen, dan akun pengguna tidak diblokir. Percobaan ini digunakan untuk
-mempraktikkan operator logika && (AND), || (OR), dan ! (NOT).
-
+Seorang dosen ingin memasukkan nilai beberapa mahasiswa ke dalam SIAKAD untuk
+ditentukan kategori nilai hurufnya. Program harus meminta dosen untuk memasukkan nilai
+setiap mahasiswa. Jika dosen memasukkan nilai yang tidak valid (negatif atau lebih dari 100),
+program harus mengabaikan input tersebut dan meminta dosen untuk melakukan input
+ulang. Selanjutnya, nilai yang valid dikelompokkan ke dalam kategori huruf A (80 < nilai ≤ 100),
+B+ (73 < nilai ≤ 80), B (65 < nilai ≤ 73), C+ (60 < nilai ≤ 65), C (50 < nilai ≤ 60), D (39 < nilai ≤ 50),
+dan E (nilai ≤ 39).
 #### 2.2.1 Kode Program Java
 
 ```java
 
 import java.util.Scanner;
 
-public class operatorLogikaWifi02 {
+public class SiakadWhile {
 
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
 
-        boolean mahasiswa, dosen, akunDiblokir;
+        int nilai, jml, i = 0;
 
-        System.out.print("Apakah pengguna mahasiswa? (true/false): ");
-        mahasiswa = sc.nextBoolean();
-        System.out.print("Apakah pengguna dosen? (true/false): ");
-        dosen = sc.nextBoolean();
-        System.out.print("Apakah akun sedang diblokir? (true/false): ");
-        akunDiblokir = sc.nextBoolean();
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        System.out.print("");
+        jml = sc.nextInt();
 
-        if ((mahasiswa || dosen) && !akunDiblokir) {
-            System.out.println("Akses Wifi Diberikan");
-        } else {
-            System.out.println("Akses Wifi Ditolak");
+        while (i < jml) {
+            System.out.println("");
+            System.out.println("======== NILAI ========");
+            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + ": ");
+            nilai = sc.nextInt();
+
+            if (nilai < 0 || nilai > 100) {
+                System.out.println("Nilai mahasiswa tidak valid. Masukkan lagi nilai mahasiswa");
+                continue;
+            }
+
+            if (nilai > 80 && nilai <=100) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah A");
+                System.out.println("");
+            } else if (nilai > 73 && nilai <= 80) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah B+");
+                System.out.println("");
+            } else if (nilai > 65 && nilai <= 73) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah B");
+                System.out.println("");
+            } else if (nilai > 60 && nilai <= 65) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah C+");
+                System.out.println("");
+            } else if (nilai > 50 && nilai <= 60) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah C");
+                System.out.println("");
+            } else if (nilai > 39 && nilai <= 50) {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah D");
+                System.out.println("");
+            } else {
+                System.out.println("");
+                System.out.println("=========== AKREDITASI =========");
+                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah E");
+                System.out.println("");
+            }
+            i++;
         }
     }
 }
@@ -136,27 +178,30 @@ public class operatorLogikaWifi02 {
 #### 2.2.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 2](/week%206/Foto/hasil%20operator%20logika%20wifi.PNG)
+![Gambar Output Percobaan 2](/week%209/foto/SiakadaWhile.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Jelaskan fungsi operator ||, &&, dan ! pada kondisi program tersebut.
+![Gambar Output Percobaan 2](/week%209/foto/soal%20nomor%2002.PNG)
+* **Pertanyaan 1:** Pada potongan kode berikut, tentukan maksud dan kegunaan dari sintaks di atas:
     * **Jawab:** Fungsi operator `||` memiliki arti OR yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka otomatis kondisi yang satunya lagi akan `true` juga pada program diatas digunakan untuk mengetahui apakah anda dosen atau mahasiswa. Fungsi operator `&&` memiliki arti `AND` yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka kondisi satunya lagi akan di cek juga jika `true` maka kondisi bernilai `true` jika false maka kondisi akan bernilai `false` pada program diatas digunakan untuk mengecek apakah anda dosen/mahasiswa dan akun anda tidak diblokir. Fungsi operator `!` memiliki arti Negasi yaitu jika kita ingin membuat kondisi `true` maka kita harus memasukkan input sebaliknya contohnya jika kita ingin output `true` kita harus input nilai `false` pada program diatas digunakan untuk mengetahui apakah akun anda diblokir 
-* **Pertanyaan 2:** Mengapa pengguna dosen tetap dapat memperoleh akses ketika nilai mahasiswa = false?
+* **Pertanyaan 2:** Mengapa sintaks i++ dituliskan di akhir perulangan WHILE? Apa yang terjadi jika posisinya
+dituliskan di awal perulangan WHILE?
     * **Jawab:** Karena pada program diatas menggunakan perintah `||` yang memiliki arti atau makna sebagai `OR` jika satu`true` maka yang lain juga ikut `true` meskipun yang lain bernilai `false`
-* **Pertanyaan 3:** Ubah operator || menjadi &&. Jalankan kembali program menggunakan data uji 1 dan 2. Apa yang terjadi dan mengapa?
+* **Pertanyaan 3:** Apabila jumlah mahasiswa yang dimasukkan adalah 19, berapa kali perulangan WHILE
+akan berjalan?
     * **Jawab:** Jika operator || pada (mahasiswa || dosen) diubah menjadi &&, maka akses WiFi hanya diberikan jika pengguna adalah mahasiswa DAN dosen sekaligus, serta akun tidak sedang diblokir. Jadi, jika data uji 1 atau 2 hanya memiliki salah satu dari mahasiswa atau dosen bernilai true, hasilnya berubah menjadi `Akses Wifi Ditolak`
-* **Pertanyaan 4:** Pada ekspresi mahasiswa || dosen, kapan kondisi dosen tidak perlu dievaluasi? Jelaskan berdasarkan short-circuit          evaluation.
+* **Pertanyaan 4:** Modifikasi kode program sehingga apabila terdapat mahasiswa yang mendapat nilai A,
+program menampilkan pesan tambahan "Bagus, pertahankan nilainya"!
     * **Jawab:** Kondisi dosen tidak perlu dievaluasi ketika mahasiswa bernilai `true`. Hal ini karena operator `||` berarti `OR` (atau). Jika bagian pertama sudah `true`, hasil keseluruhan pasti `true`, sehingga Java tidak perlu memeriksa kondisi kedua.
-* **Pertanyaan 5:** Pada ekspresi (mahasiswa || dosen) && !akunDiblokir, kapan kondisi !akunDiblokir tidak perlu dievaluasi? Jelaskan.
-    * **Jawab:** Kondisi `!akunDiblokir` tidak perlu dievaluasi ketika (mahasiswa || dosen) bernilai `false`. Hal ini karena operator `&&` berarti `AND` (dan). Jika kondisi pertama sudah `false`, hasil keseluruhan pasti `false`, sehingga Java tidak perlu mengevaluasi kondisi kedua.
  
-### 2.3 Percobaan 3: Nested IF dan Operator Logika untuk Menentukan Akses Laboratorium
+### 2.3 Percobaan 3: Studi Kasus Transaksi di Kafe – Perulangan DO-WHILE 
 
-Mahasiswa dapat menggunakan laboratorium di luar jadwal kuliah apabila statusnya aktif
-dan tidak sedang mendapatkan sanksi. Jika syarat tersebut terpenuhi, sistem melakukan
-pemeriksaan kedua. Akses laboratorium diberikan apabila mahasiswa memiliki izin dosen
-atau merupakan asisten laboratorium. Kasus ini menggabungkan pemilihan bersarang dengan
-operator logika.
+Di sebuah kafe, kasir ingin memproses transaksi beberapa pelanggan. Pelanggan dapat
+membeli lebih dari satu item (kopi dengan harga Rp 12.000, teh dengan harga Rp 7.000, dan
+roti dengan harga Rp 20.000), dan kasir akan terus memasukkan jumlah pembelian untuk
+setiap pelanggan. Jika ada pelanggan yang memutuskan untuk membatalkan transaksi
+(dengan memasukkan "batal"), maka kasir akan menghentikan input transaksi dan program
+berhenti.
 
 #### 2.3.1 Kode Program Java
 
@@ -164,34 +209,48 @@ operator logika.
 
 import java.util.Scanner;
 
-public class nesdetAksesLab02 {
+public class KafeDoWhile {
 
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
 
-        boolean mahasiswaAktif, sedangDisaksi, punyaIzinDosen, asistenLab;
+        int itemKopi, itemTeh, itemRoti, totalHarga;
+        String namaPelanggan;
+        int hargaKopi = 12000, hargaTeh = 7000, hargaRoti = 20000;
 
-        System.out.println("Jawab lah True Atau False");
+        System.out.println("==== MENU ====");
+        System.out.println("KOPI : 12.000");
+        System.out.println("TEH : 7.000");
+        System.out.println("ROTI : 20.000");
 
-        System.out.print("Apakah mahasiswa aktif: ");
-        mahasiswaAktif = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa sedang di sakasi: ");
-        sedangDisaksi = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa punya izin dosen: ");
-        punyaIzinDosen = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa merupakan asisten Lab: ");
-        asistenLab = sc.nextBoolean();
-
-        if (mahasiswaAktif && !sedangDisaksi) {
-            if (punyaIzinDosen || asistenLab) {
-                System.out.println("Akses labolatorium diberikan");
-            } else {
-                System.out.println("Akses ditolak : membutuhkan izin dosen atau status asisten Lab");
+        do {
+            System.out.println("");
+            System.out.print("Masukkan Nama Pelanggan ( Ketik batal untuk keluar ): ");
+            namaPelanggan = sc.nextLine();
+            if (namaPelanggan.equalsIgnoreCase("batal")) {
+                System.out.println("");
+                System.out.println("Transaksi Di Batalkan");
+                break;
             }
-        } else {
-            System.out.println("Akses ditolak : status mahasiswa tidak memenuhi syarat");
-        }
+            System.out.println("");
+            System.out.println("======= JUMLAH ======");
+            System.out.print("Jumlah Kopi: ");
+            itemKopi = sc.nextInt();
+            System.out.print("Jumlah Teh: ");
+            itemTeh = sc.nextInt();
+            System.out.print("Jumlah Roti: ");
+            itemRoti = sc.nextInt();
+
+            totalHarga = (itemKopi * hargaKopi) + (itemTeh * hargaTeh) + (itemRoti * hargaRoti);
+
+            System.out.println("");
+            System.out.println("====== STRUCK HARGA TOTAL =====");
+            System.out.println("Total yang harus dibayar: Rp. " + totalHarga);
+            sc.nextLine();
+        } while (true);
+
+        System.out.println("Semua Transaksi Selesai");
     }
 }
 
@@ -200,56 +259,47 @@ public class nesdetAksesLab02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%206/Foto/hasil%20neted%20akses%20lab.PNG)
+![Gambar Output Percobaan 3](/week%209/foto/KafeDoWhile.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Mengapa pemeriksaan punyaIzinDosen || asistenLab ditempatkan di dalam IF pertama?
+* **Pertanyaan 1:**  Pada penggunaan DO-WHILE ini, apabila nama pelanggan yang dimasukkan pertama kali
+adalah “batal”, maka berapa kali perulangan dilakukan?
     * **Jawab:** Karena mahasiswa harus memenuhi syarat utama terlebih dahulu, yaitu mahasiswa aktif dan tidak sedang disanksi. Setelah syarat tersebut terpenuhi, barulah program memeriksa apakah mahasiswa memiliki izin dosen atau merupakan asisten lab.
       Urutanya :
       * mahasiswaAktif && !sedangDisaksi → syarat utama.
       * punyaIzinDosen || asistenLab → syarat tambahan.
       * Jika semua terpenuhi → akses laboratorium diberikan.
-* **Pertanyaan 2:** Jelaskan fungsi operator &&, ||, dan ! pada program tersebut.
+* **Pertanyaan 2:** Sebutkan kondisi berhenti yang digunakan pada perulangan DO-WHILE tersebut!
     * **Jawab:**
       * && -- AND -- Kedua kondisi harus bernilai true. Digunakan untuk memastikan mahasiswa aktif dan tidak sedang disanksi
       * ! -- NOT -- Membalik nilai boolean. !sedangDisaksi berarti mahasiswa tidak sedang disanksi.
-* **Pertanyaan 3:** Apakah syarat akses dapat ditulis menjadi satu kondisi: mahasiswaAktif &&
-!sedangDisanksi && (punyaIzinDosen || asistenLab)? Jelaskan apakah keputusan akses
-akhirnya sama.
+* **Pertanyaan 3:**  Apa fungsi dari penggunaan nilai true pada kondisi DO-WHILE?
     * **Jawab:** Ya, dapat. Keputusan akses akhirnya sama, karena kedua bentuk program memiliki syarat logika yang sama. Syarat akses adalah:
       * Mahasiswa aktif -- AND
       * tidak sedang disanksi -- AND
       * (punya izin dosen OR asisten lab).
     * Perbedaannya adalah Nested IF lebih mudah digunakan jika ingin memberikan alasan penolakan yang berbeda.
-* **Pertanyaan 4:** Apa keuntungan menggunakan Nested IF pada kasus ini dibandingkan hanya satu IF jika
-sistem perlu menampilkan alasan penolakan yang berbeda?
+* **Pertanyaan 4:** Mengapa perulangan DO-WHILE tersebut tetap berjalan meskipun tidak ada komponen
+inisialisasi dan update?
     * **Jawab:** Keuntungan `Nested IF` adalah program dapat membedakan alasan penolakan berdasarkan tahap pemeriksaan. Dengan `satu if` saja, logika tetap bisa dibuat, tetapi untuk membedakan alasan penolakan biasanya diperlukan kondisi tambahan sehingga kode dapat menjadi kurang terstruktur.
-* **Pertanyaan 5:** Buat satu kombinasi masukan yang menyebabkan akses ditolak pada level pertama dan
-satu kombinasi yang menyebabkan akses ditolak pada level kedua.
-    * **Jawab:**
-    * **Kombinasi 01**
-      * ![Gambar Output Kombinasi 01](/week%206/Foto/hasil%20kombinasi%2001.PNG)
-    * **Kombinasi 02**
-      * ![Gambar Output Kombinasi 02](/week%206/Foto/hasil%20kombinasi%2002.PNG)
-
     
 ## 3: TUGAS MANDIRI
 
-* **Tugas No 01** Implementasikan flowchart yang telah Anda buat pada Latihan 2 Pertemuan 6 terkait
-    sistem diskon toko buku ke dalam program Java. Program wajib menerapkan struktur
-    pemilihan bersarang (Nested IF). Gunakan operator logika apabila diperlukan
-* **Tugas No 01** Buatlah program Java untuk sistem seleksi calon asisten praktikum berdasarkan ketentuan berikut:
-  * Mahasiswa dapat mengikuti seleksi apabila berstatus aktif dan tidak sedang
-    mendapatkan sanksi akademik.
-  * Jika syarat tersebut terpenuhi, mahasiswa harus memenuhi syarat berikutnya yaitu
-    nilai Dasar Pemrograman minimal 80 atau memiliki sertifikat kompetensi
-    pemrograman.
-  * Jika lolos 2 syarat tersebut, mahasiswa akan dipanggil untuk mengikuti wawancara.
-    Mahasiswa diterima sebagai asisten apabila nilai wawancara minimal 75.
-  * Program harus menampilkan alasan apabila mahasiswa gagal pada setiap tahap
-    seleksi.
-  * Gunakan pemilihan bersarang dan operator logika. Simpan file dengan nama
-    tugas2SeleksiAsistenNoPresensi.java.
+* **Tugas No 01** Seorang pengelola bioskop ingin membuat program untuk menghitung total penjualan
+tiket dalam satu hari. Tiket dijual dengan harga Rp 50.000 per tiket. Program harus
+menghitung total tiket yang terjual dan total harga penjualan tiket selama satu hari
+dengan ketentuan sebagai berikut:
+    * Jika pelanggan membeli lebih dari 4 tiket, pelanggan mendapatkan diskon 10%
+    * Jika pelanggan membeli lebih dari 10 tiket, pelanggan mendapatkan diskon 15%.
+    * Jika input jumlah tiket tidak valid (negatif), program akan mengabaikan input 
+
+* **Tugas No 02** Sebuah tempat parkir ingin membuat program untuk menghitung total
+pembayaran parkir dari beberapa kendaraan. Tarif parkir adalah Rp 3.000 per jam
+untuk mobil dan Rp 2.000 per jam untuk motor. Program akan terus meminta
+masukan selama input bukan 0. Implementasikan flowchart tersebut ke dalam
+bentuk kode program Java!
+
+![Gambar Output Percobaan 3](/week%209/foto/FlowChart%20Tugas%2002.PNG)
 
 ### 3.1 Implementasi Kode Tugas
 
@@ -259,43 +309,51 @@ satu kombinasi yang menyebabkan akses ditolak pada level kedua.
 
 import java.util.Scanner;
 
-public class DiskonTokoBuku {
+public class Tugas1PertemuanSembilan02 {
 
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
 
-        String hariApa, jenisBuku;
-        int diskonKamus, diskonNovel, diskonSelainBuku, jumlahBuku, diskonNovel2;
+        int tiket, totalTiket = 0, hargaTiket = 50000, i = 0, jmlPelanggan;
+        double diskonSepuluh = 0.10, diskonLimaBelas = 0.15, diskonNol = 0, totalHarga = 0;
 
-        System.out.print("Hari apa anda membeli buku di sini ? ");
-        hariApa = sc.nextLine();
-        System.out.print("Jenis buku yang anda beli: ");
-        jenisBuku = sc.nextLine();
-        System.out.print("Berapa buku yang anda beli: ");
-        jumlahBuku = sc.nextInt();
+        System.out.println("Harga Tiket: Rp.50.000");
+        System.out.println("Diskon 10% Untuk Pembelian Tiket 4 Sampai 10");
+        System.out.println("Diskon 15% Untuk Pembelian Tiket lebih dari 10");
+        System.out.println("");
 
-        diskonKamus = 10 + 2;
-        diskonNovel = 7 + 2;
-        diskonNovel2 = 7 + 1;
-        diskonSelainBuku = 5;
+        System.out.print("Masukkan jumlah pelanggan: ");
+        jmlPelanggan = sc.nextInt();
+        System.out.print("");
 
-        if (hariApa.equalsIgnoreCase("RABU")) {
-            if (jenisBuku.equalsIgnoreCase("KAMUS")) {
-                System.out.println("diskon: " + diskonKamus + " %");
-            } else if (jenisBuku.equalsIgnoreCase("NOVEL")) {
-                if (jumlahBuku > 3) {
-                    System.out.println("diskon: " + diskonNovel + " %");
-                } else if (jumlahBuku <= 3) {
-                    System.out.println("diskon: " + diskonNovel2 + " %");
-                }
+        if (jmlPelanggan < 0) {
+            System.out.println("");
+            System.out.println("Input Tidak Valid");
+        } 
+
+        while (i < jmlPelanggan) {
+            System.out.println("");
+            System.out.println("===== JUMLAH TIKET =====");
+            System.out.print("Masukkan jumlah tiket yang dibeli pelanggan ke- " + (i + 1) + ": ");
+            tiket = sc.nextInt();
+
+            if (tiket >= 0 && tiket <= 4) {
+                totalHarga += (tiket * hargaTiket) - ( tiket * hargaTiket * diskonNol);
+                totalTiket += tiket;
+            } else if (tiket > 4 && tiket <= 10) {
+                totalHarga += (tiket * hargaTiket) - (tiket * hargaTiket * diskonSepuluh);
+                totalTiket += tiket;
             } else {
-                if (jumlahBuku > 3) {
-                    System.out.println("Diskon: " + diskonSelainBuku + " %");
-                } else {
-                    System.out.println("Tidak ada diskon");
-                }
+                totalHarga += (tiket * hargaTiket) - (tiket * hargaTiket * diskonLimaBelas);
+                totalTiket += tiket;
             }
+            i++;
         }
+        System.out.println("");
+        System.out.println("==== TOTAL BAYAR DAN TOTAL TIKET ====");
+        System.out.println("Total Pendapatan Penjualan Tiket: " + (int) totalHarga);
+        System.out.println("Total Tiket yang Terjual: " + (int) totalTiket);
     }
 }
   
@@ -307,38 +365,42 @@ public class DiskonTokoBuku {
 
 import java.util.Scanner;
 
-public class Tugas2SeleksiAsisten02 {
+public class TugasPertemuanSembilan02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        
+       int jenis, durasi, total = 0;
 
-        boolean status, sanksi, memilikiSertif;
-        int nilaiDasar, nilaiWawancara;
+       Scanner sc = new Scanner(System.in);
 
-        System.out.print("Apakah mahasiswa berstatus aktif ? (true/false) ");
-        status = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa sedang mendapatkan sanksi ? (true/false) ");
-        sanksi = sc.nextBoolean();
-        System.out.print("Apakah mahasiswa memiliki sertifikat kompetensi pemrograman ? (true/false) ");
-        memilikiSertif = sc.nextBoolean();
-        System.out.print("Berapa nilai dasar pemrograman mahasiswa : ");
-        nilaiDasar = sc.nextInt();
-        System.out.print("Berapa nilai wawancara mahasiswa : ");
-        nilaiWawancara = sc.nextInt();
+       do {
+        System.out.println("");
+        System.out.println("01. MOBIL");
+        System.out.println("02. SEPEDA MOTOR");
+        System.out.println("00. BERHENTI");
 
-        if (status && !sanksi) {
-            if (nilaiDasar >= 80 || memilikiSertif) {
-                if (nilaiWawancara >= 75) {
-                    System.out.println("Mahasiswa Diterima Menjadi Asisten");
-                } else {
-                    System.out.println("Mahasiswa gagal pada tahap wawancara. karena nilai kurang dari 75 ");
-                }
+        System.out.println("");
+        System.out.println("==== JENIS KENDARAAN ====");
+        System.out.print("Masukkan jenis kendaraan:");
+        jenis = sc.nextInt();
+
+        if (jenis == 1 || jenis == 2) {
+            System.out.println("");
+            System.out.println("==== DURASI ====");
+            System.out.print("Masukkan Durasi Parkir Dalam Jam: ");
+            durasi = sc.nextInt();
+
+            if (jenis == 1) {
+                total += durasi * 3000;
             } else {
-                System.out.println("Mahasiswa gagal menjadi asisten. karena gagal pada tahap nilai dan sertifikat ");
+                total += durasi * 2000;
             }
-        } else {
-            System.out.println("Mahasiswa gagal pada tahap pertama. Mahasisa tidak aktif dan terkena sanksi");
         }
+       } while (jenis != 0);
+
+       System.out.println("");
+       System.out.println("==== TOTAL PENDAPATAN ====");
+       System.out.println("Total pendapatan parkir: Rp." + total);
     }
 }
 
@@ -348,10 +410,12 @@ public class Tugas2SeleksiAsisten02 {
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 * **Hasil Kode Program Nomor 01**
-![Gambar Output Percobaan 1 Tugas Mandiri](/week%206/Foto/hasil%20diskon%20toko%20buku.PNG)
 
-* **Hasil Kode Program Nomor 01**
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%206/Foto/hasil%20tugas%202%20seleksi%20asisten.PNG)
+![Gambar Output Percobaan 1 Tugas Mandiri](/week%209/foto/TUGAS%2001.PNG)
+
+* **Hasil Kode Program Nomor 02**
+  
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%209/foto/TUGAS%2002.PNG)
 
 
 ## 4: KESIMPULAN
