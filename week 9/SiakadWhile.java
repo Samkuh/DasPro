@@ -27,6 +27,7 @@ public class SiakadWhile {
                 System.out.println("");
                 System.out.println("=========== AKREDITASI =========");
                 System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah A");
+                System.out.println("Bagus. Pertahankan Nilainyaa !!");
                 System.out.println("");
             } else if (nilai > 73 && nilai <= 80) {
                 System.out.println("");
