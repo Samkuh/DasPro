@@ -182,16 +182,19 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 ![Gambar Output Percobaan 2](/week%209/foto/soal%20nomor%2002.PNG)
 * **Pertanyaan 1:** Pada potongan kode berikut, tentukan maksud dan kegunaan dari sintaks di atas:
-    * **Jawab:** Fungsi operator `||` memiliki arti OR yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka otomatis kondisi yang satunya lagi akan `true` juga pada program diatas digunakan untuk mengetahui apakah anda dosen atau mahasiswa. Fungsi operator `&&` memiliki arti `AND` yaitu jika kita ingin membuat kondisi bila satu kondisi `true` maka kondisi satunya lagi akan di cek juga jika `true` maka kondisi bernilai `true` jika false maka kondisi akan bernilai `false` pada program diatas digunakan untuk mengecek apakah anda dosen/mahasiswa dan akun anda tidak diblokir. Fungsi operator `!` memiliki arti Negasi yaitu jika kita ingin membuat kondisi `true` maka kita harus memasukkan input sebaliknya contohnya jika kita ingin output `true` kita harus input nilai `false` pada program diatas digunakan untuk mengetahui apakah akun anda diblokir 
+    * **Jawab:** • 
+	• Berfungsi `nilai < 0 || nilai > 100` : sebagai validasi batas input. Skala nilai mahasiswa yang sah berada di rentang 0 sampai 100. Kondisi ini digunakan untuk menyaring dan mendeteksi jika pengguna tidak sengaja memasukkan angka di luar batas (seperti -10 atau 105) agar tidak diproses ke tahap akreditasi. `Continue` : Saat mendeteksi nilai tidak valid, program akan langsung melompat kembali ke baris pengecekan kondisi while (i < jml). Perintah ini berguna agar nilai yang salah tersebut langsung dilewati dan tidak ikut dicetak akreditasinya oleh perintah if-else di bawahnya.
 * **Pertanyaan 2:** Mengapa sintaks i++ dituliskan di akhir perulangan WHILE? Apa yang terjadi jika posisinya
 dituliskan di awal perulangan WHILE?
-    * **Jawab:** Karena pada program diatas menggunakan perintah `||` yang memiliki arti atau makna sebagai `OR` jika satu`true` maka yang lain juga ikut `true` meskipun yang lain bernilai `false`
+    * **Jawab:**Agar nilai i tetap konsisten sejak awal input hingga proses cetak akreditasi untuk mahasiswa yang sama selesai dilakukan. Sebagai contoh, ketika i = 0, cetakan teks (i + 1) akan memproses "Mahasiswa ke-1". Setelah seluruh akreditasi mahasiswa ke-1 berhasil dicetak, barulah i++ menaikkan nilai menjadi 1 untuk bersiap memproses mahasiswa berikutnya pada putaran berikutnya. Akan terjadi pergeseran indeks logika (off-by-one error). Pada putaran pertama, i yang awalnya 0 langsung berubah menjadi 1 sebelum input diminta. Akibatnya, cetakan teks (i + 1) akan langsung menampilkan "Masukkan nilai mahasiswa ke- 2", sehingga mahasiswa ke-1 terlewati.
 * **Pertanyaan 3:** Apabila jumlah mahasiswa yang dimasukkan adalah 19, berapa kali perulangan WHILE
 akan berjalan?
-    * **Jawab:** Jika operator || pada (mahasiswa || dosen) diubah menjadi &&, maka akses WiFi hanya diberikan jika pengguna adalah mahasiswa DAN dosen sekaligus, serta akun tidak sedang diblokir. Jadi, jika data uji 1 atau 2 hanya memiliki salah satu dari mahasiswa atau dosen bernilai true, hasilnya berubah menjadi `Akses Wifi Ditolak`
+    * **Jawab:** Perulangan akan berjalan tepat sebanyak 19 kali (dimulai dari i = 0 hingga i = 18). Jika pengguna salah memasukkan nilai (misal 150), program akan memicu perintah continue. Karena continue langsung melompat ke atas sebelum melewati i++, nilai i tidak akan pernah bertambah. Akibatnya, perulangan akan terjebak dan berjalan tanpa batas (infinite loop) pada nomor mahasiswa tersebut
 * **Pertanyaan 4:** Modifikasi kode program sehingga apabila terdapat mahasiswa yang mendapat nilai A,
 program menampilkan pesan tambahan "Bagus, pertahankan nilainya"!
-    * **Jawab:** Kondisi dosen tidak perlu dievaluasi ketika mahasiswa bernilai `true`. Hal ini karena operator `||` berarti `OR` (atau). Jika bagian pertama sudah `true`, hasil keseluruhan pasti `true`, sehingga Java tidak perlu memeriksa kondisi kedua.
+    * **Jawab:**
+	
+	![Gambar Output Percobaan 2](/week%209/foto/hasil%20SiakadWhile.PNG)
  
 ### 2.3 Percobaan 3: Studi Kasus Transaksi di Kafe – Perulangan DO-WHILE 
 
