@@ -74,23 +74,22 @@ Percobaan 1!
     * **Jawab** 1. INISIALISASI : `int i = 1`, 2. KONDISI : `i <= 10` , 3. UPDATE : `I++`
 * **Pertanyaan 2:** Mengapa variabel tertinggi diinisialisasi 0 dan terendah diinisialisasi 100? Apa yang
 terjadi jika variabel tertinggi diinisialisasi 100 dan terendah diinisialisasi 0?
-    * **Jawab:** Perintah tersebut masuk pada `If Else` yang mempunyai makna `true` Jika kondisi didalam kurung terpenuhi. yaitu jika
-jumlah bimbingan P1 lebih dari sama dengan 8 dan P2 lebih dari sama dengan 4.
+    * **Jawab:** Nilai 0 adalah batas bawah terkecil. Ketika nilai mahasiswa pertama dimasukkan (misal: 75), program membandingkan 75 > 0 (Benar), sehingga variabel tertinggi langsung diperbarui menjadi 75. Nilai 100 adalah batas atas terbesar. Ketika nilai mahasiswa pertama dimasukkan (75), program membandingkan 75 < 100 (Benar), sehingga variabel terendah langsung diperbarui menjadi 75.
 
 ![Gambar Soal Nomor 01](/week%209/foto/soal%20nomor%2001.PNG)
 * **Pertanyaan 3:** Jelaskan fungsi dan alur kerja dari potongan kode di atas!
-    * **Jawab:** Sistem SIMTA akan memeriksa syarat
-administrasi terlebih dahulu, yaitu mahasiswa harus bebas kompen. Jika syarat ini terpenuhi,
-sistem kemudian memeriksa catatan log bimbingan. Untuk bisa mendaftar ujian, mahasiswa
-harus memiliki minimal 8 kali bimbingan dengan pembimbing 1 dan minimal 4 kali bimbingan
-dengan pembimbing 2. Jika semua syarat terpenuhi, mahasiswa dapat melanjutkan ke proses
-pendaftaran ujian skripsi. Jika tidak, sistem akan menampilkan output gagal dengan alasan yang berbeda sesuai tahap berapa yang gagal .
+    * **Jawab:** 
+	Jika tertinggi = 100, tidak ada nilai mahasiswa (rentang 0-100) yang bisa lebih besar dari 100. Akibatnya, kondisi if (nilai > tertinggi) akan selalu salah (false), dan hasil akhir nilai tertinggi akan selalu tetap 100.
+	Jika terendah = 0, tidak ada nilai mahasiswa yang bisa lebih kecil dari 0. Akibatnya, kondisi if (nilai < terendah) akan selalu salah (false), dan hasil akhir nilai terendah akan selalu tetap 0.
+
+
 * **Pertanyaan 4:** Modifikasi kode program sehingga terdapat perhitungan untuk menentukan berapa
 mahasiswa yang lulus dan yang tidak lulus berdasarkan batas kelulusan (nilai minimal 60).
 Tampilkan jumlah mahasiswa lulus dan tidak lulus setelah menampilkan nilai tertinggi
 dan terendah!
-* **Jawab:** 
-
+* **Jawab:**
+  
+![Gambar Soal Nomor 01](/week%209/foto/hasil%20SiakadFor.PNG)
 
 ---
 
