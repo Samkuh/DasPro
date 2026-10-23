@@ -273,7 +273,7 @@ adalah “batal”, maka berapa kali perulangan dilakukan?
     * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
 * **Pertanyaan 4:** Mengapa perulangan DO-WHILE tersebut tetap berjalan meskipun tidak ada komponen
 inisialisasi dan update?
-    * **Jawab:** 1. Kondisi Dikunci true: Karena kondisinya selalu true, program tidak memerlukan variabel counter angka untuk mengecek batas akhir perulangan 2. Update Dinamis Lewat Input: Proses pembaruan status perulangan terjadi secara dinamis melalui baris namaPelanggan = sc.nextLine();. Setiap kali loop berputar, isi variabel tersebut diperbarui langsung berdasarkan apa yang diketik oleh pengguna. 3. Kontrol Melalui break: Fungsi penghenti perulangan diambil alih oleh seleksi kondisi if yang mendeteksi kata "batal". Selama pengguna tidak mengetik kata tersebut, loop akan terus berputar secara otomatis.
+    * **Jawab:** `1.` Kondisi Dikunci true: Karena kondisinya selalu true, program tidak memerlukan variabel counter angka untuk mengecek batas akhir perulangan `2.` Update Dinamis Lewat Input: Proses pembaruan status perulangan terjadi secara dinamis melalui baris namaPelanggan = sc.nextLine();. Setiap kali loop berputar, isi variabel tersebut diperbarui langsung berdasarkan apa yang diketik oleh pengguna. `3.` Kontrol Melalui break: Fungsi penghenti perulangan diambil alih oleh seleksi kondisi if yang mendeteksi kata "batal". Selama pengguna tidak mengetik kata tersebut, loop akan terus berputar secara otomatis.
 
     
 ## 3: TUGAS MANDIRI
