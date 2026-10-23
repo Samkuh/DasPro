@@ -413,5 +413,5 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 ## 4: KESIMPULAN
 
-* **Kesimpulan** obsheet 6 Dasar Pemrograman 2026 dari Politeknik Negeri Malang ini berisi panduan praktikum mengenai struktur pemilihan bersarang (Nested IF) dan operator logika (&&, ||, !) dalam bahasa Java. Melalui tiga modul percobaan—yaitu pengecekan syarat ujian skripsi, akses WiFi kampus, dan izin laboratorium—mahasiswa dilatih untuk menyusun logika kondisi yang kompleks.
-
+* **Kesimpulan**
+Berdasarkan Jobsheet 7 tentang Perulangan 1, dapat disimpulkan bahwa perulangan `for`, `while`, dan `do-while` dalam Java digunakan untuk menjalankan perintah secara berulang sesuai kondisi tertentu. Melalui praktikum ini, mahasiswa dapat menerapkan perulangan untuk mengolah nilai mahasiswa, menentukan kategori nilai, dan menghitung total transaksi. Selain itu, mahasiswa dapat memahami penggunaan kondisi percabangan untuk membuat program yang lebih efektif dan sesuai kebutuhan.
