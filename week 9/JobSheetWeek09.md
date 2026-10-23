@@ -186,7 +186,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 	• Berfungsi `nilai < 0 || nilai > 100` : sebagai validasi batas input. Skala nilai mahasiswa yang sah berada di rentang 0 sampai 100. Kondisi ini digunakan untuk menyaring dan mendeteksi jika pengguna tidak sengaja memasukkan angka di luar batas (seperti -10 atau 105) agar tidak diproses ke tahap akreditasi. `Continue` : Saat mendeteksi nilai tidak valid, program akan langsung melompat kembali ke baris pengecekan kondisi while (i < jml). Perintah ini berguna agar nilai yang salah tersebut langsung dilewati dan tidak ikut dicetak akreditasinya oleh perintah if-else di bawahnya.
 * **Pertanyaan 2:** Mengapa sintaks i++ dituliskan di akhir perulangan WHILE? Apa yang terjadi jika posisinya
 dituliskan di awal perulangan WHILE?
-    * **Jawab:**Agar nilai i tetap konsisten sejak awal input hingga proses cetak akreditasi untuk mahasiswa yang sama selesai dilakukan. Sebagai contoh, ketika i = 0, cetakan teks (i + 1) akan memproses "Mahasiswa ke-1". Setelah seluruh akreditasi mahasiswa ke-1 berhasil dicetak, barulah i++ menaikkan nilai menjadi 1 untuk bersiap memproses mahasiswa berikutnya pada putaran berikutnya. Akan terjadi pergeseran indeks logika (off-by-one error). Pada putaran pertama, i yang awalnya 0 langsung berubah menjadi 1 sebelum input diminta. Akibatnya, cetakan teks (i + 1) akan langsung menampilkan "Masukkan nilai mahasiswa ke- 2", sehingga mahasiswa ke-1 terlewati.
+    * **Jawab:**Agar nilai i tetap konsisten sejak awal input hingga proses cetak akreditasi untuk mahasiswa yang sama selesai dilakukan. Sebagai contoh, ketika i = 0, cetakan teks (i + 1) akan memproses "Mahasiswa ke-1". Setelah seluruh akreditasi mahasiswa ke-1 berhasil dicetak, barulah i++ menaikkan nilai menjadi 1 untuk bersiap memproses mahasiswa berikutnya pada putaran berikutnya. Akan terjadi pergeseran indeks logika. Pada putaran pertama, i yang awalnya 0 langsung berubah menjadi 1 sebelum input diminta. Akibatnya, cetakan teks (i + 1) akan langsung menampilkan "Masukkan nilai mahasiswa ke- 2", sehingga mahasiswa ke-1 terlewati.
 * **Pertanyaan 3:** Apabila jumlah mahasiswa yang dimasukkan adalah 19, berapa kali perulangan WHILE
 akan berjalan?
     * **Jawab:** Perulangan akan berjalan tepat sebanyak 19 kali (dimulai dari i = 0 hingga i = 18). Jika pengguna salah memasukkan nilai (misal 150), program akan memicu perintah continue. Karena continue langsung melompat ke atas sebelum melewati i++, nilai i tidak akan pernah bertambah. Akibatnya, perulangan akan terjebak dan berjalan tanpa batas (infinite loop) pada nomor mahasiswa tersebut
@@ -266,24 +266,16 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:**  Pada penggunaan DO-WHILE ini, apabila nama pelanggan yang dimasukkan pertama kali
 adalah “batal”, maka berapa kali perulangan dilakukan?
-    * **Jawab:** Karena mahasiswa harus memenuhi syarat utama terlebih dahulu, yaitu mahasiswa aktif dan tidak sedang disanksi. Setelah syarat tersebut terpenuhi, barulah program memeriksa apakah mahasiswa memiliki izin dosen atau merupakan asisten lab.
-      Urutanya :
-      * mahasiswaAktif && !sedangDisaksi → syarat utama.
-      * punyaIzinDosen || asistenLab → syarat tambahan.
-      * Jika semua terpenuhi → akses laboratorium diberikan.
+    * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
 * **Pertanyaan 2:** Sebutkan kondisi berhenti yang digunakan pada perulangan DO-WHILE tersebut!
     * **Jawab:**
-      * && -- AND -- Kedua kondisi harus bernilai true. Digunakan untuk memastikan mahasiswa aktif dan tidak sedang disanksi
-      * ! -- NOT -- Membalik nilai boolean. !sedangDisaksi berarti mahasiswa tidak sedang disanksi.
+     Namun, secara logis di dalam blok kode, kondisi berhentinya adalah ketika variabel namaPelanggan bernilai "batal" Ketika kondisi ini terpenuhi, perintah `break;` dieksekusi untuk menghentikan perulangan secara paksa.
 * **Pertanyaan 3:**  Apa fungsi dari penggunaan nilai true pada kondisi DO-WHILE?
-    * **Jawab:** Ya, dapat. Keputusan akses akhirnya sama, karena kedua bentuk program memiliki syarat logika yang sama. Syarat akses adalah:
-      * Mahasiswa aktif -- AND
-      * tidak sedang disanksi -- AND
-      * (punya izin dosen OR asisten lab).
-    * Perbedaannya adalah Nested IF lebih mudah digunakan jika ingin memberikan alasan penolakan yang berbeda.
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
 * **Pertanyaan 4:** Mengapa perulangan DO-WHILE tersebut tetap berjalan meskipun tidak ada komponen
 inisialisasi dan update?
-    * **Jawab:** Keuntungan `Nested IF` adalah program dapat membedakan alasan penolakan berdasarkan tahap pemeriksaan. Dengan `satu if` saja, logika tetap bisa dibuat, tetapi untuk membedakan alasan penolakan biasanya diperlukan kondisi tambahan sehingga kode dapat menjadi kurang terstruktur.
+    * **Jawab:** 1. Kondisi Dikunci true: Karena kondisinya selalu true, program tidak memerlukan variabel counter angka untuk mengecek batas akhir perulangan 2. Update Dinamis Lewat Input: Proses pembaruan status perulangan terjadi secara dinamis melalui baris namaPelanggan = sc.nextLine();. Setiap kali loop berputar, isi variabel tersebut diperbarui langsung berdasarkan apa yang diketik oleh pengguna. 3. Kontrol Melalui break: Fungsi penghenti perulangan diambil alih oleh seleksi kondisi if yang mendeteksi kata "batal". Selama pengguna tidak mengetik kata tersebut, loop akan terus berputar secara otomatis.
+
     
 ## 3: TUGAS MANDIRI
 
