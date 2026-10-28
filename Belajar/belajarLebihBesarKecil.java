@@ -21,6 +21,5 @@ public class belajarLebihBesarKecil {
             }
         }
         System.out.println(" bilangan terbesar adalah bilangan ke- " + b);
-        
     }
 }
