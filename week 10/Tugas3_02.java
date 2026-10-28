@@ -24,7 +24,7 @@ public class Tugas3_02 {
             System.out.println("\n--- Data Toko " + i + " ---");
             int jumlahPelanggan;
             do {
-                System.out.print("Masukkan jumlah pelanggan untuk Toko " + i + ": ");
+                System.out.print("Masukkan jumlah pelanggan untuk Toko " + i + " : ");
                 jumlahPelanggan = labib.nextInt();
                 if (jumlahPelanggan < 0) {
                     System.out.println("Jumlah pelanggan tidak boleh negatif. Ulangi");
@@ -36,7 +36,7 @@ public class Tugas3_02 {
             for (int j = 1; j <= jumlahPelanggan; j++) {
                 int jumlahBarang;
                 do {
-                    System.out.print(" Jumlah barang pelanggan ke- " + j + ":");
+                    System.out.print(" Jumlah barang pelanggan ke- " + j + " : ");
                     jumlahBarang = labib.nextInt();
                     if (jumlahBarang < 0) {
                         System.out.println( " jumlah barang tidak boleh negatif. Ulangi");
