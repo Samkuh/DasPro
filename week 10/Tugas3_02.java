@@ -45,7 +45,7 @@ public class Tugas3_02 {
                 totalBarangTokoIni += jumlahBarang;
             }
 
-            ringkasanPerToko += "Toko" + i + " - pelanggan: " + jumlahPelanggan + " total barang: " + totalBarangTokoIni + "\n";
+            ringkasanPerToko += "Toko " + i + " - pelanggan: " + jumlahPelanggan + " - total barang: " + totalBarangTokoIni + "\n";
             totalBarangSeluruhToko += totalBarangTokoIni;
 
             if (totalBarangTokoIni > barangTerbanyak) {
