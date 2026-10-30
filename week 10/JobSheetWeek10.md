@@ -213,23 +213,130 @@ setiap iterasi outer loop? Apa yang terjadi jika j tidak di-reset?
 * **Pertanyaan 3:**  Jelaskan perubahan inisialisasi, kondisi, dan perubahan nilai (update) pada outer loop
 yang diperlukan untuk membentuk segitiga terbalik.
     * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+
+
+### 2.3 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
+
+Dalam penilaian proyek kelompok, setiap kelompok memperoleh nilai dari sejumlah penilai.
+Program menerima jumlah kelompok dan jumlah penilai yang sama untuk setiap kelompok,
+kemudian menghitung rata-rata nilai tiap kelompok dan menentukan kelompok dengan ratarata tertinggi. Kasus ini diselesaikan dengan nested loop tanpa perlu menyimpan seluruh nilai:
+WHILE (luar) untuk kelompok, FOR (tengah) untuk penilai, dan DO-WHILE (dalam) untuk
+mengulang input nilai yang tidak valid.
+
+#### 2.3.1 Kode Program Java
+
+```java
+
+import java.util.Scanner;
+
+public class NilaiKelompok02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah kelompok : ");
+        int jumlahKelompok = sc.nextInt();
+        System.out.print("Masukkan jumlah penilai : ");
+        int jumlahPenilai = sc.nextInt();
+
+        if (jumlahKelompok <= 0 || jumlahKelompok <= 0) {
+            System.out.println("Jumlah kelompok dan penilai harus lebih dari 0");
+        } else {
+            int nomorKelompok = 1;
+            double rataTertinggi = -1;
+            int kelompokTerbaik = 0;
+
+            while (nomorKelompok <= jumlahKelompok) {
+                System.out.println("Kelompok : " + nomorKelompok);
+                double totalNilai = 0;
+
+                for (int i = 1; i <= jumlahPenilai; i++) {
+                    int nilai;
+                    do {
+                        System.out.print(" Nilai dari Penilai " + i + ": ");
+                        nilai = sc.nextInt();
+                        if (nilai < 0 || nilai > 100) {
+                            System.out.println(" Nilai harus bernilai antara 0 sampai 100. Ulangi input");
+                        }
+                    } while (nilai < 0 || nilai > 100);
+                    totalNilai += nilai;
+                }
+
+                double rataNilai = totalNilai / jumlahPenilai;
+                System.out.println("Kelompok " + nomorKelompok + ": nilai rata - rata = " + rataNilai);
+
+                if (rataNilai > rataTertinggi) {
+                   rataTertinggi = rataNilai;
+                   kelompokTerbaik = nomorKelompok;
+                }
+                nomorKelompok++;
+            }
+                System.out.println("=============");
+                System.out.println("Kelompok terbaik : " + kelompokTerbaik);
+                System.out.println("Rata rata tertinggi : " + rataTertinggi);
+        }
+        sc.close();
+    }
+}
+
+```
+
+#### 2.3.2 Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 3](/week%209/foto/KafeDoWhile.PNG)
+
+#### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
+* **Pertanyaan 1:**  Mengapa totalNilai perlu di-reset di dalam outer loop, tetapi rataTertinggi tidak
+boleh di-reset pada setiap kelompok?
+    * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
       
+* **Pertanyaan 2:** Untuk 3 kelompok dan 2 penilai (tanpa input yang salah), berapa kali badan perulangan
+FOR dijalankan secara keseluruhan?
+    * **Jawab:**
+     Namun, secara logis di dalam blok kode, kondisi berhentinya adalah ketika variabel namaPelanggan bernilai "batal" Ketika kondisi ini terpenuhi, perintah `break;` dieksekusi untuk menghentikan perulangan secara paksa.
+
+* **Pertanyaan 3:**  Apa yang terjadi jika totalNilai dideklarasikan sebagai int dan rata-rata dihitung
+menggunakan pembagian dua bilangan bulat? Berikan contoh nilai.
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+
+* **Pertanyaan 4:**  Mengapa rataTertinggi diberi nilai awal -1, bukan 0? Berikan contoh input yang
+membuat hasil salah apabila nilai awalnya 0.
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+
+* **Pertanyaan 5:**   Program ini memiliki tiga tingkat perulangan. Sebutkan masing-masing jenis perulangan
+beserta perannya.
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
     
 ## 3: TUGAS MANDIRI
+Kerjakan tugas berikut secara mandiri. Gunakan nested loop, struktur pemilihan jika
+diperlukan, dan cukup gunakan variabel biasa (variabel penampung dan penghitung) untuk
+menyimpan hasil perhitungan. Buat file terpisah untuk setiap tugas. Commit dan push seluruh
+file ke repository daspro-jobsheet8 di GitHub.
 
-* **Tugas No 01** Seorang pengelola bioskop ingin membuat program untuk menghitung total penjualan
-tiket dalam satu hari. Tiket dijual dengan harga Rp 50.000 per tiket. Program harus
-menghitung total tiket yang terjual dan total harga penjualan tiket selama satu hari
-dengan ketentuan sebagai berikut:
-    * Jika pelanggan membeli lebih dari 4 tiket, pelanggan mendapatkan diskon 10%
-    * Jika pelanggan membeli lebih dari 10 tiket, pelanggan mendapatkan diskon 15%.
-    * Jika input jumlah tiket tidak valid (negatif), program akan mengabaikan input 
+* **Tugas No 01** Buat program untuk mencetak pola bilangan 1 sampai nomor baris. Masukkan bilangan bulat
+n (n minimal 1). Pada baris pertama tercetak 1, pada baris kedua 1 2, dan seterusnya sampai
+baris ke-n. Setelah pola selesai, tampilkan total banyaknya angka yang telah dicetak. Simpan
+dengan nama file: Tugas1NoAbsen.java.
+Contoh untuk n = 5:
 
-* **Tugas No 02** Sebuah tempat parkir ingin membuat program untuk menghitung total
-pembayaran parkir dari beberapa kendaraan. Tarif parkir adalah Rp 3.000 per jam
-untuk mobil dan Rp 2.000 per jam untuk motor. Program akan terus meminta
-masukan selama input bukan 0. Implementasikan flowchart tersebut ke dalam
-bentuk kode program Java!
+
+* **Tugas No 02** Buat program untuk menampilkan tabel perkalian berukuran n × n menggunakan nested FOR
+atau WHILE. Nilai n minimal 3. Setiap posisi menampilkan hasil perkalian nomor baris dan
+nomor kolom. Atur spasi agar keluaran rapi, lalu tampilkan jumlah seluruh angka pada tabel.
+Simpan program dengan nama file: Tugas2NoAbsen.java.
+
+
+* **Tugas No 03** Sebuah pusat perbelanjaan memiliki beberapa toko. Setiap toko melayani sejumlah
+pelanggan pada hari yang sama, dan setiap pelanggan membeli beberapa barang. Program
+meminta jumlah toko, kemudian jumlah pelanggan pada masing-masing toko, dan jumlah
+barang yang dibeli setiap pelanggan. Hitung dan tampilkan total pelanggan serta total barang
+per toko, total barang seluruh toko, dan nomor toko dengan jumlah barang terbanyak. Jika
+terdapat nilai tertinggi yang sama, tampilkan toko dengan nomor paling kecil. Simpan
+program dengan nama file: Tugas3NoAbsen.java.
+
+Ketentuan: jumlah toko minimal 1; jumlah pelanggan dan jumlah barang setiap pelanggan
+boleh 0, tetapi tidak boleh negatif. Gunakan perulangan bersarang; data tidak perlu disimpan
+satu per satu, cukup diakumulasikan ke variabel total.
 
 ![Gambar Output Percobaan 3](/week%209/foto/FlowChart%20Tugas%2002.PNG)
 
