@@ -73,8 +73,9 @@ for (int i = 2; i <= n; i += 2) {
 }
 
 ```
+
 Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
-    * **Jawab:** 
+* **Jawab:** 
 	Jika tertinggi = 100, tidak ada nilai mahasiswa (rentang 0-100) yang bisa lebih besar dari 100. Akibatnya, kondisi if (nilai > tertinggi) akan selalu salah (false), dan hasil akhir nilai tertinggi akan selalu tetap 100.
 	Jika terendah = 0, tidak ada nilai mahasiswa yang bisa lebih kecil dari 0. Akibatnya, kondisi if (nilai < terendah) akan selalu salah (false), dan hasil akhir nilai terendah akan selalu tetap 0.
 
