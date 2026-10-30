@@ -348,51 +348,29 @@ satu per satu, cukup diakumulasikan ke variabel total.
 
 import java.util.Scanner;
 
-public class Tugas1PertemuanSembilan02 {
+public class Tugas1_02 {
 
     public static void main(String[] args) {
-        
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n : ");
+        int n = sc.nextInt();
 
-        int tiket, totalTiket = 0, hargaTiket = 50000, i = 0, jmlPelanggan;
-        double diskonSepuluh = 0.10, diskonLimaBelas = 0.15, diskonNol = 0, totalHarga = 0;
-
-        System.out.println("Harga Tiket: Rp.50.000");
-        System.out.println("Diskon 10% Untuk Pembelian Tiket 4 Sampai 10");
-        System.out.println("Diskon 15% Untuk Pembelian Tiket lebih dari 10");
-        System.out.println("");
-
-        System.out.print("Masukkan jumlah pelanggan: ");
-        jmlPelanggan = sc.nextInt();
-        System.out.print("");
-
-        if (jmlPelanggan < 0) {
-            System.out.println("");
-            System.out.println("Input Tidak Valid");
-        } 
-
-        while (i < jmlPelanggan) {
-            System.out.println("");
-            System.out.println("===== JUMLAH TIKET =====");
-            System.out.print("Masukkan jumlah tiket yang dibeli pelanggan ke- " + (i + 1) + ": ");
-            tiket = sc.nextInt();
-
-            if (tiket >= 0 && tiket <= 4) {
-                totalHarga += (tiket * hargaTiket) - ( tiket * hargaTiket * diskonNol);
-                totalTiket += tiket;
-            } else if (tiket > 4 && tiket <= 10) {
-                totalHarga += (tiket * hargaTiket) - (tiket * hargaTiket * diskonSepuluh);
-                totalTiket += tiket;
-            } else {
-                totalHarga += (tiket * hargaTiket) - (tiket * hargaTiket * diskonLimaBelas);
-                totalTiket += tiket;
+        int i = 0;
+        int total = 0;
+        while (i <= n) {
+            int j = 0;
+            int k = 1;
+            while (j < i) {
+                System.out.print(k + " ");
+                j++;
+                k++;
             }
-            i++;
+        total += i;
+        i++;
+        System.out.println();
         }
-        System.out.println("");
-        System.out.println("==== TOTAL BAYAR DAN TOTAL TIKET ====");
-        System.out.println("Total Pendapatan Penjualan Tiket: " + (int) totalHarga);
-        System.out.println("Total Tiket yang Terjual: " + (int) totalTiket);
+        System.out.println("Total Angka tercetak : " + total);
+        sc.close();
     }
 }
   
@@ -404,47 +382,100 @@ public class Tugas1PertemuanSembilan02 {
 
 import java.util.Scanner;
 
-public class TugasPertemuanSembilan02 {
+public class Tugas2_02 {
 
     public static void main(String[] args) {
-        
-       int jenis, durasi, total = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah n : ");
+        int n = sc.nextInt();
+        int total = 0;
+        int a = 0;
 
-       Scanner sc = new Scanner(System.in);
-
-       do {
-        System.out.println("");
-        System.out.println("01. MOBIL");
-        System.out.println("02. SEPEDA MOTOR");
-        System.out.println("00. BERHENTI");
-
-        System.out.println("");
-        System.out.println("==== JENIS KENDARAAN ====");
-        System.out.print("Masukkan jenis kendaraan:");
-        jenis = sc.nextInt();
-
-        if (jenis == 1 || jenis == 2) {
-            System.out.println("");
-            System.out.println("==== DURASI ====");
-            System.out.print("Masukkan Durasi Parkir Dalam Jam: ");
-            durasi = sc.nextInt();
-
-            if (jenis == 1) {
-                total += durasi * 3000;
-            } else {
-                total += durasi * 2000;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(i * j + "\t");
+                a = i * j;
+                total += a;
             }
+            System.out.println();
         }
-       } while (jenis != 0);
-
-       System.out.println("");
-       System.out.println("==== TOTAL PENDAPATAN ====");
-       System.out.println("Total pendapatan parkir: Rp." + total);
+        System.out.println("Jumlah seluruh angka : " + total);
+        sc.close();
     }
 }
 
 ```
 
+
+* **Kode Program No 03**
+
+```java
+
+import java.util.Scanner;
+
+public class Tugas3_02 {
+
+    public static void main(String[] args) {
+        Scanner labib = new Scanner(System.in);
+        
+        int jumlahToko;
+        do {
+            System.out.print("Masukkan jumlah toko (minimal 1) : ");
+            jumlahToko = labib.nextInt();
+            if (jumlahToko < 1) {
+                System.out.println("Jumlah toko tidak boleh kurang dari 1. Ulangi ");
+            }
+        } while (jumlahToko < 1);
+
+        int totalBarangSeluruhToko = 0;
+        int tokoTerbanyak = 0;
+        int barangTerbanyak = -1;
+
+        String ringkasanPerToko = "";
+
+        for (int i = 1; i <= jumlahToko; i++) {
+            System.out.println("\n--- Data Toko " + i + " ---");
+            int jumlahPelanggan;
+            do {
+                System.out.print("Masukkan jumlah pelanggan untuk Toko " + i + " : ");
+                jumlahPelanggan = labib.nextInt();
+                if (jumlahPelanggan < 0) {
+                    System.out.println("Jumlah pelanggan tidak boleh negatif. Ulangi");
+                }
+            } while (jumlahPelanggan < 0);
+
+            int totalBarangTokoIni = 0;
+
+            for (int j = 1; j <= jumlahPelanggan; j++) {
+                int jumlahBarang;
+                do {
+                    System.out.print(" Jumlah barang pelanggan ke- " + j + " : ");
+                    jumlahBarang = labib.nextInt();
+                    if (jumlahBarang < 0) {
+                        System.out.println( " jumlah barang tidak boleh negatif. Ulangi");
+                    }
+                } while (jumlahBarang < 0);
+                totalBarangTokoIni += jumlahBarang;
+            }
+
+            ringkasanPerToko += "Toko " + i + " - pelanggan: " + jumlahPelanggan + " - total barang: " + totalBarangTokoIni + "\n";
+            totalBarangSeluruhToko += totalBarangTokoIni;
+
+            if (totalBarangTokoIni > barangTerbanyak) {
+                barangTerbanyak = totalBarangTokoIni;
+                tokoTerbanyak = i;
+            }
+        }
+            System.out.println("\n======= Ringkasan Rekap ===========");
+            System.out.print(ringkasanPerToko);
+            System.out.println("Total barang seluruh toko: " + totalBarangSeluruhToko);
+            System.out.println("Toko dengan barang terbanyak: " + tokoTerbanyak);    
+            labib.close();
+    }
+}
+
+
+```
 #### 3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
