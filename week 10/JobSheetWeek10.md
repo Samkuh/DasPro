@@ -146,14 +146,11 @@ ke GitHub.
 	
 	
  
-### 2.3 Percobaan 3: Studi Kasus Transaksi di Kafe – Perulangan DO-WHILE 
+### 2.3 Percobaan 3: Debugging Bintang Segitiga – Nested WHILE
 
-Di sebuah kafe, kasir ingin memproses transaksi beberapa pelanggan. Pelanggan dapat
-membeli lebih dari satu item (kopi dengan harga Rp 12.000, teh dengan harga Rp 7.000, dan
-roti dengan harga Rp 20.000), dan kasir akan terus memasukkan jumlah pembelian untuk
-setiap pelanggan. Jika ada pelanggan yang memutuskan untuk membatalkan transaksi
-(dengan memasukkan "batal"), maka kasir akan menghentikan input transaksi dan program
-berhenti.
+Kode awal pada percobaan ini sengaja dibuat belum menghasilkan format segitiga yang
+benar. Tugas Anda adalah mengidentifikasi kesalahannya dan memperbaikinya tanpa
+mengganti struktur WHILE menjadi FOR. 
 
 #### 2.3.1 Kode Program Java
 
@@ -161,48 +158,38 @@ berhenti.
 
 import java.util.Scanner;
 
-public class KafeDoWhile {
+public class Triangle02 {
 
     public static void main(String[] args) {
-        
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n : ");
+        int n = sc.nextInt();
 
-        int itemKopi, itemTeh, itemRoti, totalHarga;
-        String namaPelanggan;
-        int hargaKopi = 12000, hargaTeh = 7000, hargaRoti = 20000;
-
-        System.out.println("==== MENU ====");
-        System.out.println("KOPI : 12.000");
-        System.out.println("TEH : 7.000");
-        System.out.println("ROTI : 20.000");
-
-        do {
-            System.out.println("");
-            System.out.print("Masukkan Nama Pelanggan ( Ketik batal untuk keluar ): ");
-            namaPelanggan = sc.nextLine();
-            if (namaPelanggan.equalsIgnoreCase("batal")) {
-                System.out.println("");
-                System.out.println("Transaksi Di Batalkan");
-                break;
+        int i = 0;
+        while (i <= n) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
             }
-            System.out.println("");
-            System.out.println("======= JUMLAH ======");
-            System.out.print("Jumlah Kopi: ");
-            itemKopi = sc.nextInt();
-            System.out.print("Jumlah Teh: ");
-            itemTeh = sc.nextInt();
-            System.out.print("Jumlah Roti: ");
-            itemRoti = sc.nextInt();
+            System.out.println();
+            i++;
+        }
+        sc.close();
 
-            totalHarga = (itemKopi * hargaKopi) + (itemTeh * hargaTeh) + (itemRoti * hargaRoti);
-
-            System.out.println("");
-            System.out.println("====== STRUCK HARGA TOTAL =====");
-            System.out.println("Total yang harus dibayar: Rp. " + totalHarga);
-            sc.nextLine();
-        } while (true);
-
-        System.out.println("Semua Transaksi Selesai");
+        System.out.println();
+        
+        i = n;
+        while (i > 0) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i--;
+        }
+        sc.close();
     }
 }
 
@@ -214,18 +201,19 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 3](/week%209/foto/KafeDoWhile.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:**  Pada penggunaan DO-WHILE ini, apabila nama pelanggan yang dimasukkan pertama kali
-adalah “batal”, maka berapa kali perulangan dilakukan?
+* **Pertanyaan 1:**  Sebutkan ketidaksesuaian output awal dan minimal dua perbaikan yang diperlukan untuk
+menghasilkan pola segitiga bertingkat.
     * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
-* **Pertanyaan 2:** Sebutkan kondisi berhenti yang digunakan pada perulangan DO-WHILE tersebut!
+      
+* **Pertanyaan 2:** Jelaskan peran variabel i dan j. Mengapa nilai j harus diinisialisasi kembali ke 0 pada
+setiap iterasi outer loop? Apa yang terjadi jika j tidak di-reset?
     * **Jawab:**
      Namun, secara logis di dalam blok kode, kondisi berhentinya adalah ketika variabel namaPelanggan bernilai "batal" Ketika kondisi ini terpenuhi, perintah `break;` dieksekusi untuk menghentikan perulangan secara paksa.
-* **Pertanyaan 3:**  Apa fungsi dari penggunaan nilai true pada kondisi DO-WHILE?
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
-* **Pertanyaan 4:** Mengapa perulangan DO-WHILE tersebut tetap berjalan meskipun tidak ada komponen
-inisialisasi dan update?
-    * **Jawab:** `1.` Kondisi Dikunci true: Karena kondisinya selalu true, program tidak memerlukan variabel counter angka untuk mengecek batas akhir perulangan `2.` Update Dinamis Lewat Input: Proses pembaruan status perulangan terjadi secara dinamis melalui baris namaPelanggan = sc.nextLine();. Setiap kali loop berputar, isi variabel tersebut diperbarui langsung berdasarkan apa yang diketik oleh pengguna. `3.` Kontrol Melalui break: Fungsi penghenti perulangan diambil alih oleh seleksi kondisi if yang mendeteksi kata "batal". Selama pengguna tidak mengetik kata tersebut, loop akan terus berputar secara otomatis.
 
+* **Pertanyaan 3:**  Jelaskan perubahan inisialisasi, kondisi, dan perubahan nilai (update) pada outer loop
+yang diperlukan untuk membentuk segitiga terbalik.
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+      
     
 ## 3: TUGAS MANDIRI
 
