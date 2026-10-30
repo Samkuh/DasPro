@@ -487,6 +487,9 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
   
 ![Gambar Output Percobaan 2 Tugas Mandiri](/week%209/foto/TUGAS%2002.PNG)
 
+* **Hasil Kode Program Nomor 03**
+  
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%209/foto/TUGAS%2002.PNG)
 
 ## 4: KESIMPULAN
 
