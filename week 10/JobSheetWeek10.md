@@ -58,7 +58,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika inisialisasi i = 1 diubah menjadi i = 0 tanpa mengubah kondisi, berapa karakter *
 yang tercetak ketika n = 5? Jelaskan.
-    * **Jawab** 1. INISIALISASI : `int i = 1`, 2. KONDISI : `i <= 10` , 3. UPDATE : `I++`
+    * **Jawab:** INISIALISASI : `int i = 1`, 2. KONDISI : `i <= 10` , 3. UPDATE : `I++`
       
 * **Pertanyaan 2:** Jika kondisi i <= n diganti menjadi i < n, berapa kali perulangan dijalankan saat n = 5?
 Mengapa hasilnya berbeda?
@@ -494,5 +494,6 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ## 4: KESIMPULAN
 
 * **Kesimpulan**
-Berdasarkan Jobsheet 7 tentang Perulangan 1, dapat disimpulkan bahwa perulangan `for`, `while`, dan `do-while` dalam Java digunakan untuk menjalankan perintah secara berulang sesuai kondisi tertentu. Melalui praktikum ini, mahasiswa dapat menerapkan perulangan untuk mengolah nilai mahasiswa, menentukan kategori nilai, dan menghitung total transaksi. Selain itu, mahasiswa dapat memahami penggunaan kondisi percabangan untuk membuat program yang lebih efektif dan sesuai kebutuhan.
+Kesimpulan:
+Berdasarkan Jobsheet 8, dapat disimpulkan bahwa perulangan bersarang (nested loop) merupakan perulangan di dalam perulangan yang digunakan untuk membuat pola dan menyelesaikan perhitungan secara berulang. Dengan memahami penggunaan FOR, WHILE, dan DO-WHILE, kita dapat membuat program yang lebih terstruktur, seperti pola bintang, tabel perkalian, serta pengolahan data nilai dan penjualan.
 
