@@ -22,7 +22,7 @@ sederhana.
 
 ## 2: PRAKTIKUM
 
-### 2.1 Percobaan 1:  Studi Kasus Nilai Mahasiswa di SIAKAD – Perulangan FOR
+### 2.1 Percobaan 1:  Review Perulangan 1
 
 
 Percobaan ini mengulang konsep perulangan FOR sebelum mempelajari perulangan
@@ -34,28 +34,18 @@ samping). Gunakan input n berupa bilangan bulat positif.
 
 import java.util.Scanner;
 
-public class SiakadFor02 {
+public class Star02 {
 
     public static void main(String[] args) {
-    
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
 
-    double nilai, tertinggi = 0, terendah = 100;
-
-        for (int i = 1; i <= 10; i++) {
-        System.out.print("Masukkan nilai mahasiswa ( 1 - 100 ) ke- " + i + ": ");
-        nilai = sc.nextDouble();
-            if (nilai > tertinggi) {
-            tertinggi = nilai;
-            }
-            if (nilai < terendah) {
-            terendah = nilai;
-            }
+        for (int i = 1; i <= n; i++) {
+            System.out.print("*");
         }
-        System.out.println("");
-        System.out.println("============================");
-        System.out.println("Nilai Tertinggi: " + tertinggi);    
-        System.out.println("Nilai Terendah: " + terendah);    
+        System.out.println();
+        sc.close();
     }
 }
 ```
@@ -97,82 +87,34 @@ program dengan menekan Ctrl + C pada terminal.
 
 ---
 
-### 2.2 Percobaan 2: Studi Kasus Nilai Mahasiswa di SIAKAD – Perulangan WHILE
+### 2.2 Percobaan 2: Percobaan 2: Pola Bintang Persegi Panjang (Nested FOR)
 
-Seorang dosen ingin memasukkan nilai beberapa mahasiswa ke dalam SIAKAD untuk
-ditentukan kategori nilai hurufnya. Program harus meminta dosen untuk memasukkan nilai
-setiap mahasiswa. Jika dosen memasukkan nilai yang tidak valid (negatif atau lebih dari 100),
-program harus mengabaikan input tersebut dan meminta dosen untuk melakukan input
-ulang. Selanjutnya, nilai yang valid dikelompokkan ke dalam kategori huruf A (80 < nilai ≤ 100),
-B+ (73 < nilai ≤ 80), B (65 < nilai ≤ 73), C+ (60 < nilai ≤ 65), C (50 < nilai ≤ 60), D (39 < nilai ≤ 50),
-dan E (nilai ≤ 39).
+Pada percobaan ini digunakan nested loop FOR untuk mencetak persegi panjang bintang.
+Jumlah baris dan kolom dimasukkan secara terpisah sehingga peran kedua loop dapat diamati
+dengan jelas: outer loop mengatur baris, sedangkan inner loop mengatur kolom (ingat analogi
+rak/loker pada materi).
 #### 2.2.1 Kode Program Java
 
 ```java
 
 import java.util.Scanner;
 
-public class SiakadWhile {
+public class Rectangle02 {
 
     public static void main(String[] args) {
-        
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah baris : ");
+        int baris = sc.nextInt();
+        System.out.print("Masukkan jumlah kolom : ");
+        int kolom = sc.nextInt();
 
-        int nilai, jml, i = 0;
-
-        System.out.print("Masukkan Jumlah Mahasiswa: ");
-        System.out.print("");
-        jml = sc.nextInt();
-
-        while (i < jml) {
-            System.out.println("");
-            System.out.println("======== NILAI ========");
-            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + ": ");
-            nilai = sc.nextInt();
-
-            if (nilai < 0 || nilai > 100) {
-                System.out.println("Nilai mahasiswa tidak valid. Masukkan lagi nilai mahasiswa");
-                continue;
+        for (int b = 1; b <= baris; b++) {
+            for (int k = 1; k <= kolom; k++) {
+                System.out.print("*");
             }
-
-            if (nilai > 80 && nilai <=100) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah A");
-                System.out.println("");
-            } else if (nilai > 73 && nilai <= 80) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah B+");
-                System.out.println("");
-            } else if (nilai > 65 && nilai <= 73) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah B");
-                System.out.println("");
-            } else if (nilai > 60 && nilai <= 65) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah C+");
-                System.out.println("");
-            } else if (nilai > 50 && nilai <= 60) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah C");
-                System.out.println("");
-            } else if (nilai > 39 && nilai <= 50) {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah D");
-                System.out.println("");
-            } else {
-                System.out.println("");
-                System.out.println("=========== AKREDITASI =========");
-                System.out.println("Nilai mahasiswa ke- " + (i + 1) + " Adalah E");
-                System.out.println("");
-            }
-            i++;
+            System.out.println();
         }
+        sc.close();
     }
 }
 
@@ -184,20 +126,24 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 2](/week%209/foto/SiakadaWhile.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-![Gambar Output Percobaan 2](/week%209/foto/soal%20nomor%2002.PNG)
-* **Pertanyaan 1:** Pada potongan kode berikut, tentukan maksud dan kegunaan dari sintaks di atas:
+* **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
     * **Jawab:** Berfungsi `nilai < 0 || nilai > 100` : sebagai validasi batas input. Skala nilai mahasiswa yang sah berada di rentang 0 sampai 100. Kondisi ini digunakan untuk menyaring dan mendeteksi jika pengguna tidak sengaja memasukkan angka di luar batas (seperti -10 atau 105) agar tidak diproses ke tahap akreditasi. `Continue` : Saat mendeteksi nilai tidak valid, program akan langsung melompat kembali ke baris pengecekan kondisi while (i < jml). Perintah ini berguna agar nilai yang salah tersebut langsung dilewati dan tidak ikut dicetak akreditasinya oleh perintah if-else di bawahnya.
-* **Pertanyaan 2:** Mengapa sintaks i++ dituliskan di akhir perulangan WHILE? Apa yang terjadi jika posisinya
-dituliskan di awal perulangan WHILE?
+      
+* **Pertanyaan 2:**Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4
+dan kolom = 7?
     * **Jawab:** Agar nilai i tetap konsisten sejak awal input hingga proses cetak akreditasi untuk mahasiswa yang sama selesai dilakukan. Sebagai contoh, ketika i = 0, cetakan teks (i + 1) akan memproses "Mahasiswa ke-1". Setelah seluruh akreditasi mahasiswa ke-1 berhasil dicetak, barulah i++ menaikkan nilai menjadi 1 untuk bersiap memproses mahasiswa berikutnya pada putaran berikutnya. Akan terjadi pergeseran indeks logika. Pada putaran pertama, i yang awalnya 0 langsung berubah menjadi 1 sebelum input diminta. Akibatnya, cetakan teks (i + 1) akan langsung menampilkan "Masukkan nilai mahasiswa ke- 2", sehingga mahasiswa ke-1 terlewati.
-* **Pertanyaan 3:** Apabila jumlah mahasiswa yang dimasukkan adalah 19, berapa kali perulangan WHILE
-akan berjalan?
+      
+* **Pertanyaan 3:** Apa yang terjadi jika batas perulangan luar dan dalam ditukar (outer menggunakan
+kolom, inner menggunakan baris)? Gunakan baris = 3 dan kolom = 6 untuk menjelaskan.
     * **Jawab:** Perulangan akan berjalan tepat sebanyak 19 kali (dimulai dari i = 0 hingga i = 18). Jika pengguna salah memasukkan nilai (misal 150), program akan memicu perintah continue. Karena continue langsung melompat ke atas sebelum melewati i++, nilai i tidak akan pernah bertambah. Akibatnya, perulangan akan terjebak dan berjalan tanpa batas (infinite loop) pada nomor mahasiswa tersebut
-* **Pertanyaan 4:** Modifikasi kode program sehingga apabila terdapat mahasiswa yang mendapat nilai A,
-program menampilkan pesan tambahan "Bagus, pertahankan nilainya"!
+      
+* **Pertanyaan 4:** Jelaskan akibat penghapusan System.out.println(); setelah inner loop.
     * **Jawab:**
+
+* **Pertanyaan 5:** Modifikasi program agar karakter yang dicetak adalah #, lalu commit dan push perubahan
+ke GitHub.
 	
-	![Gambar Output Percobaan 2](/week%209/foto/hasil%20SiakadWhile.PNG)
+	
  
 ### 2.3 Percobaan 3: Studi Kasus Transaksi di Kafe – Perulangan DO-WHILE 
 
