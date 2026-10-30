@@ -53,7 +53,7 @@ public class Star02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%209/foto/SiakadaFor.PNG)
+![Gambar Output Percobaan 1](/week%2010/Foto/Star02.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika inisialisasi i = 1 diubah menjadi i = 0 tanpa mengubah kondisi, berapa karakter *
@@ -66,6 +66,7 @@ Mengapa hasilnya berbeda?
 
 * **Pertanyaan 3:** Prediksi output potongan kode berikut ketika n = 9, kemudian buktikan dengan
 mengganti perulangan FOR pada program Anda dan menjalankannya.
+
 ```java
 
 for (int i = 2; i <= n; i += 2) {
@@ -73,8 +74,8 @@ for (int i = 2; i <= n; i += 2) {
 }
 
 ```
-
 Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
+
 * **Jawab:** 
 	Jika tertinggi = 100, tidak ada nilai mahasiswa (rentang 0-100) yang bisa lebih besar dari 100. Akibatnya, kondisi if (nilai > tertinggi) akan selalu salah (false), dan hasil akhir nilai tertinggi akan selalu tetap 100.
 	Jika terendah = 0, tidak ada nilai mahasiswa yang bisa lebih kecil dari 0. Akibatnya, kondisi if (nilai < terendah) akan selalu salah (false), dan hasil akhir nilai terendah akan selalu tetap 0.
@@ -124,7 +125,7 @@ public class Rectangle02 {
 #### 2.2.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 2](/week%209/foto/SiakadaWhile.PNG)
+![Gambar Output Percobaan 2](/week%2010/Foto/Ractangle02.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
@@ -198,7 +199,7 @@ public class Triangle02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%209/foto/KafeDoWhile.PNG)
+![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:**  Sebutkan ketidaksesuaian output awal dan minimal dua perbaikan yang diperlukan untuk
@@ -215,7 +216,7 @@ yang diperlukan untuk membentuk segitiga terbalik.
     * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
 
 
-### 2.3 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
+### 2.4 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
 
 Dalam penilaian proyek kelompok, setiap kelompok memperoleh nilai dari sejumlah penilai.
 Program menerima jumlah kelompok dan jumlah penilai yang sama untuk setiap kelompok,
@@ -223,7 +224,7 @@ kemudian menghitung rata-rata nilai tiap kelompok dan menentukan kelompok dengan
 WHILE (luar) untuk kelompok, FOR (tengah) untuk penilai, dan DO-WHILE (dalam) untuk
 mengulang input nilai yang tidak valid.
 
-#### 2.3.1 Kode Program Java
+#### 2.4.1 Kode Program Java
 
 ```java
 
@@ -280,12 +281,12 @@ public class NilaiKelompok02 {
 
 ```
 
-#### 2.3.2 Hasil Running / Screenshot Output
+#### 2.4.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%209/foto/KafeDoWhile.PNG)
+![Gambar Output Percobaan 3](/week%2010/Foto/NilaiKelompok02.PNG)
 
-#### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
+#### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:**  Mengapa totalNilai perlu di-reset di dalam outer loop, tetapi rataTertinggi tidak
 boleh di-reset pada setiap kelompok?
     * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
@@ -338,7 +339,6 @@ Ketentuan: jumlah toko minimal 1; jumlah pelanggan dan jumlah barang setiap pela
 boleh 0, tetapi tidak boleh negatif. Gunakan perulangan bersarang; data tidak perlu disimpan
 satu per satu, cukup diakumulasikan ke variabel total.
 
-![Gambar Output Percobaan 3](/week%209/foto/FlowChart%20Tugas%2002.PNG)
 
 ### 3.1 Implementasi Kode Tugas
 
@@ -481,15 +481,15 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 * **Hasil Kode Program Nomor 01**
 
-![Gambar Output Percobaan 1 Tugas Mandiri](/week%209/foto/TUGAS%2001.PNG)
+![Gambar Output Percobaan 1 Tugas Mandiri](/week%2010/Foto/Tugas_01.PNG)
 
 * **Hasil Kode Program Nomor 02**
   
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%209/foto/TUGAS%2002.PNG)
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%2010/Foto/Tugas_02.PNG)
 
 * **Hasil Kode Program Nomor 03**
   
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%209/foto/TUGAS%2002.PNG)
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%2010/Foto/Tugas_03.PNG)
 
 ## 4: KESIMPULAN
 
