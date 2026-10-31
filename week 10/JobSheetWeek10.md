@@ -375,20 +375,20 @@ diperlukan, dan cukup gunakan variabel biasa (variabel penampung dan penghitung)
 menyimpan hasil perhitungan. Buat file terpisah untuk setiap tugas. Commit dan push seluruh
 file ke repository daspro-jobsheet8 di GitHub.
 
-* **Tugas No 01** Buat program untuk mencetak pola bilangan 1 sampai nomor baris. Masukkan bilangan bulat
+* **Tugas No 01 Pola Bilangan Bertingkat** Buat program untuk mencetak pola bilangan 1 sampai nomor baris. Masukkan bilangan bulat
 n (n minimal 1). Pada baris pertama tercetak 1, pada baris kedua 1 2, dan seterusnya sampai
 baris ke-n. Setelah pola selesai, tampilkan total banyaknya angka yang telah dicetak. Simpan
 dengan nama file: Tugas1NoAbsen.java.
 Contoh untuk n = 5:
 
 
-* **Tugas No 02** Buat program untuk menampilkan tabel perkalian berukuran n × n menggunakan nested FOR
+* **Tugas No 02 Tabel Perkalian** Buat program untuk menampilkan tabel perkalian berukuran n × n menggunakan nested FOR
 atau WHILE. Nilai n minimal 3. Setiap posisi menampilkan hasil perkalian nomor baris dan
 nomor kolom. Atur spasi agar keluaran rapi, lalu tampilkan jumlah seluruh angka pada tabel.
 Simpan program dengan nama file: Tugas2NoAbsen.java.
 
 
-* **Tugas No 03** Sebuah pusat perbelanjaan memiliki beberapa toko. Setiap toko melayani sejumlah
+* **Tugas No 03 Rekap Penjualan Beberapa Toko** Sebuah pusat perbelanjaan memiliki beberapa toko. Setiap toko melayani sejumlah
 pelanggan pada hari yang sama, dan setiap pelanggan membeli beberapa barang. Program
 meminta jumlah toko, kemudian jumlah pelanggan pada masing-masing toko, dan jumlah
 barang yang dibeli setiap pelanggan. Hitung dan tampilkan total pelanggan serta total barang
