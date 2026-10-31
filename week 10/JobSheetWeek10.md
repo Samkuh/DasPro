@@ -133,7 +133,7 @@ public class Rectangle02 {
         int kolom = sc.nextInt();
 
         for (int b = 1; b <= baris; b++) {
-            for (int k = 1; k <= kolom; k++) {
+            for (int j = 1; j <= kolom; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -151,22 +151,44 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
-    * **Jawab:** Berfungsi `nilai < 0 || nilai > 100` : sebagai validasi batas input. Skala nilai mahasiswa yang sah berada di rentang 0 sampai 100. Kondisi ini digunakan untuk menyaring dan mendeteksi jika pengguna tidak sengaja memasukkan angka di luar batas (seperti -10 atau 105) agar tidak diproses ke tahap akreditasi. `Continue` : Saat mendeteksi nilai tidak valid, program akan langsung melompat kembali ke baris pengecekan kondisi while (i < jml). Perintah ini berguna agar nilai yang salah tersebut langsung dilewati dan tidak ikut dicetak akreditasinya oleh perintah if-else di bawahnya.
+    * **Jawab:** Fungsi variabel `i` dan `j` digunakan untuk nilai inisiasi pertama pada setiap perulangan nya yaitu outer loop dan inner loop
       
 * **Pertanyaan 2:**Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4
 dan kolom = 7?
-    * **Jawab:** Agar nilai i tetap konsisten sejak awal input hingga proses cetak akreditasi untuk mahasiswa yang sama selesai dilakukan. Sebagai contoh, ketika i = 0, cetakan teks (i + 1) akan memproses "Mahasiswa ke-1". Setelah seluruh akreditasi mahasiswa ke-1 berhasil dicetak, barulah i++ menaikkan nilai menjadi 1 untuk bersiap memproses mahasiswa berikutnya pada putaran berikutnya. Akan terjadi pergeseran indeks logika. Pada putaran pertama, i yang awalnya 0 langsung berubah menjadi 1 sebelum input diminta. Akibatnya, cetakan teks (i + 1) akan langsung menampilkan "Masukkan nilai mahasiswa ke- 2", sehingga mahasiswa ke-1 terlewati.
+    * **Jawab:** Outer loop akan berjalan 4 kali perulangan karena outerloop berjalan untuk menentukan berapa baris yang di input. sedangkan inner loop akan berjalan 7 kali setiap barisnya karena inner loop berjalan untuk menentukan berapa kolom yang di input setiap perulangan yang dilakukan oleh outer loop
       
 * **Pertanyaan 3:** Apa yang terjadi jika batas perulangan luar dan dalam ditukar (outer menggunakan
 kolom, inner menggunakan baris)? Gunakan baris = 3 dan kolom = 6 untuk menjelaskan.
-    * **Jawab:** Perulangan akan berjalan tepat sebanyak 19 kali (dimulai dari i = 0 hingga i = 18). Jika pengguna salah memasukkan nilai (misal 150), program akan memicu perintah continue. Karena continue langsung melompat ke atas sebelum melewati i++, nilai i tidak akan pernah bertambah. Akibatnya, perulangan akan terjebak dan berjalan tanpa batas (infinite loop) pada nomor mahasiswa tersebut
+    * **Jawab:** Akan menghasilkan output yang tertukar yang harusnya output menghasilkan nilai baris ini malah menghasilkan nilai kolom ataupun sebaliknya. Output yang dihasilkan dari baris 3 dan kolom 6 adalah menghasilkan baris 6 dan setiap barisnya menghasilkan 3 baris bintang
       
 * **Pertanyaan 4:** Jelaskan akibat penghapusan System.out.println(); setelah inner loop.
-    * **Jawab:**
+    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk mengganti baris ke baris yang ada di bawahnya 
 
 * **Pertanyaan 5:** Modifikasi program agar karakter yang dicetak adalah #, lalu commit dan push perubahan
 ke GitHub.
-	
+```java
+import java.util.Scanner;
+
+public class Rectangle02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah baris : ");
+        int baris = sc.nextInt();
+        System.out.print("Masukkan jumlah kolom : ");
+        int kolom = sc.nextInt();
+
+        for (int b = 1; b <= baris; b++) {
+            for (int j = 1; j <= kolom; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+```
+program di atas akan menghasilkan output yang sama seperti program aslinya namun outputnya berganti dengan simbol `#`
 	
  
 ### 2.3 Percobaan 3: Debugging Bintang Segitiga – Nested WHILE
