@@ -347,24 +347,27 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:**  Mengapa totalNilai perlu di-reset di dalam outer loop, tetapi rataTertinggi tidak
 boleh di-reset pada setiap kelompok?
-    * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
+    * **Jawab:** `totalNilai` perlu di-reset menjadi 0 pada setiap kelompok agar nilai dari kelompok sebelumnya tidak tercampur dengan kelompok berikutnya. Sedangkan `rataTertinggi` tidak boleh di-reset karena digunakan untuk menyimpan dan membandingkan rata-rata tertinggi dari seluruh kelompok yang telah diproses.
       
 * **Pertanyaan 2:** Untuk 3 kelompok dan 2 penilai (tanpa input yang salah), berapa kali badan perulangan
 FOR dijalankan secara keseluruhan?
     * **Jawab:**
-     Namun, secara logis di dalam blok kode, kondisi berhentinya adalah ketika variabel namaPelanggan bernilai "batal" Ketika kondisi ini terpenuhi, perintah `break;` dieksekusi untuk menghentikan perulangan secara paksa.
+     Badan perulangan FOR dijalankan sebanyak 6 kali. Hal ini karena terdapat 3 kelompok dan setiap kelompok dinilai oleh 2 penilai
 
 * **Pertanyaan 3:**  Apa yang terjadi jika totalNilai dideklarasikan sebagai int dan rata-rata dihitung
 menggunakan pembagian dua bilangan bulat? Berikan contoh nilai.
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+    * **Jawab:** Jika menggunakan tipe data int, hasil pembagian bilangan bulat akan menghilangkan angka di belakang koma. Contohnya, jika total nilai adalah 171 dan jumlah penilai adalah 2, hasil pembagian menjadi `85`, bukan `85,5`.
 
 * **Pertanyaan 4:**  Mengapa rataTertinggi diberi nilai awal -1, bukan 0? Berikan contoh input yang
 membuat hasil salah apabila nilai awalnya 0.
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+    * **Jawab:** Karena nilai awal -1 memastikan bahwa kelompok pertama tetap dapat tercatat sebagai kelompok terbaik, meskipun semua nilai yang diberikan adalah 0. Jika nilai awalnya 0 dan seluruh kelompok mendapatkan rata-rata 0, kondisi `rataNilai > rataTertinggi` tidak akan terpenuhi sehingga kelompok terbaik yang dihasilakan adalah `kelompok : 0`.
 
 * **Pertanyaan 5:**   Program ini memiliki tiga tingkat perulangan. Sebutkan masing-masing jenis perulangan
 beserta perannya.
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
+    * **Jawab:**
+    * While : Untuk menentukan setiap nomor kelompok yang perlu diberi input secara bergantian
+    * For : Untuk menentukan jumlah penilai yang harus menginput dan menjumlahkan nilai dari setiap kelompoknya secara bergantian
+    * Do - While : Digunakan untuk input dan menjumlahkan nilai dan digunakan untuk mengulang input nilai apabila nilai yang dimasukkan tidak sesuai dengan rentang 0 sampai 100.
     
 ## 3: TUGAS MANDIRI
 Kerjakan tugas berikut secara mandiri. Gunakan nested loop, struktur pemilihan jika
