@@ -58,11 +58,13 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika inisialisasi i = 1 diubah menjadi i = 0 tanpa mengubah kondisi, berapa karakter *
 yang tercetak ketika n = 5? Jelaskan.
-    * **Jawab:** INISIALISASI : `int i = 1`, 2. KONDISI : `i <= 10` , 3. UPDATE : `I++`
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
       
 * **Pertanyaan 2:** Jika kondisi i <= n diganti menjadi i < n, berapa kali perulangan dijalankan saat n = 5?
 Mengapa hasilnya berbeda?
-    * **Jawab:** Nilai 0 adalah batas bawah terkecil. Ketika nilai mahasiswa pertama dimasukkan (misal: 75), program membandingkan 75 > 0 (Benar), sehingga variabel tertinggi langsung diperbarui menjadi 75. Nilai 100 adalah batas atas terbesar. Ketika nilai mahasiswa pertama dimasukkan (75), program membandingkan 75 < 100 (Benar), sehingga variabel terendah langsung diperbarui menjadi 75.
+    * **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
+      inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
 
 * **Pertanyaan 3:** Prediksi output potongan kode berikut ketika n = 9, kemudian buktikan dengan
 mengganti perulangan FOR pada program Anda dan menjalankannya.
@@ -74,11 +76,32 @@ for (int i = 2; i <= n; i += 2) {
 }
 
 ```
-Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
-
 * **Jawab:** 
 	Jika tertinggi = 100, tidak ada nilai mahasiswa (rentang 0-100) yang bisa lebih besar dari 100. Akibatnya, kondisi if (nilai > tertinggi) akan selalu salah (false), dan hasil akhir nilai tertinggi akan selalu tetap 100.
 	Jika terendah = 0, tidak ada nilai mahasiswa yang bisa lebih kecil dari 0. Akibatnya, kondisi if (nilai < terendah) akan selalu salah (false), dan hasil akhir nilai terendah akan selalu tetap 0.
+
+Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+
+```
 
 * **Pertanyaan 4:** Jelaskan mengapa perubahan increment i++ menjadi i-- (dengan kondisi tetap i <= n)
 membuat perulangan berjalan terus-menerus dan tidak berhenti dalam waktu wajar
