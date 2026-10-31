@@ -10,8 +10,8 @@ public class Rectangle02 {
         int kolom = sc.nextInt();
 
         for (int b = 1; b <= baris; b++) {
-            for (int k = 1; k <= kolom; k++) {
-                System.out.print("*");
+            for (int j = 1; j <= kolom; j++) {
+                System.out.print("#");
             }
             System.out.println();
         }
