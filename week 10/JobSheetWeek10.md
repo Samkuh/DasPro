@@ -153,7 +153,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 * **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
     * **Jawab:** Fungsi variabel `i` dan `j` digunakan untuk nilai inisiasi pertama pada setiap perulangan nya yaitu outer loop dan inner loop
       
-* **Pertanyaan 2:**Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4
+* **Pertanyaan 2:** Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4
 dan kolom = 7?
     * **Jawab:** Outer loop akan berjalan 4 kali perulangan karena outerloop berjalan untuk menentukan berapa baris yang di input. sedangkan inner loop akan berjalan 7 kali setiap barisnya karena inner loop berjalan untuk menentukan berapa kolom yang di input setiap perulangan yang dilakukan oleh outer loop
       
@@ -248,17 +248,31 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:**  Sebutkan ketidaksesuaian output awal dan minimal dua perbaikan yang diperlukan untuk
 menghasilkan pola segitiga bertingkat.
-    * **Jawab:** Jika nama pelanggan pertama yang dimasukkan adalah "batal", perulangan dilakukan sebanyak 1 kali.
+    * **Jawab:** Ketidaksesuaian output awal adalah semua bintang tercetak dalam satu baris dan terdapat perulangan tambahan yang menghasilkan baris kosong. Perbaikan yang diperlukan yaitu menambahkan System.out.println(); setelah inner loop agar setiap baris berpindah ke baris baru serta mengubah inisialisasi outer loop dari i = 0 menjadi i = 1 agar jumlah baris sesuai dengan nilai n.
       
 * **Pertanyaan 2:** Jelaskan peran variabel i dan j. Mengapa nilai j harus diinisialisasi kembali ke 0 pada
 setiap iterasi outer loop? Apa yang terjadi jika j tidak di-reset?
     * **Jawab:**
-     Namun, secara logis di dalam blok kode, kondisi berhentinya adalah ketika variabel namaPelanggan bernilai "batal" Ketika kondisi ini terpenuhi, perintah `break;` dieksekusi untuk menghentikan perulangan secara paksa.
+     Nilai j harus diinisialisasi kembali ke 0 agar setiap baris dapat mencetak bintang sesuai dengan nilai i. Jika tidak di-reset, perulangan dalam tidak akan berjalan dengan benar karena nilai j sudah mencapai batas sebelumnya.
 
 * **Pertanyaan 3:**  Jelaskan perubahan inisialisasi, kondisi, dan perubahan nilai (update) pada outer loop
 yang diperlukan untuk membentuk segitiga terbalik.
     * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
-
+    * Ini Adalah Kode Program Segitiga Terbalik
+      
+```java
+ i = n;
+        while (i > 0) {
+            int j = 0;
+            while (j < i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            i--;
+        }
+```
+Untuk membuat segitiga terbalik, inisialisasi variabel i diubah menjadi n, kondisi perulangan menjadi i > 0, dan nilai i dikurangi menggunakan i-- setiap kali perulangan selesai
 
 ### 2.4 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
 
