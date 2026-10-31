@@ -76,9 +76,7 @@ for (int i = 2; i <= n; i += 2) {
 }
 
 ```
-* **Jawab:** 
-	Jika tertinggi = 100, tidak ada nilai mahasiswa (rentang 0-100) yang bisa lebih besar dari 100. Akibatnya, kondisi if (nilai > tertinggi) akan selalu salah (false), dan hasil akhir nilai tertinggi akan selalu tetap 100.
-	Jika terendah = 0, tidak ada nilai mahasiswa yang bisa lebih kecil dari 0. Akibatnya, kondisi if (nilai < terendah) akan selalu salah (false), dan hasil akhir nilai terendah akan selalu tetap 0.
+* **Jawab:** Saat kode program tersebut di jalankan dan kita menginput nilai n adalah 9 maka yang akan keluar adalah bilangan genap positif yang tidak melebihi nilai dari pada n itu sendiri. yaitu 2 4 6 8
 
 Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
 * **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
@@ -102,12 +100,13 @@ public class Star02 {
 }
 
 ```
+Kode di atas akan menghasilkan output 1 3 5 7 9 atau bilangan ganjil positif
 
 * **Pertanyaan 4:** Jelaskan mengapa perubahan increment i++ menjadi i-- (dengan kondisi tetap i <= n)
 membuat perulangan berjalan terus-menerus dan tidak berhenti dalam waktu wajar
 untuk n positif. Jangan menjalankan versi tersebut; jika terlanjur berjalan, hentikan
 program dengan menekan Ctrl + C pada terminal.
-* **Jawab:**
+* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
   
 
 ---
