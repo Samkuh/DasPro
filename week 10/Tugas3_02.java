@@ -56,7 +56,7 @@ public class Tugas3_02 {
             System.out.println("\n======= Ringkasan Rekap ===========");
             System.out.print(ringkasanPerToko);
             System.out.println("Total barang seluruh toko: " + totalBarangSeluruhToko);
-            System.out.println("Toko dengan barang terbanyak: " + tokoTerbanyak);    
+            System.out.println("Toko dengan barang terbanyak: Toko Nomor " + tokoTerbanyak);    
             labib.close();
     }
 }

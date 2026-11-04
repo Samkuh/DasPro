@@ -9,7 +9,7 @@ public class NilaiKelompok02 {
         System.out.print("Masukkan jumlah penilai : ");
         double jumlahPenilai = sc.nextInt();
 
-        if (jumlahKelompok <= 0 || jumlahKelompok <= 0) {
+        if (jumlahKelompok <= 0 || jumlahPenilai <= 0) {
             System.out.println("Jumlah kelompok dan penilai harus lebih dari 0");
         } else {
             int nomorKelompok = 1;
@@ -20,7 +20,8 @@ public class NilaiKelompok02 {
                 System.out.println("Kelompok : " + nomorKelompok);
                 int totalNilai = 0;
 
-                for (int i = 1; i <= jumlahPenilai; i++) {
+                int i = 1;
+                while (i <= jumlahPenilai) {
                     int nilai;
                     do {
                         System.out.print(" Nilai dari Penilai " + i + ": ");
@@ -29,6 +30,7 @@ public class NilaiKelompok02 {
                             System.out.println(" Nilai harus bernilai antara 0 sampai 100. Ulangi input");
                         }
                     } while (nilai < 0 || nilai > 100);
+                    i++;
                     totalNilai += nilai;
                 }
 

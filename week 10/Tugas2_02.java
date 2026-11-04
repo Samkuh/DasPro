@@ -11,8 +11,8 @@ public class Tugas2_02 {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
-                System.out.print(i * j + "\t");
                 a = i * j;
+                System.out.print(a + "\t");
                 total += a;
             }
             System.out.println();
