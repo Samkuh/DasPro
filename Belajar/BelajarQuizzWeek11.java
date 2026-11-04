@@ -6,7 +6,7 @@ public class BelajarQuizzWeek11 {
         Scanner sc = new Scanner(System.in);
 
         String nama = "Achmad labib zainullah";
-        int noAbsen = 0;
+        int noAbsen = 2;
         int k = noAbsen % 5;
 
         System.out.println("Nama: " + nama);
@@ -51,7 +51,7 @@ public class BelajarQuizzWeek11 {
                 rataRata = totalOngkirKurir / jumlahPaket;
             }
 
-            System.out.printf(" Total: %.0f | Rata per paket: %.2f\n",totalOngkirKurir, rataRata);
+            System.out.printf(" Total: %.0f | Rata per paket: %.0f\n",totalOngkirKurir, rataRata);
 
             if (totalOngkirKurir > ongkirTertinggi) {
                 ongkirTertinggi = totalOngkirKurir;
