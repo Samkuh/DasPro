@@ -58,6 +58,12 @@ public class Array_Tugas_02_02 {
 
         int totalHarga = 0;
 
+        String daftarPesanan[] = new String[jumlahMenu];
+        int jumlahPesanan[] = new int[jumlahMenu];
+        int subtotalPesanan[] = new int[jumlahMenu];
+
+        int jumlahDataPesanan = 0;
+
         for (int i = 0; i < jumlahMenu; i++) {
             System.out.print("Masukkan Menu Ke-" + (i + 1) + " : ");
             String pesan = sc.nextLine();
@@ -68,10 +74,16 @@ public class Array_Tugas_02_02 {
 
                 if (menu[j].equalsIgnoreCase(pesan)) {
                     System.out.print    ("Masukkan Jumlah Pesanan: ");
-                    int jumlahPesanan = sc.nextInt();
+                    int jumlah = sc.nextInt();
                     sc.nextLine();
-                    System.out.println(menu[j] + " | " + harga[j] + " | " + jumlahPesanan);
-                    totalHarga += harga[j] * jumlahPesanan ;
+
+                    daftarPesanan[jumlahDataPesanan] = menu[j];
+                    jumlahPesanan[jumlahDataPesanan] = jumlah;
+                    subtotalPesanan[jumlahDataPesanan] = harga[j] * jumlah;
+
+                    totalHarga += subtotalPesanan[jumlahDataPesanan];
+                    jumlahDataPesanan++;
+
                     ditemukan = true;
                     break;
                 }
@@ -86,8 +98,17 @@ public class Array_Tugas_02_02 {
         }
 
         System.out.println();
-        System.out.println("==== Total Harga ====");
-        System.out.println("Total Harga: " + totalHarga);
+        System.out.println("==== DAFTAR PESANAN ====");
+
+        for (int i = 0; i < jumlahDataPesanan; i++) {
+            System.out.println("Menu ke- " + (i + 1) + " : " + daftarPesanan[i]);
+            System.out.println("Jumlah Pesanan: " + jumlahPesanan[i]);
+            System.out.println("Total Harga Per Menu : Rp. " + subtotalPesanan[i]);
+            System.out.println();
+        }
+
+        System.out.println("=== TOTAL HARGA ===");
+        System.out.println("Total Harga : Rp." + totalHarga);
         
     }
 }
