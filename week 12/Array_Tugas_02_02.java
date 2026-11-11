@@ -11,14 +11,60 @@ public class Array_Tugas_02_02 {
 
         System.out.println();
         System.out.println("=== DAFTAR MENU ===");
-        System.out.println("Nasi Goreng : 15.000");
-        System.out.println("Mie Goreng : 13.000");
-        System.out.println("Roti Bakar : 10.000");
-        System.out.println("Kentang Goreng : 12.000");
-        System.out.println("Teh Tarik : 8.000");
-        System.out.println("Cappucino : 18.000");
-        System.out.println("Chocolate Ice : 20.000");
+        
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println(menu[i]);
+        }
 
+        System.out.println();
+
+
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println("=== Pencari Menu ===");
+            String pesan = sc.nextLine();
+                if (menu[i].equalsIgnoreCase(pesan)) {
+                    System.out.println(menu[i] + " | " + harga[i]);
+                    break;
+                }
+
+            }
+
+        System.out.print("Masukkan Jumlah Menu Yang Ingin Dipesan: ");
+        int jumlahMenu = sc.nextInt();
+        sc.nextLine();
+
+        int totalHarga = 0;
+
+        for (int i = 0; i < jumlahMenu; i++) {
+            System.out.print("Masukkan Menu Ke-" + (i + 1) + " : ");
+            String pesan = sc.nextLine();
+
+            boolean ditemukan = false;
+
+            for (int j = 0; j < menu.length; j++) {
+
+                if (menu[j].equalsIgnoreCase(pesan)) {
+                    System.out.print    ("Masukkan Jumlah Pesanan: ");
+                    int jumlahPesanan = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println(menu[j] + " | " + harga[j]);
+                    totalHarga += harga[j] * jumlahPesanan ;
+                    ditemukan = true;
+                    break;
+                }
+            }
+
+            if (!ditemukan) {
+                System.out.println("Menu Tidak Tersedia");
+            }
+
+            System.out.println();
+
+        }
+
+        System.out.println();
+        System.out.println("==== Total Harga ====");
+        System.out.println("Total Harga: " + totalHarga);
         
     }
 }
