@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array_Tugas_02_02 {
@@ -12,23 +13,45 @@ public class Array_Tugas_02_02 {
         System.out.println();
         System.out.println("=== DAFTAR MENU ===");
         
-        for (int i = 0; i < menu.length; i++) {
-            System.out.println(menu[i]);
-        }
+        System.out.println(Arrays.toString(menu));
 
         System.out.println();
 
+        String ulang;
 
-        for (int i = 0; i < menu.length; i++) {
-            System.out.println("=== Pencari Menu ===");
-            String pesan = sc.nextLine();
-                if (menu[i].equalsIgnoreCase(pesan)) {
-                    System.out.println(menu[i] + " | " + harga[i]);
+        System.out.println("=== Pesanan Kafe Kampus ===");
+        do {
+            System.out.print("Masukkan Nama Menu Yang Anda Ingin Cari: ");
+            String cari = sc.nextLine();
+
+            boolean ditemukan = false;
+
+            for (int i = 0; i < menu.length; i++) {
+
+                if (menu[i].equalsIgnoreCase(cari)) {
+                    System.out.println("Menu : " + menu[i] + " | " + "Harga: Rp." + harga[i]);
+
+                    ditemukan = true;
                     break;
                 }
-
             }
 
+            if (!ditemukan) {
+                System.out.println("Menu tidak ditemukan");
+            }
+
+            System.out.print("\nApakah anda ingin mencari harga menu lain? ( IYA / TIDAK ): ");
+            ulang = sc.nextLine();
+            if (ulang.equalsIgnoreCase("TIDAK")) {
+                System.out.println("Anda Akan di arahkan ke Menu Pemesanan");
+            }
+
+            System.out.println();
+        } while (ulang.equalsIgnoreCase("IYA"));
+
+        System.out.println();
+
+        System.out.println("=== Menu Pemesanan ===");
         System.out.print("Masukkan Jumlah Menu Yang Ingin Dipesan: ");
         int jumlahMenu = sc.nextInt();
         sc.nextLine();
@@ -47,7 +70,7 @@ public class Array_Tugas_02_02 {
                     System.out.print    ("Masukkan Jumlah Pesanan: ");
                     int jumlahPesanan = sc.nextInt();
                     sc.nextLine();
-                    System.out.println(menu[j] + " | " + harga[j]);
+                    System.out.println(menu[j] + " | " + harga[j] + " | " + jumlahPesanan);
                     totalHarga += harga[j] * jumlahPesanan ;
                     ditemukan = true;
                     break;
