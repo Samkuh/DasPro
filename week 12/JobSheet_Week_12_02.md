@@ -461,18 +461,18 @@ public class Star02 {
  
 ## 3: TUGAS MANDIRI
 
-* **Tugas No 01 Pengelolaan Nilai Mahasiswa**
+## Tugas No 01 Pengelolaan Nilai Mahasiswa
 
 Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
 menyediakan fitur untuk:
-	* • Memasukkan banyaknya nilai mahasiswa yang akan diinput.
-	* • Memasukkan setiap nilai mahasiswa satu per satu.
-	* • Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
-	* • Menampilkan nilai tertinggi dan nilai terendah.
-	* • Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
+ *  Memasukkan banyaknya nilai mahasiswa yang akan diinput.
+ *  Memasukkan setiap nilai mahasiswa satu per satu.
+ *  Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
+ *  Menampilkan nilai tertinggi dan nilai terendah.
+ *  Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
 
 
-* **Tugas No 02 Aplikasi Pemesanan Kafe Kampus**
+## Tugas No 02 Aplikasi Pemesanan Kafe Kampus
 
 Buat program yang dapat mengelola pemesanan makanan dan minuman di kafe kampus. Program
 menyediakan daftar menu yang sudah ditentukan, memungkinkan pengguna memilih menu melalui fitur
