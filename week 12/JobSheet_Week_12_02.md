@@ -336,7 +336,7 @@ public class SearchNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 * **BAGIAN B — Bubble Sort** 
 
@@ -368,7 +368,7 @@ public class SortNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 
 * **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
