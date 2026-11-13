@@ -93,7 +93,7 @@ public class Star02 {
     }
 }
 ```
-    * **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
+* **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
       inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
 
 * **Pertanyaan 3:** Ubah statement penampilan pada langkah ke-4 menjadi seperti berikut: System.out.println("bil[" + i
@@ -120,7 +120,7 @@ public class Star02 {
     }
 }
 ```
-	* **Jawab:** Saat kode program tersebut di jalankan dan kita menginput nilai n adalah 9 maka yang akan keluar adalah bilangan genap 		positif yang tidak melebihi nilai dari pada n itu sendiri. yaitu 2 4 6 8
+* **Jawab:** Saat kode program tersebut di jalankan dan kita menginput nilai n adalah 9 maka yang akan keluar adalah bilangan genap 		positif yang tidak melebihi nilai dari pada n itu sendiri. yaitu 2 4 6 8
 
 * **Pertanyaan 4:** JJika kondisi pada statement for-loop di atas diubah menjadi i <= 4, apa keluaran dari program?
 Mengapa demikian?
