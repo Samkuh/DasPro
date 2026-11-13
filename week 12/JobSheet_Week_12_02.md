@@ -207,7 +207,28 @@ beserta alasannya.
       
 * **Pertanyaan 4:** Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan
 jumlah mahasiswa yang tidak lulus di akhir program.
-    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk 		mengganti baris ke baris yang ada di bawahnya 
+    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk 		mengganti baris ke baris yang ada di bawahnya
+
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+```
 
  
 ### 2.3 Percobaan 3:Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
@@ -265,43 +286,191 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:**  Sebutkan ketidaksesuaian output awal dan minimal dua perbaikan yang diperlukan untuk
-menghasilkan pola segitiga bertingkat.
-    * **Jawab:** Ketidaksesuaian output awal adalah semua bintang tercetak dalam satu baris dan terdapat perulangan tambahan yang menghasilkan baris kosong. Perbaikan yang diperlukan yaitu menambahkan System.out.println(); setelah inner loop agar setiap baris berpindah ke baris baru serta mengubah inisialisasi outer loop dari i = 0 menjadi i = 1 agar jumlah baris sesuai dengan nilai n.
+* **Pertanyaan 1:** Modifikasi kode program di atas agar dapat menampilkan banyaknya mahasiswa yang lulus, yaitu
+mahasiswa yang memiliki nilai lebih besar dari 70 (> 70).
+	 * **Jawab:** Ketidaksesuaian output awal adalah semua bintang tercetak dalam satu baris dan terdapat perulangan tambahan yang 			menghasilkan baris kosong. Perbaikan yang diperlukan yaitu menambahkan System.out.println(); setelah inner loop agar setiap baris  ke 	baris baru serta mengubah inisialisasi outer loop dari i = 0 menjadi i = 1 agar jumlah baris sesuai dengan nilai n.
       
-* **Pertanyaan 2:** Jelaskan peran variabel i dan j. Mengapa nilai j harus diinisialisasi kembali ke 0 pada
-setiap iterasi outer loop? Apa yang terjadi jika j tidak di-reset?
+* **Pertanyaan 2:** Modifikasi program di atas sehingga program menerima jumlah elemen array berdasarkan input dari
+pengguna (tidak selalu 10), lalu tetap dapat menghitung total, rata-rata, nilai tertinggi, dan nilai
+terendah dengan benar.
     * **Jawab:**
-     Nilai j harus diinisialisasi kembali ke 0 agar setiap baris dapat mencetak bintang sesuai dengan nilai i. Jika tidak di-reset, perulangan dalam tidak akan berjalan dengan benar karena nilai j sudah mencapai batas sebelumnya.
+     Nilai j harus diinisialisasi kembali ke 0 agar setiap baris dapat mencetak bintang sesuai dengan nilai i. Jika tidak di-reset, 		perulangan dalam tidak akan berjalan dengan benar karena nilai j sudah mencapai batas sebelumnya.
 
-* **Pertanyaan 3:**  Jelaskan perubahan inisialisasi, kondisi, dan perubahan nilai (update) pada outer loop
-yang diperlukan untuk membentuk segitiga terbalik.
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa batasan jumlah putaran yang kaku.
-    * Ini Adalah Kode Program Segitiga Terbalik
-      
-```java
- i = n;
-        while (i > 0) {
-            int j = 0;
-            while (j < i) {
-                System.out.print("*");
-                j++;
-            }
-            System.out.println();
-            i--;
-        }
-```
-Untuk membuat segitiga terbalik, inisialisasi variabel i diubah menjadi n, kondisi perulangan menjadi i > 0, dan nilai i dikurangi menggunakan i-- setiap kali perulangan selesai
+* **Pertanyaan 3:**  Mengapa pada perhitungan rata-rata digunakan (double) total / nilaiMhs.length, bukan langsung total
+/ nilaiMhs.length? Jelaskan!
+    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan 		kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa 		batasan jumlah putaran yang kaku.
+ 
+### 2.4 Percobaan 4 : Pencarian (Searching) dan Pengurutan (Sorting) Sederhana
 
-### 2.4 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
+Percobaan ini menerapkan algoritma pencarian dan pengurutan sederhana pada data nilai mahasiswa,
+dua kemampuan dasar yang banyak dipakai dalam pengolahan data nyata.
 
-Dalam penilaian proyek kelompok, setiap kelompok memperoleh nilai dari sejumlah penilai.
-Program menerima jumlah kelompok dan jumlah penilai yang sama untuk setiap kelompok,
-kemudian menghitung rata-rata nilai tiap kelompok dan menentukan kelompok dengan ratarata tertinggi. Kasus ini diselesaikan dengan nested loop tanpa perlu menyimpan seluruh nilai:
-WHILE (luar) untuk kelompok, FOR (tengah) untuk penilai, dan DO-WHILE (dalam) untuk
-mengulang input nilai yang tidak valid.
+* **BAGIAN A — Linear Search** 
 
 #### 2.4.1 Kode Program Java
+
+```java
+
+public class SearchNilai_02 {
+
+    public static void main(String[] args) {
+        
+        int[] nilai = {78, 65, 90, 55, 88, 72};
+        int key = 90;
+        boolean ditemukan = false;
+
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i] == key) {
+                System.out.println("Nilai " + key + " ditemukan pada indeks ke- " + i);
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Nilai " + key + " tidak ditemukan. ");
+        }
+    }
+}
+
+```
+
+#### 2.4.2 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+
+* **BAGIAN B — Bubble Sort** 
+
+#### 2.4.1 Kode Program Java
+
+```java
+
+import java.util.Arrays;
+
+public class SortNilai_02 {
+
+    public static void main(String[] args) {
+        
+        int[] nilai = {78, 65, 90, 55, 88, 72};
+        for (int i = 0; i < nilai.length; i++) {
+            for (int j = 0; j < nilai.length - 1 - i; j++) {
+                if (nilai[j] > nilai[j + 1]) {
+                    int temp = nilai[j];
+                    nilai[j] = nilai[j + 1];
+                    nilai[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(nilai));
+    }
+}
+
+```
+
+#### 2.4.2 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+
+
+* **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+
+* **Pertanyaan 2:** Modifikasi kode program Bagian A sehingga program dapat menerima input berupa banyaknya
+elemen array nilai, isi array, dan sebuah nilai (key) yang ingin dicari dari pengguna, lalu mencetak
+indeks posisi elemen dari nilai (key) tersebut.
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+```
+
+* **Pertanyaan 3:** Modifikasi program Bagian A agar menampilkan pesan "Nilai yang dicari tidak ditemukan" dengan
+format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di dalam array.
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+```
+
+* **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data
+ujicoba yang tersedia!
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+
+* **Pertanyaan 5:** Modifikasi program Bagian B agar mengurutkan array dari nilai terbesar ke terkecil (descending),
+bukan dari terkecil ke terbesar.
+    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
+      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+```
+
+
+### 2.5 Tugas 1: Pengelolaan Nilai Mahasiswa
+
+Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
+menyediakan fitur untuk:
+• Memasukkan banyaknya nilai mahasiswa yang akan diinput.
+• Memasukkan setiap nilai mahasiswa satu per satu.
+• Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
+• Menampilkan nilai tertinggi dan nilai terendah.
+• Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
+
+#### 2.5.1 Kode Program Java
 
 ```java
 
