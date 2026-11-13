@@ -336,7 +336,7 @@ public class SearchNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 * **BAGIAN B — Bubble Sort** 
 
@@ -368,7 +368,7 @@ public class SortNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 
 * **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
@@ -461,18 +461,18 @@ public class Star02 {
  
 ## 3: TUGAS MANDIRI
 
-* **Tugas No 01 Pengelolaan Nilai Mahasiswa**
+## Tugas No 01 Pengelolaan Nilai Mahasiswa
 
 Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
 menyediakan fitur untuk:
-	* • Memasukkan banyaknya nilai mahasiswa yang akan diinput.
-	* • Memasukkan setiap nilai mahasiswa satu per satu.
-	* • Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
-	* • Menampilkan nilai tertinggi dan nilai terendah.
-	* • Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
+ *  Memasukkan banyaknya nilai mahasiswa yang akan diinput.
+ *  Memasukkan setiap nilai mahasiswa satu per satu.
+ *  Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
+ *  Menampilkan nilai tertinggi dan nilai terendah.
+ *  Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
 
 
-* **Tugas No 02 Aplikasi Pemesanan Kafe Kampus**
+## Tugas No 02 Aplikasi Pemesanan Kafe Kampus
 
 Buat program yang dapat mengelola pemesanan makanan dan minuman di kafe kampus. Program
 menyediakan daftar menu yang sudah ditentukan, memungkinkan pengguna memilih menu melalui fitur
@@ -680,7 +680,5 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ## 4: KESIMPULAN
 
 * **Kesimpulan**
-Kesimpulan:
-Berdasarkan Jobsheet 8, dapat disimpulkan bahwa perulangan bersarang (nested loop) merupakan perulangan di dalam perulangan yang digunakan untuk membuat pola dan menyelesaikan perhitungan secara berulang. Dengan memahami penggunaan FOR, WHILE, dan DO-WHILE, kita dapat membuat program yang lebih terstruktur, seperti pola bintang, tabel perkalian, serta pengolahan data nilai dan penjualan.
 
-
+Berdasarkan praktikum Jobsheet 9, dapat disimpulkan bahwa array 1 dimensi dalam Java digunakan untuk menyimpan dan mengolah sekumpulan data dengan tipe yang sama. Melalui praktikum ini, mahasiswa mempelajari cara membuat, mengisi, menampilkan, serta mengolah data menggunakan perulangan. Selain itu, array dapat digunakan untuk menghitung total, rata-rata, nilai tertinggi dan terendah, melakukan pencarian (*searching*), serta pengurutan (*sorting*). Dengan demikian, penggunaan array dapat mempermudah pengelolaan data dan membantu menyelesaikan berbagai permasalahan dalam pemrograman.
