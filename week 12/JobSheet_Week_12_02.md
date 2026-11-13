@@ -465,11 +465,11 @@ public class Star02 {
 
 Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
 menyediakan fitur untuk:
-• Memasukkan banyaknya nilai mahasiswa yang akan diinput.
-• Memasukkan setiap nilai mahasiswa satu per satu.
-• Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
-• Menampilkan nilai tertinggi dan nilai terendah.
-• Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
+	* • Memasukkan banyaknya nilai mahasiswa yang akan diinput.
+	* • Memasukkan setiap nilai mahasiswa satu per satu.
+	* • Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
+	* • Menampilkan nilai tertinggi dan nilai terendah.
+	* • Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
 
 
 * **Tugas No 02 Aplikasi Pemesanan Kafe Kampus**
