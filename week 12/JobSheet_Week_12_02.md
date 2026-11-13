@@ -134,34 +134,33 @@ pada langkah ke-5? Kapan sebaiknya masing-masing digunakan?
 
 ---
 
-### 2.2 Percobaan 2: Percobaan 2: Pola Bintang Persegi Panjang (Nested FOR)
+### 2.2 Percobaan 2: Studi Kasus SIAKAD — Input Nilai Mahasiswa dan Status Kelulusan
 
-Pada percobaan ini digunakan nested loop FOR untuk mencetak persegi panjang bintang.
-Jumlah baris dan kolom dimasukkan secara terpisah sehingga peran kedua loop dapat diamati
-dengan jelas: outer loop mengatur baris, sedangkan inner loop mengatur kolom (ingat analogi
-rak/loker pada materi).
+Pada Sistem Informasi Akademik (SIAKAD), dosen perlu menginput nilai akhir mahasiswa dan mengetahui
+status kelulusan masing-masing mahasiswa secara cepat.
+
 #### 2.2.1 Kode Program Java
 
 ```java
 
 import java.util.Scanner;
 
-public class Rectangle02 {
+public class ArrayNilai_02 {
 
     public static void main(String[] args) {
+        
+        int[] nilaiAkhir = new int[10];
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah baris : ");
-        int baris = sc.nextInt();
-        System.out.print("Masukkan jumlah kolom : ");
-        int kolom = sc.nextInt();
 
-        for (int b = 1; b <= baris; b++) {
-            for (int j = 1; j <= kolom; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            System.out.print("Masukkan Nilai Mahasiswa ke- " + (i + 1) + " : ");
+            nilaiAkhir[i] = sc.nextInt();
         }
-        sc.close();
+
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            String status = (nilaiAkhir[i] > 70) ? "Lulus" : "Tidak Lulus";
+            System.out.println("Mahasiswa ke- " + (i + 1) + ": " + nilaiAkhir[i] + " ( " + status + " )");
+        }
     }
 }
 
@@ -173,52 +172,48 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 2](/week%2010/Foto/Ractangle02.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
-    * **Jawab:** Fungsi variabel `i` dan `j` digunakan untuk nilai inisiasi pertama pada setiap perulangan nya yaitu outer loop dan inner loop
+* **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
+    * **Jawab:** Fungsi variabel `i` dan `j` digunakan untuk nilai inisiasi pertama pada setiap perulangan nya yaitu outer loop dan inner 	loop
       
-* **Pertanyaan 2:** Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4
-dan kolom = 7?
-    * **Jawab:** Outer loop akan berjalan 4 kali perulangan karena outerloop berjalan untuk menentukan berapa baris yang di input. sedangkan inner loop akan berjalan 7 kali setiap barisnya karena inner loop berjalan untuk menentukan berapa kolom yang di input setiap perulangan yang dilakukan oleh outer loop
-      
-* **Pertanyaan 3:** Apa yang terjadi jika batas perulangan luar dan dalam ditukar (outer menggunakan
-kolom, inner menggunakan baris)? Gunakan baris = 3 dan kolom = 6 untuk menjelaskan.
-    * **Jawab:** Akan menghasilkan output yang tertukar yang harusnya output menghasilkan nilai baris ini malah menghasilkan nilai kolom ataupun sebaliknya. Output yang dihasilkan dari baris 3 dan kolom 6 adalah menghasilkan baris 6 dan setiap barisnya menghasilkan 3 baris bintang
-      
-* **Pertanyaan 4:** Jelaskan akibat penghapusan System.out.println(); setelah inner loop.
-    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk mengganti baris ke baris yang ada di bawahnya 
-
-* **Pertanyaan 5:** Modifikasi program agar karakter yang dicetak adalah #, lalu commit dan push perubahan
-ke GitHub.
+* **Pertanyaan 2:** Modifikasi program agar hanya menampilkan nilai mahasiswa yang lulus saja (nilai > 70), tanpa
+menampilkan yang tidak lulus. Jelaskan alur programnya!
+    * **Jawab:** Outer loop akan berjalan 4 kali perulangan karena outerloop berjalan untuk menentukan berapa baris yang di input. 			sedangkan inner loop akan berjalan 7 kali setiap barisnya karena inner loop berjalan untuk menentukan berapa kolom yang di input 		setiap perulangan yang dilakukan oleh outer loop
+ 
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
 ```java
+
 import java.util.Scanner;
 
-public class Rectangle02 {
+public class Star02 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah baris : ");
-        int baris = sc.nextInt();
-        System.out.print("Masukkan jumlah kolom : ");
-        int kolom = sc.nextInt();
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
 
-        for (int b = 1; b <= baris; b++) {
-            for (int j = 1; j <= kolom; j++) {
-                System.out.print("#");
-            }
-            System.out.println();
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
         }
+        System.out.println();
         sc.close();
     }
 }
 ```
-program di atas akan menghasilkan output yang sama seperti program aslinya namun outputnya berganti dengan simbol `#`
-	
- 
-### 2.3 Percobaan 3: Debugging Bintang Segitiga – Nested WHILE
+      
+* **Pertanyaan 3:**  Ubah perulangan pada langkah ke-4 dan ke-5 dari for loop menjadi foreach loop. Apakah seluruh
+bagian program dapat diubah menjadi foreach? Jelaskan bagian mana yang bisa dan tidak bisa,
+beserta alasannya.
+    * **Jawab:** Akan menghasilkan output yang tertukar yang harusnya output menghasilkan nilai baris ini malah menghasilkan nilai kolom 	ataupun sebaliknya. Output yang dihasilkan dari baris 3 dan kolom 6 adalah menghasilkan baris 6 dan setiap barisnya menghasilkan 3 		baris bintang
+      
+* **Pertanyaan 4:** Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan
+jumlah mahasiswa yang tidak lulus di akhir program.
+    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk 		mengganti baris ke baris yang ada di bawahnya 
 
-Kode awal pada percobaan ini sengaja dibuat belum menghasilkan format segitiga yang
-benar. Tugas Anda adalah mengidentifikasi kesalahannya dan memperbaikinya tanpa
-mengganti struktur WHILE menjadi FOR. 
+ 
+### 2.3 Percobaan 3:Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
+
+Percobaan ini melanjutkan studi kasus SIAKAD untuk menghasilkan ringkasan nilai mahasiswa,
+sebagaimana biasa ditampilkan pada rekap nilai akhir semester.
 
 #### 2.3.1 Kode Program Java
 
@@ -226,38 +221,39 @@ mengganti struktur WHILE menjadi FOR.
 
 import java.util.Scanner;
 
-public class Triangle02 {
+public class ArrayRataNilai_02 {
 
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n : ");
-        int n = sc.nextInt();
 
-        int i = 0;
-        while (i <= n) {
-            int j = 0;
-            while (j < i) {
-                System.out.print("*");
-                j++;
-            }
-            System.out.println();
-            i++;
+        int[] nilaiMhs = new int[10];
+        int total = 0;
+        double rata2 = 0;
+
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
+            total += nilaiMhs[i];
         }
-        sc.close();
 
         System.out.println();
-        
-        i = n;
-        while (i > 0) {
-            int j = 0;
-            while (j < i) {
-                System.out.print("*");
-                j++;
-            }
-            System.out.println();
-            i--;
+        System.out.println("==============");
+
+        rata2 = (double) total / nilaiMhs.length;
+        System.out.println("Total Nilai: " + total);
+        System.out.println("Rata - rata: " + rata2);
+
+        int tertinggi = nilaiMhs[0];
+        int terendah = nilaiMhs[0];
+
+        for (int i = 1; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > tertinggi) tertinggi = nilaiMhs[i];
+            if (nilaiMhs[i] < terendah) terendah = nilaiMhs[i];
         }
-        sc.close();
+
+        System.out.println("Nilai Tertinggi: " + tertinggi);
+        System.out.println("Nilai Terendah: " + terendah);
     }
 }
 
