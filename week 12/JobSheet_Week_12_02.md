@@ -27,30 +27,34 @@ Berikut adalah tujuan pelaksanaan praktikum pada bab ini:
 
 ## 2: PRAKTIKUM
 
-### 2.1 Percobaan 1:  Review Perulangan 1
-
-
-Percobaan ini mengulang konsep perulangan FOR sebelum mempelajari perulangan
-bersarang. Program menampilkan karakter * sebanyak n kali secara mendatar (ke arah
-samping). Gunakan input n berupa bilangan bulat positif.
+### 2.1 Percobaan 1:  Deklarasi, Inisialisasi, Mengisi, dan Menampilkan Elemen Array
 
 #### 2.1.1 Kode Program Java
 ```java
 
 import java.util.Scanner;
+import  java.util.Arrays;
 
-public class Star02 {
+public class ArrayBilangan_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
+        
+        int[] bil = new int[4];
 
-        for (int i = 1; i <= n; i++) {
-            System.out.print("*");
+        bil [0] = 5;
+        bil [1] = 13;
+        bil [2] = -7;
+        bil [3] = 17;
+
+        for (int i = 0; i < bil.length; i++) {
+            System.out.println("Bil [ " + i + " ] = " + bil[i]);
         }
-        System.out.println();
-        sc.close();
+
+        for (int nilai : bil) {
+            System.out.println(nilai);
+        }
+
+        System.out.println(Arrays.toString(bil));
     }
 }
 ```
@@ -61,29 +65,14 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 1](/week%2010/Foto/Star02.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Jika inisialisasi i = 1 diubah menjadi i = 0 tanpa mengubah kondisi, berapa karakter *
-yang tercetak ketika n = 5? Jelaskan.
+* **Pertanyaan 1:** Jika isi masing-masing elemen array bil diubah dengan angka 5.0, 12867, 7.5, 2000000, apa yang
+terjadi? Mengapa bisa demikian?
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
       
-* **Pertanyaan 2:** Jika kondisi i <= n diganti menjadi i < n, berapa kali perulangan dijalankan saat n = 5?
-Mengapa hasilnya berbeda?
-    * **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
-      inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
+* **Pertanyaan 2:** Modifikasi kode program di atas dengan melakukan inisialisasi elemen array sekaligus pada saat
+deklarasi array (tanpa new int[4] dan pengisian satu per satu).
 
-* **Pertanyaan 3:** Prediksi output potongan kode berikut ketika n = 9, kemudian buktikan dengan
-mengganti perulangan FOR pada program Anda dan menjalankannya.
-
-```java
-
-for (int i = 2; i <= n; i += 2) {
- System.out.print(i + " ");
-}
-
-```
-* **Jawab:** Saat kode program tersebut di jalankan dan kita menginput nilai n adalah 9 maka yang akan keluar adalah bilangan genap positif yang tidak melebihi nilai dari pada n itu sendiri. yaitu 2 4 6 8
-
-Modifikasi kode tersebut agar mencetak bilangan ganjil positif yang tidak melebihi n.
 * **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
 ```java
 
@@ -103,15 +92,43 @@ public class Star02 {
         sc.close();
     }
 }
-
 ```
-Kode di atas akan menghasilkan output 1 3 5 7 9 atau bilangan ganjil positif
+    * **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
+      inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
 
-* **Pertanyaan 4:** Jelaskan mengapa perubahan increment i++ menjadi i-- (dengan kondisi tetap i <= n)
-membuat perulangan berjalan terus-menerus dan tidak berhenti dalam waktu wajar
-untuk n positif. Jangan menjalankan versi tersebut; jika terlanjur berjalan, hentikan
-program dengan menekan Ctrl + C pada terminal.
-* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
+* **Pertanyaan 3:** Ubah statement penampilan pada langkah ke-4 menjadi seperti berikut: System.out.println("bil[" + i
++ "] = " + bil[i] + ", double = " + (bil[i] * 2)); Apa keluaran dari program? Jelaskan maksud dari statement
+tersebut.
+
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class Star02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n = ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+```
+	* **Jawab:** Saat kode program tersebut di jalankan dan kita menginput nilai n adalah 9 maka yang akan keluar adalah bilangan genap 		positif yang tidak melebihi nilai dari pada n itu sendiri. yaitu 2 4 6 8
+
+* **Pertanyaan 4:** JJika kondisi pada statement for-loop di atas diubah menjadi i <= 4, apa keluaran dari program?
+Mengapa demikian?
+	* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus 			dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
+
+* **Pertanyaan 5:**  Apa perbedaan antara menampilkan array menggunakan for loop, foreach loop, dan Arrays.toString()
+pada langkah ke-5? Kapan sebaiknya masing-masing digunakan?
+	* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus 			dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
   
 
 ---
