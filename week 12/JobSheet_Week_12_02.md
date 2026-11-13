@@ -1,4 +1,4 @@
-# JOBSHEET 8 WEEK 10- PERULANGAN 02
+# JOBSHEET 9 WEEK 12 - Array 1 Dimensi
 
 **Identitas Mahasiswa:**
 * **Nama:** [ Achmad Labib Zainullah ]
@@ -11,11 +11,16 @@
 
 Berikut adalah tujuan pelaksanaan praktikum pada bab ini:
 
- * Memahami konsep perulangan bersarang pada algoritma
- * Memahami alur perulangan bersarang
- * Mengenal sintaks perulangan bersarang
- * Mampu menerapkan perulangan bersarang untuk menyelesaikan studi kasus
-sederhana.
+ * Mahasiswa mampu memahami konsep array 1 dimensi serta cara mendeklarasikan, menginisialisasi,
+   dan mengakses elemennya dalam bahasa pemrograman Java.
+ * Mahasiswa mampu membuat program yang memanfaatkan array 1 dimensi untuk menyimpan dan
+   mengolah data, termasuk menggunakan perulangan for dan foreach.
+ * Mahasiswa mampu menerapkan operasi aritmatika pada elemen array, seperti menghitung total,
+   rata-rata, nilai tertinggi, dan nilai terendah.
+ * Mahasiswa mampu menerapkan algoritma pencarian (searching) dan pengurutan (sorting) sederhana
+   pada array 1 dimensi.
+ * Mahasiswa mampu menerapkan array 1 dimensi untuk menyelesaikan studi kasus yang relevan
+   dengan kehidupan kampus dan sehari-hari.
 
 
 ---
