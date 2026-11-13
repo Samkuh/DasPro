@@ -680,7 +680,5 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ## 4: KESIMPULAN
 
 * **Kesimpulan**
-Kesimpulan:
-Berdasarkan Jobsheet 8, dapat disimpulkan bahwa perulangan bersarang (nested loop) merupakan perulangan di dalam perulangan yang digunakan untuk membuat pola dan menyelesaikan perhitungan secara berulang. Dengan memahami penggunaan FOR, WHILE, dan DO-WHILE, kita dapat membuat program yang lebih terstruktur, seperti pola bintang, tabel perkalian, serta pengolahan data nilai dan penjualan.
 
-
+Berdasarkan praktikum Jobsheet 9, dapat disimpulkan bahwa array 1 dimensi dalam Java digunakan untuk menyimpan dan mengolah sekumpulan data dengan tipe yang sama. Melalui praktikum ini, mahasiswa mempelajari cara membuat, mengisi, menampilkan, serta mengolah data menggunakan perulangan. Selain itu, array dapat digunakan untuk menghitung total, rata-rata, nilai tertinggi dan terendah, melakukan pencarian (*searching*), serta pengurutan (*sorting*). Dengan demikian, penggunaan array dapat mempermudah pengelolaan data dan membantu menyelesaikan berbagai permasalahan dalam pemrograman.
