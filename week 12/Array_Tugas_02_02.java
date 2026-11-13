@@ -1,5 +1,5 @@
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Arrays;;
 
 public class Array_Tugas_02_02 {
 
@@ -19,7 +19,7 @@ public class Array_Tugas_02_02 {
 
         String ulang;
 
-        System.out.println("=== Pesanan Kafe Kampus ===");
+        System.out.println("=== Search Menu Kafe Kampus ===");
         do {
             System.out.print("Masukkan Nama Menu Yang Anda Ingin Cari: ");
             String cari = sc.nextLine();
@@ -43,7 +43,8 @@ public class Array_Tugas_02_02 {
             System.out.print("\nApakah anda ingin mencari harga menu lain? ( IYA / TIDAK ): ");
             ulang = sc.nextLine();
             if (ulang.equalsIgnoreCase("TIDAK")) {
-                System.out.println("Anda Akan di arahkan ke Menu Pemesanan");
+                System.out.println();
+                System.out.println("Anda Akan di arahkan ke Menu Pemesanan. Silahkan Memesan Menu ");
             }
 
             System.out.println();
@@ -79,10 +80,11 @@ public class Array_Tugas_02_02 {
 
                     daftarPesanan[jumlahDataPesanan] = menu[j];
                     jumlahPesanan[jumlahDataPesanan] = jumlah;
-                    subtotalPesanan[jumlahDataPesanan] = harga[j] * jumlah;
+                    subtotalPesanan[jumlahDataPesanan] = harga[jumlahDataPesanan] * jumlah;
 
                     totalHarga += subtotalPesanan[jumlahDataPesanan];
                     jumlahDataPesanan++;
+                    
 
                     ditemukan = true;
                     break;
