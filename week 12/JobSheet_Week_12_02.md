@@ -487,29 +487,50 @@ pencarian, mencatat pesanan, serta menghitung total biaya.
 
 import java.util.Scanner;
 
-public class Tugas1_02 {
+public class Array_Tugas_01_02 {
 
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n : ");
-        int n = sc.nextInt();
 
-        int i = 0;
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        int jumlahMhs = sc.nextInt();
+        int mahasiswa[] = new int[jumlahMhs];
+
         int total = 0;
-        while (i <= n) {
-            int j = 0;
-            int k = 1;
-            while (j < i) {
-                System.out.print(k + " ");
-                j++;
-                k++;
-            }
-        total += i;
-        i++;
-        System.out.println();
+        double rata2 = 0;
+
+        for (int i = 0; i < mahasiswa.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + ": ");
+            mahasiswa[i] = sc.nextInt();
+            total += mahasiswa[i];
         }
-        System.out.println("Total Angka tercetak : " + total);
-        sc.close();
+
+        System.out.println();
+        System.out.println("=========");
+
+        rata2 = (double) total /  jumlahMhs;
+        System.out.println("Total Nilai: " + total);
+        System.out.println("Rata - Rata Nilai: " + rata2);
+
+        int tertinggi = mahasiswa[0];
+        int terendah = mahasiswa[0];
+
+        for (int i = 0; i < jumlahMhs; i++) {
+            if (mahasiswa[i] > tertinggi) tertinggi = mahasiswa[i];
+            if (mahasiswa[i] < terendah) terendah = mahasiswa[i];
+        }
+
+        System.out.println("Nilai Tertinggi: " + tertinggi);
+        System.out.println("Nilai Terendah: " + terendah);
+
+        System.out.println();
+        System.out.println("==========");
+
+        for (int i = 0; i < jumlahMhs; i++) {
+            String status = (mahasiswa[i] > 70) ? "Lulus" : "Tidak Lulus";
+            System.out.println("Mahasiswa ke- " + (i + 1) + ": " + mahasiswa[i] + " ( " + status + " )");
+        }
     }
 }
   
@@ -520,101 +541,125 @@ public class Tugas1_02 {
 ```java
 
 import java.util.Scanner;
+import java.util.Arrays;;
 
-public class Tugas2_02 {
+public class Array_Tugas_02_02 {
 
     public static void main(String[] args) {
+        
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah n : ");
-        int n = sc.nextInt();
-        int total = 0;
-        int a = 0;
 
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                System.out.print(i * j + "\t");
-                a = i * j;
-                total += a;
+        String[] menu = {"Nasi Goreng", "Mie Goreng", "Roti Bakar", "Kentang Goreng", "Teh Tarik", "Cappucino", "Chocolate Ice"};
+        int[] harga = {15000, 13000, 10000, 12000, 8000, 18000, 20000};
+
+        System.out.println();
+        System.out.println("=== DAFTAR MENU ===");
+        
+        System.out.println(Arrays.toString(menu));
+
+        System.out.println();
+
+        String ulang;
+
+        System.out.println("=== Search Menu Kafe Kampus ===");
+        do {
+            System.out.print("Masukkan Nama Menu Yang Anda Ingin Cari: ");
+            String cari = sc.nextLine();
+
+            boolean ditemukan = false;
+
+            for (int i = 0; i < menu.length; i++) {
+
+                if (menu[i].equalsIgnoreCase(cari)) {
+                    System.out.println("Menu : " + menu[i] + " | " + "Harga: Rp." + harga[i]);
+
+                    ditemukan = true;
+                    break;
+                }
             }
+
+            if (!ditemukan) {
+                System.out.println("Menu tidak ditemukan");
+            }
+
+            System.out.print("\nApakah anda ingin mencari harga menu lain? ( IYA / TIDAK ): ");
+            ulang = sc.nextLine();
+            if (ulang.equalsIgnoreCase("TIDAK")) {
+                System.out.println();
+                System.out.println("Anda Akan di arahkan ke Menu Pemesanan. Silahkan Memesan Menu ");
+            }
+
+            System.out.println();
+        } while (ulang.equalsIgnoreCase("IYA"));
+
+        System.out.println();
+
+        System.out.println("=== Menu Pemesanan ===");
+        System.out.print("Masukkan Jumlah Menu Yang Ingin Dipesan: ");
+        int jumlahMenu = sc.nextInt();
+        sc.nextLine();
+
+        int totalHarga = 0;
+
+        String daftarPesanan[] = new String[jumlahMenu];
+        int jumlahPesanan[] = new int[jumlahMenu];
+        int subtotalPesanan[] = new int[jumlahMenu];
+
+        int jumlahDataPesanan = 0;
+
+        for (int i = 0; i < jumlahMenu; i++) {
+            System.out.print("Masukkan Menu Ke-" + (i + 1) + " : ");
+            String pesan = sc.nextLine();
+
+            boolean ditemukan = false;
+
+            for (int j = 0; j < menu.length; j++) {
+
+                if (menu[j].equalsIgnoreCase(pesan)) {
+                    System.out.print    ("Masukkan Jumlah Pesanan: ");
+                    int jumlah = sc.nextInt();
+                    sc.nextLine();
+
+                    daftarPesanan[jumlahDataPesanan] = menu[j];
+                    jumlahPesanan[jumlahDataPesanan] = jumlah;
+                    subtotalPesanan[jumlahDataPesanan] = harga[jumlahDataPesanan] * jumlah;
+
+                    totalHarga += subtotalPesanan[jumlahDataPesanan];
+                    jumlahDataPesanan++;
+                    
+
+                    ditemukan = true;
+                    break;
+                }
+            }
+
+            if (!ditemukan) {
+                System.out.println("Menu Tidak Tersedia");
+            }
+
+            System.out.println();
+
+        }
+
+        System.out.println();
+        System.out.println("==== DAFTAR PESANAN ====");
+
+        for (int i = 0; i < jumlahDataPesanan; i++) {
+            System.out.println("Menu ke- " + (i + 1) + " : " + daftarPesanan[i]);
+            System.out.println("Jumlah Pesanan: " + jumlahPesanan[i]);
+            System.out.println("Total Harga Per Menu : Rp. " + subtotalPesanan[i]);
             System.out.println();
         }
-        System.out.println("Jumlah seluruh angka : " + total);
-        sc.close();
-    }
-}
 
-```
-
-
-* **Kode Program No 03**
-
-```java
-
-import java.util.Scanner;
-
-public class Tugas3_02 {
-
-    public static void main(String[] args) {
-        Scanner labib = new Scanner(System.in);
+        System.out.println("=== TOTAL HARGA ===");
+        System.out.println("Total Harga : Rp." + totalHarga);
         
-        int jumlahToko;
-        do {
-            System.out.print("Masukkan jumlah toko (minimal 1) : ");
-            jumlahToko = labib.nextInt();
-            if (jumlahToko < 1) {
-                System.out.println("Jumlah toko tidak boleh kurang dari 1. Ulangi ");
-            }
-        } while (jumlahToko < 1);
-
-        int totalBarangSeluruhToko = 0;
-        int tokoTerbanyak = 0;
-        int barangTerbanyak = -1;
-
-        String ringkasanPerToko = "";
-
-        for (int i = 1; i <= jumlahToko; i++) {
-            System.out.println("\n--- Data Toko " + i + " ---");
-            int jumlahPelanggan;
-            do {
-                System.out.print("Masukkan jumlah pelanggan untuk Toko " + i + " : ");
-                jumlahPelanggan = labib.nextInt();
-                if (jumlahPelanggan < 0) {
-                    System.out.println("Jumlah pelanggan tidak boleh negatif. Ulangi");
-                }
-            } while (jumlahPelanggan < 0);
-
-            int totalBarangTokoIni = 0;
-
-            for (int j = 1; j <= jumlahPelanggan; j++) {
-                int jumlahBarang;
-                do {
-                    System.out.print(" Jumlah barang pelanggan ke- " + j + " : ");
-                    jumlahBarang = labib.nextInt();
-                    if (jumlahBarang < 0) {
-                        System.out.println( " jumlah barang tidak boleh negatif. Ulangi");
-                    }
-                } while (jumlahBarang < 0);
-                totalBarangTokoIni += jumlahBarang;
-            }
-
-            ringkasanPerToko += "Toko " + i + " - pelanggan: " + jumlahPelanggan + " - total barang: " + totalBarangTokoIni + "\n";
-            totalBarangSeluruhToko += totalBarangTokoIni;
-
-            if (totalBarangTokoIni > barangTerbanyak) {
-                barangTerbanyak = totalBarangTokoIni;
-                tokoTerbanyak = i;
-            }
-        }
-            System.out.println("\n======= Ringkasan Rekap ===========");
-            System.out.print(ringkasanPerToko);
-            System.out.println("Total barang seluruh toko: " + totalBarangSeluruhToko);
-            System.out.println("Toko dengan barang terbanyak: " + tokoTerbanyak);    
-            labib.close();
     }
 }
 
-
 ```
+
+
 #### 3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
@@ -626,9 +671,6 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
   
 ![Gambar Output Percobaan 2 Tugas Mandiri](/week%2010/Foto/Tugas_02.PNG)
 
-* **Hasil Kode Program Nomor 03**
-  
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%2010/Foto/Tugas_03.PNG)
 
 ## 4: KESIMPULAN
 
