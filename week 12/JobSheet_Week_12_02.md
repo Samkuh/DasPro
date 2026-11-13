@@ -62,7 +62,7 @@ public class ArrayBilangan_02 {
 #### 2.1.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2010/Foto/Star02.PNG)
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika isi masing-masing elemen array bil diubah dengan angka 5.0, 12867, 7.5, 2000000, apa yang
@@ -169,7 +169,7 @@ public class ArrayNilai_02 {
 #### 2.2.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 2](/week%2010/Foto/Ractangle02.PNG)
+![Gambar Output Percobaan 2](/week%2012/Foto/Array_Nilai.PNG)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
@@ -283,7 +283,7 @@ public class ArrayRataNilai_02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%2010/Foto/Triangle02.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai.PNG)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Modifikasi kode program di atas agar dapat menampilkan banyaknya mahasiswa yang lulus, yaitu
@@ -665,11 +665,15 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 * **Hasil Kode Program Nomor 01**
 
-![Gambar Output Percobaan 1 Tugas Mandiri](/week%2010/Foto/Tugas_01.PNG)
+![Gambar Output Percobaan 1 Tugas Mandiri](/week%2012/Foto/Array_Tugas_01.PNG)
 
-* **Hasil Kode Program Nomor 02**
+* **Hasil Kode Program Nomor 02 Bagian 01**
   
-![Gambar Output Percobaan 2 Tugas Mandiri](/week%2010/Foto/Tugas_02.PNG)
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%2012/Foto/Array_Tugas_02_01.PNG)
+
+* **Hasil Kode Program Nomor 02 Bagian 02**
+  
+![Gambar Output Percobaan 2 Tugas Mandiri](/week%2012/Foto/Array_Tugas_02_02.PNG)
 
 
 
