@@ -458,9 +458,10 @@ public class Star02 {
     }
 }
 ```
+ 
+## 3: TUGAS MANDIRI
 
-
-### 2.5 Tugas 1: Pengelolaan Nilai Mahasiswa
+* **Tugas No 01 Pengelolaan Nilai Mahasiswa**
 
 Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
 menyediakan fitur untuk:
@@ -470,123 +471,12 @@ menyediakan fitur untuk:
 • Menampilkan nilai tertinggi dan nilai terendah.
 • Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
 
-#### 2.5.1 Kode Program Java
 
-```java
+* **Tugas No 02 Aplikasi Pemesanan Kafe Kampus**
 
-import java.util.Scanner;
-
-public class NilaiKelompok02 {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah kelompok : ");
-        int jumlahKelompok = sc.nextInt();
-        System.out.print("Masukkan jumlah penilai : ");
-        int jumlahPenilai = sc.nextInt();
-
-        if (jumlahKelompok <= 0 || jumlahKelompok <= 0) {
-            System.out.println("Jumlah kelompok dan penilai harus lebih dari 0");
-        } else {
-            int nomorKelompok = 1;
-            double rataTertinggi = -1;
-            int kelompokTerbaik = 0;
-
-            while (nomorKelompok <= jumlahKelompok) {
-                System.out.println("Kelompok : " + nomorKelompok);
-                double totalNilai = 0;
-
-                for (int i = 1; i <= jumlahPenilai; i++) {
-                    int nilai;
-                    do {
-                        System.out.print(" Nilai dari Penilai " + i + ": ");
-                        nilai = sc.nextInt();
-                        if (nilai < 0 || nilai > 100) {
-                            System.out.println(" Nilai harus bernilai antara 0 sampai 100. Ulangi input");
-                        }
-                    } while (nilai < 0 || nilai > 100);
-                    totalNilai += nilai;
-                }
-
-                double rataNilai = totalNilai / jumlahPenilai;
-                System.out.println("Kelompok " + nomorKelompok + ": nilai rata - rata = " + rataNilai);
-
-                if (rataNilai > rataTertinggi) {
-                   rataTertinggi = rataNilai;
-                   kelompokTerbaik = nomorKelompok;
-                }
-                nomorKelompok++;
-            }
-                System.out.println("=============");
-                System.out.println("Kelompok terbaik : " + kelompokTerbaik);
-                System.out.println("Rata rata tertinggi : " + rataTertinggi);
-        }
-        sc.close();
-    }
-}
-
-```
-
-#### 2.4.2 Hasil Running / Screenshot Output
-Berikut adalah contoh tampilan *output* setelah program dijalankan:
-
-![Gambar Output Percobaan 3](/week%2010/Foto/NilaiKelompok02.PNG)
-
-#### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:**  Mengapa totalNilai perlu di-reset di dalam outer loop, tetapi rataTertinggi tidak
-boleh di-reset pada setiap kelompok?
-    * **Jawab:** `totalNilai` perlu di-reset menjadi 0 pada setiap kelompok agar nilai dari kelompok sebelumnya tidak tercampur dengan kelompok berikutnya. Sedangkan `rataTertinggi` tidak boleh di-reset karena digunakan untuk menyimpan dan membandingkan rata-rata tertinggi dari seluruh kelompok yang telah diproses.
-      
-* **Pertanyaan 2:** Untuk 3 kelompok dan 2 penilai (tanpa input yang salah), berapa kali badan perulangan
-FOR dijalankan secara keseluruhan?
-    * **Jawab:**
-     Badan perulangan FOR dijalankan sebanyak 6 kali. Hal ini karena terdapat 3 kelompok dan setiap kelompok dinilai oleh 2 penilai
-
-* **Pertanyaan 3:**  Apa yang terjadi jika totalNilai dideklarasikan sebagai int dan rata-rata dihitung
-menggunakan pembagian dua bilangan bulat? Berikan contoh nilai.
-    * **Jawab:** Jika menggunakan tipe data int, hasil pembagian bilangan bulat akan menghilangkan angka di belakang koma. Contohnya, jika total nilai adalah 171 dan jumlah penilai adalah 2, hasil pembagian menjadi `85`, bukan `85,5`.
-
-* **Pertanyaan 4:**  Mengapa rataTertinggi diberi nilai awal -1, bukan 0? Berikan contoh input yang
-membuat hasil salah apabila nilai awalnya 0.
-    * **Jawab:** Karena nilai awal -1 memastikan bahwa kelompok pertama tetap dapat tercatat sebagai kelompok terbaik, meskipun semua nilai yang diberikan adalah 0. Jika nilai awalnya 0 dan seluruh kelompok mendapatkan rata-rata 0, kondisi `rataNilai > rataTertinggi` tidak akan terpenuhi sehingga kelompok terbaik yang dihasilakan adalah `kelompok : 0`.
-
-* **Pertanyaan 5:**   Program ini memiliki tiga tingkat perulangan. Sebutkan masing-masing jenis perulangan
-beserta perannya.
-    * **Jawab:**
-    * While : Untuk menentukan setiap nomor kelompok yang perlu diberi input secara bergantian
-    * For : Untuk menentukan jumlah penilai yang harus menginput dan menjumlahkan nilai dari setiap kelompoknya secara bergantian
-    * Do - While : Digunakan untuk input dan menjumlahkan nilai dan digunakan untuk mengulang input nilai apabila nilai yang dimasukkan tidak sesuai dengan rentang 0 sampai 100.
-    
-## 3: TUGAS MANDIRI
-Kerjakan tugas berikut secara mandiri. Gunakan nested loop, struktur pemilihan jika
-diperlukan, dan cukup gunakan variabel biasa (variabel penampung dan penghitung) untuk
-menyimpan hasil perhitungan. Buat file terpisah untuk setiap tugas. Commit dan push seluruh
-file ke repository daspro-jobsheet8 di GitHub.
-
-* **Tugas No 01 Pola Bilangan Bertingkat** Buat program untuk mencetak pola bilangan 1 sampai nomor baris. Masukkan bilangan bulat
-n (n minimal 1). Pada baris pertama tercetak 1, pada baris kedua 1 2, dan seterusnya sampai
-baris ke-n. Setelah pola selesai, tampilkan total banyaknya angka yang telah dicetak. Simpan
-dengan nama file: Tugas1NoAbsen.java.
-Contoh untuk n = 5:
-
-
-* **Tugas No 02 Tabel Perkalian** Buat program untuk menampilkan tabel perkalian berukuran n × n menggunakan nested FOR
-atau WHILE. Nilai n minimal 3. Setiap posisi menampilkan hasil perkalian nomor baris dan
-nomor kolom. Atur spasi agar keluaran rapi, lalu tampilkan jumlah seluruh angka pada tabel.
-Simpan program dengan nama file: Tugas2NoAbsen.java.
-
-
-* **Tugas No 03 Rekap Penjualan Beberapa Toko** Sebuah pusat perbelanjaan memiliki beberapa toko. Setiap toko melayani sejumlah
-pelanggan pada hari yang sama, dan setiap pelanggan membeli beberapa barang. Program
-meminta jumlah toko, kemudian jumlah pelanggan pada masing-masing toko, dan jumlah
-barang yang dibeli setiap pelanggan. Hitung dan tampilkan total pelanggan serta total barang
-per toko, total barang seluruh toko, dan nomor toko dengan jumlah barang terbanyak. Jika
-terdapat nilai tertinggi yang sama, tampilkan toko dengan nomor paling kecil. Simpan
-program dengan nama file: Tugas3NoAbsen.java.
-
-Ketentuan: jumlah toko minimal 1; jumlah pelanggan dan jumlah barang setiap pelanggan
-boleh 0, tetapi tidak boleh negatif. Gunakan perulangan bersarang; data tidak perlu disimpan
-satu per satu, cukup diakumulasikan ke variabel total.
+Buat program yang dapat mengelola pemesanan makanan dan minuman di kafe kampus. Program
+menyediakan daftar menu yang sudah ditentukan, memungkinkan pengguna memilih menu melalui fitur
+pencarian, mencatat pesanan, serta menghitung total biaya.
 
 
 ### 3.1 Implementasi Kode Tugas
