@@ -75,7 +75,7 @@ deklarasi array (tanpa new int[4] dan pengisian satu per satu).
 	* **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
       inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -106,7 +106,7 @@ tersebut.
 	* **Jawab:** Statment tersebut bertujuan untuk menampilkan nilai nilai yang ada di setiap indeks Array untuk di kali dua.
 	dan menampilkannya dengan output double sama dengan nilai setiap indeks di kali dua
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -196,8 +196,8 @@ menampilkan yang tidak lulus. Jelaskan alur programnya!
     * **Jawab:** Saya hanya mengubah pada loop for yang kedua yang awalnya memerintahkan output untuk menampilkan staus mahasiswa yang
       lulus dan tidak lulus, saya ubah menjadi ada `if` di dalam perulangannya yang digunakan untuk memilih nilai yang lebih dari 70
       dan menampilkannya, untuk nilai yang di bawah atau sama dengan 70 tidak akan ditampilkan pada program.
- 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+      
+ * **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -234,7 +234,7 @@ beserta alasannya.
       tidak bisa menggunakan for-each, dan untuk yang bisa menggunakan for-each adalah perulangan yang digunakan untuk menampilkan
       status mahasiswa lulus atau tidak lulus
  
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -264,7 +264,7 @@ public class ArrayNilai_02 {
 * **Pertanyaan 4:** Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan
 jumlah mahasiswa yang tidak lulus di akhir program.
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -308,7 +308,7 @@ public class ArrayNilai_02 {
 ```
 
 #### 2.2.5 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Nilai_No_04.PNG)
 
  
 ### 2.3 Percobaan 3:Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
@@ -368,17 +368,143 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Modifikasi kode program di atas agar dapat menampilkan banyaknya mahasiswa yang lulus, yaitu
 mahasiswa yang memiliki nilai lebih besar dari 70 (> 70).
-	 * **Jawab:** Ketidaksesuaian output awal adalah semua bintang tercetak dalam satu baris dan terdapat perulangan tambahan yang 			menghasilkan baris kosong. Perbaikan yang diperlukan yaitu menambahkan System.out.println(); setelah inner loop agar setiap baris  ke 	baris baru serta mengubah inisialisasi outer loop dari i = 0 menjadi i = 1 agar jumlah baris sesuai dengan nilai n.
+
+* **JAWAB : Setelah Modifikasi**
+```java
+
+import java.util.Scanner;
+
+public class ArrayRataNilai_02 {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int[] nilaiMhs = new int[10];
+        int total = 0;
+        double rata2 = 0;
+
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
+            total += nilaiMhs[i];
+        }
+
+        int lulus = 0;
+        System.out.println();
+        System.out.println("=== MAHASISWA LULUS ===");
+        System.out.println();
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > 70) {
+                System.out.println("Mahasiswa ke- : " + (i + 1) + " | " + nilaiMhs[i] + " | LULUS");
+                lulus++;
+            }
+        }
+        System.out.println("JUMLAH LULUS: " + lulus);
+        
+
+        System.out.println();
+        System.out.println("=== TOTAL DAN RATA-RATA");
+        System.out.println();
+
+        rata2 = (double) total / nilaiMhs.length;
+        System.out.println("Total Nilai: " + total);
+        System.out.println("Rata - rata: " + rata2);
+
+        int tertinggi = nilaiMhs[0];
+        int terendah = nilaiMhs[0];
+
+        for (int i = 1; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > tertinggi) tertinggi = nilaiMhs[i];
+            if (nilaiMhs[i] < terendah) terendah = nilaiMhs[i];
+        }
+
+        System.out.println();
+        System.out.println("=== TERTINGGI DAN TERENDAH ===");
+        System.out.println();
+
+        System.out.println("Nilai Tertinggi: " + tertinggi);
+        System.out.println("Nilai Terendah: " + terendah);
+    }
+}
+```
+
+#### 2.3.2 Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai.PNG)
+
       
 * **Pertanyaan 2:** Modifikasi program di atas sehingga program menerima jumlah elemen array berdasarkan input dari
 pengguna (tidak selalu 10), lalu tetap dapat menghitung total, rata-rata, nilai tertinggi, dan nilai
 terendah dengan benar.
-    * **Jawab:**
-     Nilai j harus diinisialisasi kembali ke 0 agar setiap baris dapat mencetak bintang sesuai dengan nilai i. Jika tidak di-reset, 		perulangan dalam tidak akan berjalan dengan benar karena nilai j sudah mencapai batas sebelumnya.
+
+* **JAWAB : Setelah Modifikasi**
+```java
+
+import java.util.Scanner;
+
+public class ArrayRataNilai_02 {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        int jmlMhs = sc.nextInt();
+
+        System.out.println();
+        System.out.println("=== NILAI MAHASISWA ===");
+
+        int[] nilaiMhs = new int[jmlMhs];
+        int total = 0;
+        double rata2 = 0;
+
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke- " + (i + 1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
+            total += nilaiMhs[i];
+        }
+
+        System.out.println();
+        System.out.println("=== TOTAL DAN RATA-RATA");
+        System.out.println();
+
+        rata2 = (double) total / nilaiMhs.length;
+        System.out.println("Total Nilai: " + total);
+        System.out.println("Rata - rata: " + rata2);
+
+        int tertinggi = nilaiMhs[0];
+        int terendah = nilaiMhs[0];
+
+        for (int i = 1; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > tertinggi) tertinggi = nilaiMhs[i];
+            if (nilaiMhs[i] < terendah) terendah = nilaiMhs[i];
+        }
+
+        System.out.println();
+        System.out.println("=== TERTINGGI DAN TERENDAH ===");
+        System.out.println();
+
+        System.out.println("Nilai Tertinggi: " + tertinggi);
+        System.out.println("Nilai Terendah: " + terendah);
+    }
+}
+
+
+```
+
+#### 2.3.2 Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai.PNG)
 
 * **Pertanyaan 3:**  Mengapa pada perhitungan rata-rata digunakan (double) total / nilaiMhs.length, bukan langsung total
 / nilaiMhs.length? Jelaskan!
-    * **Jawab:** Teknik ini digunakan agar kontrol penuh kapan perulangan harus berhenti dipindahkan ke dalam blok kode (menggunakan 		kombinasi if dan break). Hal ini sangat ideal untuk aplikasi kasir yang harus selalu siaga menerima pesanan pelanggan baru tanpa 		batasan jumlah putaran yang kaku.
+    * **Jawab:** Statment tersebut di gunakan untuk casting yang berguna untuk mengubah variabel total dari int menjadi double,
+      agar bisa mencari rata2 yang menggunakan variabel double pada awal deklarasinya dan dapat menampilakan output rata-rata nilai
+
+
  
 ### 2.4 Percobaan 4 : Pencarian (Searching) dan Pengurutan (Sorting) Sederhana
 
@@ -461,7 +587,7 @@ indeks posisi elemen dari nilai (key) tersebut.
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -487,7 +613,7 @@ format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di 
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -518,7 +644,7 @@ bukan dari terkecil ke terbesar.
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
