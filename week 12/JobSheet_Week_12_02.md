@@ -578,61 +578,103 @@ public class SortNilai_02 {
 
 
 * **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+    * **Jawab:** Statement break pada program diatas di gunakan untuk perintah keluar dari loop perulangan yang mengecek apakah
+      input sama dengan nilai pada salah satu indeks pada Array. jika sesuai maka akan langsung menampilkan dan keluar dari loop. jika
+      input tidak ada maka akan langsung keluar loop dan menampilkan angka tidak di temukan pada indeks.
 
 * **Pertanyaan 2:** Modifikasi kode program Bagian A sehingga program dapat menerima input berupa banyaknya
 elemen array nilai, isi array, dan sebuah nilai (key) yang ingin dicari dari pengguna, lalu mencetak
 indeks posisi elemen dari nilai (key) tersebut.
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi**
+* **JAWAB : Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
 
-public class Star02 {
+public class SearchNilai_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
-        }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Masukkan Jumlah Indeks Array: ");
+        int jmlElemen = sc.nextInt();
         System.out.println();
-        sc.close();
+
+        int[] nilai = new int[jmlElemen];
+
+        System.out.println("=== NILAI DALAM INDEKS ===");
+        System.out.println();
+        for (int i = 0; i < jmlElemen; i++) {
+            System.out.print("Masukkan Nilai Indeks ke- " + i + " : ");
+            nilai[i] = sc.nextInt();
+        }
+
+        System.out.println();
+        System.out.println("=== SEARCH NILAI PADA INDEKS ===");
+        System.out.println();
+        
+        System.out.print("Masukkan Nilai Yang Dicari: ");
+        int key = sc.nextInt();
+        System.out.println();
+
+        boolean ditemukan = false;
+
+        for (int i = 0; i < nilai.length; i++ ) {
+            if (nilai[i] == key) {
+                System.out.println("Nilai: " + key + " Berada pada indeks ke- " + i);
+                ditemukan = true;
+                break;
+            }
+
+        }
+
+        if (!ditemukan) {
+            System.out.println("Nilai " + key + " tidak ditemukan. ");
+        }
     }
 }
 ```
+
+#### 2.4.2 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 * **Pertanyaan 3:** Modifikasi program Bagian A agar menampilkan pesan "Nilai yang dicari tidak ditemukan" dengan
 format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di dalam array.
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi**
+* **JAWAB : Setelah Modifikasi**
 ```java
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class Star02 {
+public class SearchNilai_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
+        
+        int[] nilai = {78, 65, 90, 55, 88, 72};
+        int key = 100;
+        boolean ditemukan = false;
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i] == key) {
+                System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + i + " (data ke-" + (i + 1) + ").");
+                ditemukan = true;
+                break;
+            }
         }
-        System.out.println();
-        sc.close();
+
+        if (!ditemukan) {
+            System.out.println("Nilai yang dicari tidak ditemukan.");
+            System.out.println("Detail Pencarian: Angka " + key + " tidak ada di dalam daftar " + Arrays.toString(nilai)
+			+ " (" + nilai.length + " elemen).");
+        }
     }
 }
+
 ```
+
+#### 2.4.2 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
 * **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data
 ujicoba yang tersedia!
