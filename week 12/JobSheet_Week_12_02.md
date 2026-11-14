@@ -678,8 +678,14 @@ public class SearchNilai_02 {
 
 * **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data
 ujicoba yang tersedia!
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+    * **Jawab:**
+  * Data Awal: {78, 65, 90, 55, 88, 72}
+  * Iterasi 1 (i = 0): Angka 90 terdorong ke indeks 5 → {65, 78, 55, 88, 72, 90}
+  * Iterasi 2 (i = 1): Angka 88 terdorong ke indeks 4 → {65, 55, 78, 72, 88, 90}
+  * Iterasi 3 (i = 2): Angka 78 terdorong ke indeks 3 → {55, 65, 72, 78, 88, 90}
+  * Iterasi 4–5 (i = 3..4): Tidak ada lagi pertukaran karena seluruh elemen sudah urut.
+  * Output Akhir: [55, 65, 72, 78, 88, 90]
+
 
 * **Pertanyaan 5:** Modifikasi program Bagian B agar mengurutkan array dari nilai terbesar ke terkecil (descending),
 bukan dari terkecil ke terbesar.
@@ -689,24 +695,32 @@ bukan dari terkecil ke terbesar.
 * **Setelah Modifikasi**
 ```java
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class Star02 {
+public class SortNilai_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
-
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        
+        int[] nilai = {78, 65, 90, 55, 88, 72};
+        for (int i = 0; i < nilai.length; i++) {
+            for (int j = 0; j < nilai.length - 1 - i; j++) {
+                if (nilai[j] < nilai[j + 1]) {
+                    int temp = nilai[j];
+                    nilai[j] = nilai[j + 1];
+                    nilai[j + 1] = temp;
+                }
+            }
         }
-        System.out.println();
-        sc.close();
+
+        System.out.println(Arrays.toString(nilai));
     }
 }
+
 ```
- 
+#### 2.4.2 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+
+
 ## 3: TUGAS MANDIRI
 
 ## Tugas No 01 Pengelolaan Nilai Mahasiswa
