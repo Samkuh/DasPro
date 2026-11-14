@@ -234,7 +234,7 @@ beserta alasannya.
       tidak bisa menggunakan for-each, dan untuk yang bisa menggunakan for-each adalah perulangan yang digunakan untuk menampilkan
       status mahasiswa lulus atau tidak lulus
  
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
