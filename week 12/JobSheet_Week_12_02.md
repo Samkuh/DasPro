@@ -637,7 +637,7 @@ public class SearchNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai_No_02.PNG)
 
 * **Pertanyaan 3:** Modifikasi program Bagian A agar menampilkan pesan "Nilai yang dicari tidak ditemukan" dengan
 format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di dalam array.
@@ -674,7 +674,7 @@ public class SearchNilai_02 {
 ```
 
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai_No_03.PNG)
 
 * **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data
 ujicoba yang tersedia!
@@ -689,10 +689,8 @@ ujicoba yang tersedia!
 
 * **Pertanyaan 5:** Modifikasi program Bagian B agar mengurutkan array dari nilai terbesar ke terkecil (descending),
 bukan dari terkecil ke terbesar.
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi**
+* **JAWAB : Setelah Modifikasi**
 ```java
 
 import java.util.Arrays;
@@ -718,7 +716,7 @@ public class SortNilai_02 {
 
 ```
 #### 2.4.2 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Buble_Short_No_05.PNG)
 
 
 ## 3: TUGAS MANDIRI
