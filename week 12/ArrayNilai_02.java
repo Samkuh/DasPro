@@ -12,9 +12,27 @@ public class ArrayNilai_02 {
             nilaiAkhir[i] = sc.nextInt();
         }
 
+        System.out.println();
+        System.out.println("=== STATUS MAHASISWA ===");
+        System.out.println();
+
+        int lulus = 0;
+        int tidakLulus = 0;
         for (int i = 0; i < nilaiAkhir.length; i++) {
-            String status = (nilaiAkhir[i] > 70) ? "Lulus" : "Tidak Lulus";
-            System.out.println("Mahasiswa ke- " + (i + 1) + ": " + nilaiAkhir[i] + " ( " + status + " )");
+            if (nilaiAkhir[i] > 70) {
+                System.out.println("Mahasiswa ke- " + (i + 1) + "| " + nilaiAkhir[i] + " | LULUS ");
+                lulus++;
+            } else {
+                System.out.println("Mahasiswa ke- " + (i + 1) + "| " + nilaiAkhir[i] + " | TIDAK LULUS ");
+                tidakLulus++;
+            }
         }
+
+        System.out.println();
+        System.out.println("=== JUMLAH MAHASISWA LULUS DAN TIDAK LULUS");
+        System.out.println();
+
+        System.out.println("LULUS: " + lulus);
+        System.out.println("TIDAK LULUS: " + tidakLulus);
     }
 }
