@@ -67,8 +67,8 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika isi masing-masing elemen array bil diubah dengan angka 5.0, 12867, 7.5, 2000000, apa yang
 terjadi? Mengapa bisa demikian?
-    * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
-      muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
+    * **Jawab:** Akan terjadi error pada program karena deklarasi variabel `bil` menggunakan int maka tidak bisa menggunakan angka yang
+      menggunakan koma
       
 * **Pertanyaan 2:** Modifikasi kode program di atas dengan melakukan inisialisasi elemen array sekaligus pada saat
 deklarasi array (tanpa new int[4] dan pengisian satu per satu).
@@ -79,19 +79,23 @@ deklarasi array (tanpa new int[4] dan pengisian satu per satu).
 ```java
 
 import java.util.Scanner;
+import  java.util.Arrays;
 
-public class Star02 {
+public class ArrayBilangan_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
+        
+        int[] bil = {5, 13, -7, 17};
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        for (int i = 0; i < bil.length; i++) {
+            System.out.println("Bil [ " + i + " ] = " + bil[i]);
+        } 
+
+        for (int nilai : bil) {
+            System.out.println(nilai);
         }
-        System.out.println();
-        sc.close();
+
+        System.out.println(Arrays.toString(bil));
     }
 }
 ```
@@ -99,37 +103,47 @@ public class Star02 {
 * **Pertanyaan 3:** Ubah statement penampilan pada langkah ke-4 menjadi seperti berikut: System.out.println("bil[" + i
 + "] = " + bil[i] + ", double = " + (bil[i] * 2)); Apa keluaran dari program? Jelaskan maksud dari statement
 tersebut.
-	* **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
-      inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
+	* **Jawab:** Statment tersebut bertujuan untuk menampilkan nilai nilai yang ada di setiap indeks Array untuk di kali dua.
+	dan menampilkannya dengan output double sama dengan nilai setiap indeks di kali dua
 
 * **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
 ```java
 
 import java.util.Scanner;
+import  java.util.Arrays;
 
-public class Star02 {
+public class ArrayBilangan_02 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
+        
+        int[] bil = {5, 13, -7, 17};
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        for (int i = 0; i < bil.length; i++) {
+            System.out.println("Bil [ " + i + " ] = " + bil[i] + " | Double = " + (bil[i] * 2));
+        } 
+
+        for (int nilai : bil) {
+            System.out.println(nilai);
         }
-        System.out.println();
-        sc.close();
+
+        System.out.println(Arrays.toString(bil));
     }
 }
+
 ```
 
-* **Pertanyaan 4:** JJika kondisi pada statement for-loop di atas diubah menjadi i <= 4, apa keluaran dari program?
+* **Pertanyaan 4:** Jika kondisi pada statement for-loop di atas diubah menjadi i <= 4, apa keluaran dari program?
 Mengapa demikian?
-	* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus 			dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
+	* **Jawab:**  akan terjadi error karena jika kondisi for-loop di ubah menjadi `i <= 4` akan memerintahkan program atau Array
+	mengakses indeks 4, tapi program di atas hanya memiliki 4 indeks yang di mulai dari 0 ( 0 sampai 3 ), maka dari itu indeks 4
+	tidak ada yang bisa di tampilkan atau di akses oleh program yang menyebabkan error
 
 * **Pertanyaan 5:**  Apa perbedaan antara menampilkan array menggunakan for loop, foreach loop, dan Arrays.toString()
 pada langkah ke-5? Kapan sebaiknya masing-masing digunakan?
-	* **Jawab:**  Karena perubahan dari `i++` menjadi `i--` mengakibatkan kondisi selalu bernilai true. maka dari itu output terus 			dihasilkan dan perulangan tidak pernah akan berhenti karena kondisi tidak akan menghasilkan nilai false
+	* **Jawab:**
+ * For loop : Tampilannya bebas bisa diatur sesuai kebutuhan. Gunakan ketika membutuhkan posisi (indeks) dan ingin memanipulasi isi Array
+ * For each : Tampilannya Bebas diatur per baris atau elemen. Gunakan ketika hanya perlu membaca atau memproses semua nilai pada Array
+ * Array.toString :  Tampilannya baku dalam satu baris. Gunakan untuk mengecek isi dalam Array secara cepat dan tidak rumit
   
 
 ---
