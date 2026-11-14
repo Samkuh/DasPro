@@ -432,7 +432,7 @@ public class ArrayRataNilai_02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai_No_01.PNG)
 
       
 * **Pertanyaan 2:** Modifikasi program di atas sehingga program menerima jumlah elemen array berdasarkan input dari
@@ -497,7 +497,7 @@ public class ArrayRataNilai_02 {
 #### 2.3.2 Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Rata_Nilai_No_02.PNG)
 
 * **Pertanyaan 3:**  Mengapa pada perhitungan rata-rata digunakan (double) total / nilaiMhs.length, bukan langsung total
 / nilaiMhs.length? Jelaskan!
