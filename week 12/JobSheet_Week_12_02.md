@@ -187,29 +187,42 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
-    * **Jawab:** Fungsi variabel `i` dan `j` digunakan untuk nilai inisiasi pertama pada setiap perulangan nya yaitu outer loop dan inner 	loop
+    * **Jawab:** Kondisi tersebut memerintahkan program untuk mengulang sebanyak panjang Arraynya. indeks Array mulai dari angka 0
+      maka dari itu variabel i menggunakan nilai 0, dan kondisi di atas digunakan agar mengulang sebanyak jumlah indeks yang ada di Array
+      tersebut
       
 * **Pertanyaan 2:** Modifikasi program agar hanya menampilkan nilai mahasiswa yang lulus saja (nilai > 70), tanpa
 menampilkan yang tidak lulus. Jelaskan alur programnya!
-    * **Jawab:** Outer loop akan berjalan 4 kali perulangan karena outerloop berjalan untuk menentukan berapa baris yang di input. 			sedangkan inner loop akan berjalan 7 kali setiap barisnya karena inner loop berjalan untuk menentukan berapa kolom yang di input 		setiap perulangan yang dilakukan oleh outer loop
+    * **Jawab:** Saya hanya mengubah pada loop for yang kedua yang awalnya memerintahkan output untuk menampilkan staus mahasiswa yang
+      lulus dan tidak lulus, saya ubah menjadi ada `if` di dalam perulangannya yang digunakan untuk memilih nilai yang lebih dari 70
+      dan menampilkannya, untuk nilai yang di bawah atau sama dengan 70 tidak akan ditampilkan pada program.
  
 * **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
 ```java
 
 import java.util.Scanner;
 
-public class Star02 {
+public class ArrayNilai_02 {
 
     public static void main(String[] args) {
+        
+        int[] nilaiAkhir = new int[10];
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            System.out.print("Masukkan Nilai Mahasiswa ke- " + (i + 1) + " : ");
+            nilaiAkhir[i] = sc.nextInt();
         }
+
         System.out.println();
-        sc.close();
+        System.out.println("=== MAHASISWA YANG LULUS ===");
+        System.out.println();
+
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            if (nilaiAkhir[i] > 70) {
+                System.out.println("Mahasiswa ke- " + (i + 1) + " Lulus dengan nilai : " + nilaiAkhir[i]);
+            }
+        }
     }
 }
 ```
@@ -217,32 +230,85 @@ public class Star02 {
 * **Pertanyaan 3:**  Ubah perulangan pada langkah ke-4 dan ke-5 dari for loop menjadi foreach loop. Apakah seluruh
 bagian program dapat diubah menjadi foreach? Jelaskan bagian mana yang bisa dan tidak bisa,
 beserta alasannya.
-    * **Jawab:** Akan menghasilkan output yang tertukar yang harusnya output menghasilkan nilai baris ini malah menghasilkan nilai kolom 	ataupun sebaliknya. Output yang dihasilkan dari baris 3 dan kolom 6 adalah menghasilkan baris 6 dan setiap barisnya menghasilkan 3 		baris bintang
+    * **Jawab:** Tidak semua bagian program di ubah menjadi for each. for pertama yang di gunakan untuk menginput nilai mahasiswa
+      tidak bisa menggunakan for-each, dan untuk yang bisa menggunakan for-each adalah perulangan yang digunakan untuk menampilkan
+      status mahasiswa lulus atau tidak lulus
+ 
+* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+```java
+
+import java.util.Scanner;
+
+public class ArrayNilai_02 {
+
+    public static void main(String[] args) {
+        
+        int[] nilaiAkhir = new int[10];
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            System.out.print("Masukkan Nilai Mahasiswa ke- " + (i + 1) + " : ");
+            nilaiAkhir[i] = sc.nextInt();
+        }
+
+        int no = 1;
+        for (int nilai : nilaiAkhir) {
+            String status = (nilai > 70) ? "Lulus" : "Tidak Lulus";
+            System.out.println("Mahasiswa ke- " + no + ": " + nilai + " ( " + status + " )");
+            no++;
+        }
+    }
+}
+```
       
 * **Pertanyaan 4:** Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan
 jumlah mahasiswa yang tidak lulus di akhir program.
-    * **Jawab:** output yang dihasilkan akan terus kesamping tidak menghasilkan baris karena setiap innerloop tidak ada perintah untuk 		mengganti baris ke baris yang ada di bawahnya
 
 * **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
 ```java
 
 import java.util.Scanner;
 
-public class Star02 {
+public class ArrayNilai_02 {
 
     public static void main(String[] args) {
+        
+        int[] nilaiAkhir = new int[10];
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
 
-        for (int i = 1; i <= n; i += 2) {
-            System.out.print(i + " ");
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            System.out.print("Masukkan Nilai Mahasiswa ke- " + (i + 1) + " : ");
+            nilaiAkhir[i] = sc.nextInt();
         }
+
         System.out.println();
-        sc.close();
+        System.out.println("=== STATUS MAHASISWA ===");
+        System.out.println();
+
+        int lulus = 0;
+        int tidakLulus = 0;
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            if (nilaiAkhir[i] > 70) {
+                System.out.println("Mahasiswa ke- " + (i + 1) + "| " + nilaiAkhir[i] + " | LULUS ");
+                lulus++;
+            } else {
+                System.out.println("Mahasiswa ke- " + (i + 1) + "| " + nilaiAkhir[i] + " | TIDAK LULUS ");
+                tidakLulus++;
+            }
+        }
+
+        System.out.println();
+        System.out.println("=== JUMLAH MAHASISWA LULUS DAN TIDAK LULUS");
+        System.out.println();
+
+        System.out.println("LULUS: " + lulus);
+        System.out.println("TIDAK LULUS: " + tidakLulus);
     }
 }
 ```
+
+#### 2.2.5 Hasil Running / Screenshot Output
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
 
  
 ### 2.3 Percobaan 3:Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
