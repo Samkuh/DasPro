@@ -6,7 +6,13 @@ public class ArrayRataNilai_02 {
         
         Scanner sc = new Scanner(System.in);
 
-        int[] nilaiMhs = new int[10];
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        int jmlMhs = sc.nextInt();
+
+        System.out.println();
+        System.out.println("=== NILAI MAHASISWA ===");
+
+        int[] nilaiMhs = new int[jmlMhs];
         int total = 0;
         double rata2 = 0;
 
@@ -17,7 +23,8 @@ public class ArrayRataNilai_02 {
         }
 
         System.out.println();
-        System.out.println("==============");
+        System.out.println("=== TOTAL DAN RATA-RATA");
+        System.out.println();
 
         rata2 = (double) total / nilaiMhs.length;
         System.out.println("Total Nilai: " + total);
@@ -31,7 +38,12 @@ public class ArrayRataNilai_02 {
             if (nilaiMhs[i] < terendah) terendah = nilaiMhs[i];
         }
 
+        System.out.println();
+        System.out.println("=== TERTINGGI DAN TERENDAH ===");
+        System.out.println();
+
         System.out.println("Nilai Tertinggi: " + tertinggi);
         System.out.println("Nilai Terendah: " + terendah);
     }
 }
+
