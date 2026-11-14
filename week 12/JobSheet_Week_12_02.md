@@ -75,7 +75,7 @@ deklarasi array (tanpa new int[4] dan pengisian satu per satu).
 	* **Jawab:** karakter `*` yang dihasilkan adalah 4 buah karakter. karena kondisi mengisyaratkan bahwa i kurang dari n. jika nilai
       inisiasi pertamanya adalah 1 maka yang akan muncul adalah 1 sampai 4 atau 4 buah karakater saja yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -106,7 +106,7 @@ tersebut.
 	* **Jawab:** Statment tersebut bertujuan untuk menampilkan nilai nilai yang ada di setiap indeks Array untuk di kali dua.
 	dan menampilkannya dengan output double sama dengan nilai setiap indeks di kali dua
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -196,8 +196,8 @@ menampilkan yang tidak lulus. Jelaskan alur programnya!
     * **Jawab:** Saya hanya mengubah pada loop for yang kedua yang awalnya memerintahkan output untuk menampilkan staus mahasiswa yang
       lulus dan tidak lulus, saya ubah menjadi ada `if` di dalam perulangannya yang digunakan untuk memilih nilai yang lebih dari 70
       dan menampilkannya, untuk nilai yang di bawah atau sama dengan 70 tidak akan ditampilkan pada program.
- 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+      
+ * **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -264,7 +264,7 @@ public class ArrayNilai_02 {
 * **Pertanyaan 4:** Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan
 jumlah mahasiswa yang tidak lulus di akhir program.
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -308,7 +308,7 @@ public class ArrayNilai_02 {
 ```
 
 #### 2.2.5 Hasil Running / Screenshot Output
-![Gambar Output Percobaan 3](/week%2012/Foto/Array_Search_Nilai.PNG)
+![Gambar Output Percobaan 3](/week%2012/Foto/Array_Nilai_No_04.PNG)
 
  
 ### 2.3 Percobaan 3:Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
@@ -461,7 +461,7 @@ indeks posisi elemen dari nilai (key) tersebut.
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -487,7 +487,7 @@ format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di 
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
@@ -518,7 +518,7 @@ bukan dari terkecil ke terbesar.
     * **Jawab:** Tercetak 6 karakter `*` karena nilai inisiasi pertama adalah nol dan kondisinya kurang dari sama dengan n maka yang akan
       muncul adalah 0 sampai 5 atau 6 buah karakter yang akan muncul
 
-* **Setelah Modifikasi Menjadi Bilangan Ganjil Positif Saja**
+* **Setelah Modifikasi**
 ```java
 
 import java.util.Scanner;
