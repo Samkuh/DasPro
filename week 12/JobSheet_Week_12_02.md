@@ -140,7 +140,7 @@ Mengapa demikian?
 
 * **Pertanyaan 5:**  Apa perbedaan antara menampilkan array menggunakan for loop, foreach loop, dan Arrays.toString()
 pada langkah ke-5? Kapan sebaiknya masing-masing digunakan?
-	* **Jawab:**
+* **Jawab:**
  * For loop : Tampilannya bebas bisa diatur sesuai kebutuhan. Gunakan ketika membutuhkan posisi (indeks) dan ingin memanipulasi isi Array
  * For each : Tampilannya Bebas diatur per baris atau elemen. Gunakan ketika hanya perlu membaca atau memproses semua nilai pada Array
  * Array.toString :  Tampilannya baku dalam satu baris. Gunakan untuk mengecek isi dalam Array secara cepat dan tidak rumit
