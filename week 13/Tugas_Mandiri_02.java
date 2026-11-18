@@ -6,11 +6,12 @@ public class Tugas_Mandiri_02 {
         Scanner sc = new Scanner(System.in);
 
         int[][] survei = new int[10][6];
+        
         double[] rataPertanyaan = new double[6];
         int[] totalPertanyaan = new int[6];
         double[] rataResponden = new double[10];
-        int total = 0;
         int totalResponden;
+        int total = 0;
         double rataTotal = 0;
 
         System.out.println("--- Hasil Survei ---");
@@ -35,7 +36,7 @@ public class Tugas_Mandiri_02 {
         }
 
         System.out.println();
-        for (int i = 0; i < survei[i].length;i++) {
+        for (int i = 0; i < survei.length;i++) {
             System.out.printf("Rata - rata dari responden ke- " + (i + 1) + ": %.2f", rataResponden[i]);
             System.out.println();
         }
