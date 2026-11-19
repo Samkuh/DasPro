@@ -158,5 +158,114 @@ baris?
  
 * **Pertanyaan 14:** Apa fungsi dari String.join()? Jelaskan parameter yang diterimanya.
     * **Jawab:**
- 
 
+
+### Percobaan 2: Scanner dan Perulangan untuk Input dan Output Array 2 Dimensi
+
+#### Kode Program Java
+```java
+
+import java.util.Scanner;
+
+public class Bioskop_With_Scanner_02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int baris, kolom;
+        String nama, pilihan;
+        String[][] penonton = new String[4][2];
+
+        while (true) {
+            System.out.print("Masukkan Nama: ");
+            nama = sc.nextLine();
+            System.out.print("Masukkan Baris (1 - 4): ");
+            baris = sc.nextInt();
+            System.out.print("Masukkan Kolom (1 - 2): ");
+            kolom = sc.nextInt();
+            sc.nextLine();
+
+            penonton[baris - 1][kolom - 1] = nama;
+
+            System.out.print("Input penonton lainnya? (y/n): ");
+            pilihan = sc.nextLine();
+
+            if (pilihan.equalsIgnoreCase("n")) {
+                break;
+            }
+        }
+
+            System.out.println();
+            System.out.printf("%s \t %s\n", penonton[0][0], penonton[0][1]);
+            System.out.printf("%s \t %s\n", penonton[1][0], penonton[1][1]);
+            System.out.printf("%s \t %s\n", penonton[2][0], penonton[2][1]);
+            System.out.printf("%s \t %s\n", penonton[3][0], penonton[3][1]);
+            System.out.println();
+    }
+}
+
+```
+
+#### Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+* **Pertanyaan 1:** Apakah pengisian elemen array dari Scanner harus dilakukan secara berurutan mulai dari
+indeks ke-0? Jelaskan!
+    * **Jawab:**
+
+* **Pertanyaan 2:** Modifikasi program agar menampilkan menu berikut:
+   *  1 Input data penonton
+   *  2 Tampilkan daftar penonton
+   *  3 Exit
+
+* **Setelah Modifikasi**
+```java
+
+import java.util.Scanner;
+import  java.util.Arrays;
+
+public class ArrayBilangan_02 {
+
+    public static void main(String[] args) {
+        
+        int[] bil = {5, 13, -7, 17};
+
+        for (int i = 0; i < bil.length; i++) {
+            System.out.println("Bil [ " + i + " ] = " + bil[i] + " | Double = " + (bil[i] * 2));
+        } 
+
+        for (int nilai : bil) {
+            System.out.println(nilai);
+        }
+
+        System.out.println(Arrays.toString(bil));
+    }
+}
+
+```
+
+* **Pertanyaan 3:** Modifikasi program untuk menangani nomor baris atau kolom yang tidak tersedia
+(misalnya baris 7 atau kolom 0).
+
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+* **Pertanyaan 4:** Pada menu 1, tampilkan peringatan jika kursi yang dipilih sudah terisi penonton lain, lalu
+minta baris dan kolom kembali.
+
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+* **Pertanyaan 5:** Pada menu 2, jika sebuah kursi kosong (null), tampilkan *** sebagai pengganti null.
+
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+
+### Percobaan 3: Array 2 Dimensi dengan Panjang Baris Berbeda
+
+### Percobaan 4: Studi Kasus SIAKAD
