@@ -359,39 +359,41 @@ myNumbers[0].length. Bagian mana yang berubah? Mengapa?
 
 import java.util.Scanner;
 
-public class Bioskop_With_Scanner_02 {
+public class Siakad_02 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int baris, kolom;
-        String nama, pilihan;
-        String[][] penonton = new String[4][2];
 
-        while (true) {
-            System.out.print("Masukkan Nama: ");
-            nama = sc.nextLine();
-            System.out.print("Masukkan Baris (1 - 4): ");
-            baris = sc.nextInt();
-            System.out.print("Masukkan Kolom (1 - 2): ");
-            kolom = sc.nextInt();
-            sc.nextLine();
+        int[][] nilai = new int[4][3];
 
-            penonton[baris - 1][kolom - 1] = nama;
+        for (int i = 0; i < nilai.length; i++) {
+            System.out.println();
+            System.out.print("Input nilai mahasiswa ke- " + (i + 1) + ": ");
+            double totalPerSiswa = 0;
 
-            System.out.print("Input penonton lainnya? (y/n): ");
-            pilihan = sc.nextLine();
-
-            if (pilihan.equalsIgnoreCase("n")) {
-                break;
+            System.out.println();
+            for (int j = 0; j < nilai[i].length; j++) {
+                System.out.print("Nilai mata kuliah ke- " + (j + 1) + ": ");
+                nilai[i][j] = sc.nextInt();
+                totalPerSiswa += nilai[i][j];
             }
+
+            System.out.println("Nilai rata - rata: " + totalPerSiswa / nilai[i].length);
         }
 
-            System.out.println();
-            System.out.printf("%s \t %s\n", penonton[0][0], penonton[0][1]);
-            System.out.printf("%s \t %s\n", penonton[1][0], penonton[1][1]);
-            System.out.printf("%s \t %s\n", penonton[2][0], penonton[2][1]);
-            System.out.printf("%s \t %s\n", penonton[3][0], penonton[3][1]);
-            System.out.println();
+        System.out.println();
+        System.out.println("=====================");
+        System.out.println("Rata - rata nilai setiap mata kuliah: ");
+
+        for (int j = 0; j < 3; j++) {
+            double totalPerMatkul = 0;
+
+            for (int i = 0; i < nilai.length; i++) {
+                totalPerMatkul += nilai[i][j];
+            }
+
+            System.out.println("Mata kuliah " + (j + 1) + ": " + totalPerMatkul / nilai.length);
+        }
     }
 }
 
@@ -401,3 +403,118 @@ public class Bioskop_With_Scanner_02 {
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+* **Pertanyaan 1:** Bagaimana jika jumlah mahasiswa dan jumlah mata kuliah berubah? Modifikasi program
+SIAKAD agar jumlah mahasiswa dan mata kuliah dapat ditentukan saat program berjalan.
+
+* **Setelah Modifikasi**
+```java
+
+import java.util.Scanner;
+import  java.util.Arrays;
+
+public class ArrayBilangan_02 {
+
+    public static void main(String[] args) {
+        
+        int[] bil = {5, 13, -7, 17};
+
+        for (int i = 0; i < bil.length; i++) {
+            System.out.println("Bil [ " + i + " ] = " + bil[i] + " | Double = " + (bil[i] * 2));
+        } 
+
+        for (int nilai : bil) {
+            System.out.println(nilai);
+        }
+
+        System.out.println(Arrays.toString(bil));
+    }
+}
+
+```
+
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+
+### Tugas Mandiri
+
+
+* **TUGAS** Implementasikan flowchart latihan survei pada slide Dasar Pemrograman (Teori) ke dalam
+program Java. Data survei terdiri dari 10 responden dan 6 pertanyaan dengan jawaban 1 sampai
+5. Program harus:
+   *  1 menyimpan hasil survei ke dalam array 2 dimensi;
+   *  2 menampilkan nilai rata-rata untuk setiap responden;
+   *  3 menampilkan nilai rata-rata untuk setiap pertanyaan;
+   *  4 menampilkan nilai rata-rata secara keseluruhan.
+
+#### Kode Program Java
+```java
+
+import java.util.Scanner;
+
+public class Tugas_Mandiri_02 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[][] survei = new int[10][6];
+        
+        double[] rataPertanyaan = new double[6];
+        int[] totalPertanyaan = new int[6];
+        double[] rataResponden = new double[10];
+        int totalResponden;
+        int total = 0;
+        double rataTotal = 0;
+
+        System.out.println("--- Hasil Survei ---");
+        for (int i = 0; i < survei.length; i++) {
+            System.out.println("Survei Responden ke- " + (i + 1) + ": ");
+            totalResponden = 0;
+            for (int j = 0; j < survei[i].length; j++) {
+                do {
+                    System.out.print("Masukkan nilai (1 - 5) dari pertanyaan ke- " + (j + 1) + ": ");
+                    survei[i][j] = sc.nextInt();
+                    if (survei[i][j] < 1 || survei[i][j] > 5) {
+                        System.out.println("Input Tidak Valid. Ulang Input Nilai");
+                    }
+                }while (survei[i][j] < 1 || survei[i][j] > 5);
+                totalResponden += survei[i][j];
+                total += survei[i][j];
+                totalPertanyaan[j] += survei[i][j];
+                rataPertanyaan[j] = (double)totalPertanyaan[j] / survei.length;
+            }
+            rataResponden[i] = (double) totalResponden / survei[i].length;
+            rataTotal = (double) total / (survei.length*survei[i].length);
+        }
+
+        System.out.println();
+        for (int i = 0; i < survei.length;i++) {
+            System.out.printf("Rata - rata dari responden ke- " + (i + 1) + ": %.2f", rataResponden[i]);
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < survei[i].length;i++) {
+            System.out.printf("Rata - rata dari pertanyaan ke- " + (i + 1) + ": %.2f", rataPertanyaan[i]);
+            System.out.println();
+        }
+
+        System.out.printf("Rata - rata dari total seluruh nilai dari tiap pertanyaan %.2f\n", rataTotal);
+        sc.close();
+    }
+}
+
+```
+
+#### Hasil Running / Screenshot Output
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
+![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+
+#### KESIMPULAN
+
+
+
