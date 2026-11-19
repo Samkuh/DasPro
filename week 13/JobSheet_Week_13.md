@@ -442,8 +442,7 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 
 * **TUGAS** Implementasikan flowchart latihan survei pada slide Dasar Pemrograman (Teori) ke dalam
-program Java. Data survei terdiri dari 10 responden dan 6 pertanyaan dengan jawaban 1 sampai
-5. Program harus:
+program Java. Data survei terdiri dari 10 responden dan 6 pertanyaan dengan jawaban 1 sampai 5. Program harus:
    *  1 menyimpan hasil survei ke dalam array 2 dimensi;
    *  2 menampilkan nilai rata-rata untuk setiap responden;
    *  3 menampilkan nilai rata-rata untuk setiap pertanyaan;
