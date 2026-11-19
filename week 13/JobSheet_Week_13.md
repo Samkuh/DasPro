@@ -515,5 +515,5 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 #### KESIMPULAN
 
-
-
+**Kesimpulan**
+Array 2 dimensi dalam Java digunakan untuk menyimpan dan mengolah data dalam bentuk baris dan kolom. Melalui percobaan ini, mahasiswa mempelajari cara mendeklarasikan, menginisialisasi, mengakses, serta mengisi elemen array menggunakan perulangan `for` dan `foreach`. Selain itu, mahasiswa juga memahami penggunaan `Scanner` untuk input data, *jagged array* untuk membuat baris dengan panjang berbeda, serta nested loop untuk menghitung rata-rata nilai setiap mahasiswa dan mata kuliah. Dengan demikian, praktikum ini membantu meningkatkan pemahaman dan kemampuan dalam mengolah data yang memiliki struktur lebih kompleks menggunakan bahasa pemrograman Java.
