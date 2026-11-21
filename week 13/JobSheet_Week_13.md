@@ -364,20 +364,20 @@ public class Bioskop_With_Scanner_02 {
 
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_With_Scanner_03.PNG)
 
 * **Pertanyaan 4:** Pada menu 1, tampilkan peringatan jika kursi yang dipilih sudah terisi penonton lain, lalu
 minta baris dan kolom kembali.
 
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_With_Scanner_04.PNG)
 
 * **Pertanyaan 5:** Pada menu 2, jika sebuah kursi kosong (null), tampilkan *** sebagai pengganti null.
 
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_With_Scanner_05.PNG)
 
 
 ### Percobaan 3: Array 2 Dimensi dengan Panjang Baris Berbeda
