@@ -133,8 +133,9 @@ menggunakan for loop. Compile, run, lalu amati hasilnya.
    penonton[i].length);
 
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_06.PNG)
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+      
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_06.PNG)
 
 * **Pertanyaan 7:** Modifikasi kode pada pertanyaan 5 untuk menampilkan panjang setiap baris
 menggunakan foreach loop. Compile, run, lalu amati hasilnya.
@@ -143,8 +144,8 @@ menggunakan foreach loop. Compile, run, lalu amati hasilnya.
    *  3 System.out.println("Panjang baris: " + barisPenonton.length):
 
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_07.PNG)
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_07.PNG)
  
 * **Pertanyaan 8:** Tambahkan kode untuk menampilkan nama penonton pada baris ke-3 (indeks 2)
 menggunakan for loop. Compile, run, lalu amati hasilnya.
@@ -153,8 +154,8 @@ menggunakan for loop. Compile, run, lalu amati hasilnya.
    *  3 System.out.println(penonton[2][i]);
 
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_08.PNG)
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_08.PNG)
   
 * **Pertanyaan 9:** Modifikasi kode pada pertanyaan 8 menjadi perulangan dengan foreach loop. Compile,
 run, lalu amati hasilnya.
@@ -163,8 +164,8 @@ run, lalu amati hasilnya.
    *  3 System.out.println(i);
 
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_09.PNG)
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_09.PNG)
   
 * **Pertanyaan 10:** Modifikasi kode pada pertanyaan 9 untuk menampilkan nama penonton setiap baris.
 Gunakan String.join(), compile, run, lalu amati hasilnya.
@@ -173,8 +174,8 @@ Gunakan String.join(), compile, run, lalu amati hasilnya.
    *  3 String.join(", ", penonton[i]));
 
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_10.PNG) 
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_10.PNG) 
 
 * **Pertanyaan 11:** Menurut Anda, apa kekurangan dan kelebihan foreach loop dibandingkan for loop?
     * **Jawab:** `foreach loop` jauh lebih ringkas dan aman dari error indeks saat hanya ingin membaca seluruh isi array, sedangkan `for
