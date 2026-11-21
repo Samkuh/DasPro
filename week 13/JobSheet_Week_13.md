@@ -155,6 +155,7 @@ menggunakan for loop. Compile, run, lalu amati hasilnya.
 
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
 ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_08.PNG)
   
 * **Pertanyaan 9:** Modifikasi kode pada pertanyaan 8 menjadi perulangan dengan foreach loop. Compile,
@@ -165,6 +166,7 @@ run, lalu amati hasilnya.
 
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
 ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_09.PNG)
   
 * **Pertanyaan 10:** Modifikasi kode pada pertanyaan 9 untuk menampilkan nama penonton setiap baris.
@@ -175,6 +177,7 @@ Gunakan String.join(), compile, run, lalu amati hasilnya.
 
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
 ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_10.PNG) 
 
 * **Pertanyaan 11:** Menurut Anda, apa kekurangan dan kelebihan foreach loop dibandingkan for loop?
@@ -413,25 +416,26 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 ![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers.PNG)
 
 * **Pertanyaan 1:**  Apa fungsi dari Arrays.toString()?
-    * **Jawab:**
+    * **Jawab:** Arrays.toString() berfungsi untuk mengubah seluruh isi elemen sebuah array 1 dimensi menjadi satu representasi teks
+      (String) yang rapi dan mudah dibaca di layar.
 
 * **Pertanyaan 2:** Pada Kode 16, Arrays.toString() dipanggil pada myNumbers[i]. Ganti pemanggilannya
 menjadi Arrays.toString(myNumbers), lalu compile dan jalankan. Apa yang tampil?
 Jelaskan.
-    * **Jawab:**
+* **Jawab:**
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
 
 * **Pertanyaan 3:** Jalankan juga System.out.println(Arrays.deepToString(myNumbers));. Bandingkan
 hasilnya dengan Kode 16. Mengapa deepToString() diperlukan untuk array 2 dimensi?
-    * **Jawab:**
+* **Jawab:**
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
 
 * **Pertanyaan 4:**  Apa nilai default untuk elemen array dengan tipe data int?
-    * **Jawab:**
+    * **Jawab:** Nilai default untuk elemen array dengan tipe data int di Java adalah 0.
  
 * **Pertanyaan 5:** Tambahkan kode berikut untuk menampilkan panjang setiap baris. Compile dan run, lalu
 amati hasilnya.
@@ -444,14 +448,18 @@ amati hasilnya.
 
 * **Pertanyaan 6:**  Array myNumbers memiliki panjang yang berbeda untuk setiap barisnya. Apakah panjang
 array dapat dimodifikasi setelah diinstansiasi? Jelaskan.
-    * **Jawab:**
+    * **Jawab:** Tidak, panjang sebuah array di Java bersifat tetap (fixed-size) dan tidak dapat dimodifikasi (ditambah atau dikurangi)
+      setelah diinstansiasi.
+      Meskipun setiap baris pada myNumbers memiliki panjang yang berbeda-beda (baris ke-0 panjangnya 5, baris ke-1 panjangnya 3, dan baris
+      ke-2 panjangnya 1), ukuran masing-masing baris tersebut sudah dikunci begitu kata kunci new int[...] dijalankan
  
 * **Pertanyaan 7:** Jalankan myNumbers[0] = new int[7]; setelah instansiasi, lalu cetak myNumbers.length dan
 myNumbers[0].length. Bagian mana yang berubah? Mengapa?
    *  1 for (int i = 0; i < myNumbers.length; i++) {
    *  2 System.out.println("Panjang baris ke-" + (i + 1) + ": " +
    *  3 myNumbers[i].length);
-* **Jawab:**
+* **Jawab:** Bagian yang berubah adalah nilai myNumbers.length yang bertambah dari 5 menjadi 7, sedangkan myNumbers.length tetap 3 (tidak
+      berubah).
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
 
