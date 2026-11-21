@@ -172,17 +172,21 @@ Gunakan String.join(), compile, run, lalu amati hasilnya.
       ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG) 
 
 * **Pertanyaan 11:** Menurut Anda, apa kekurangan dan kelebihan foreach loop dibandingkan for loop?
-    * **Jawab:**
+    * **Jawab:** `foreach loop` jauh lebih ringkas dan aman dari error indeks saat hanya ingin membaca seluruh isi array, sedangkan `for
+      loop` jauh lebih fleksibel karena memiliki akses ke nomor indeks dan kontrol penuh atas alur perulangan.
  
 * **Pertanyaan 12:** Berapa indeks baris maksimal untuk array penonton? Dari mana nilai itu diperoleh?
-    * **Jawab:**
+    * **Jawab:** Indeks baris maksimal untuk array penonton adalah 3.
+    Nilai tersebut diperoleh dari deklarasi Array Pertama yang mempunyai `[4] [2]` yang mengisyaratkan mempunyai 4 baris, karena
+    penomoran indeks array di Java selalu dimulai dari 0.
  
 * **Pertanyaan 13:** Berapa indeks kolom maksimal untuk array penonton? Apakah nilainya sama untuk setiap
 baris?
-    * **Jawab:**
+    * **Jawab:** Indeks kolom maksimal untuk array penonton pada kode tersebut tetap 1, dan nilainya sama untuk setiap baris.
  
 * **Pertanyaan 14:** Apa fungsi dari String.join()? Jelaskan parameter yang diterimanya.
-    * **Jawab:**
+    * **Jawab:** String.join() berfungsi untuk menggabungkan beberapa elemen teks (seperti isi array atau kumpulan String) menjadi satu
+      buah teks (String) utuh dengan karakter pemisah tertentu di antara setiap elemennya.
 
 
 ### Percobaan 2: Scanner dan Perulangan untuk Input dan Output Array 2 Dimensi
