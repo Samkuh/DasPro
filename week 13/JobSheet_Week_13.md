@@ -56,7 +56,7 @@ public class Bioskop {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop.PNG)
 
 * **Pertanyaan 1:** Apakah pengisian elemen array harus dilakukan secara berurutan mulai dari indeks ke-0?
 Jelaskan!
@@ -219,7 +219,7 @@ public class Bioskop_With_Scanner_02 {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_With_Scanner.PNG)
 
 * **Pertanyaan 1:** Apakah pengisian elemen array dari Scanner harus dilakukan secara berurutan mulai dari
 indeks ke-0? Jelaskan!
@@ -307,7 +307,7 @@ public class MyNumbers {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers.PNG)
 
 * **Pertanyaan 1:**  Apa fungsi dari Arrays.toString()?
     * **Jawab:**
@@ -402,7 +402,7 @@ public class Siakad_02 {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Siakad.PNG)
 
 * **Pertanyaan 1:** Bagaimana jika jumlah mahasiswa dan jumlah mata kuliah berubah? Modifikasi program
 SIAKAD agar jumlah mahasiswa dan mata kuliah dapat ditentukan saat program berjalan.
@@ -511,7 +511,7 @@ public class Tugas_Mandiri_02 {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Tugas_Mandiri.PNG)
 
 #### KESIMPULAN
 
