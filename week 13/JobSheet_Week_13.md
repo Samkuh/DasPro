@@ -444,8 +444,9 @@ amati hasilnya.
    *  2 System.out.println("Panjang baris ke-" + (i + 1) + ": " +
    *  3 myNumbers[i].length);
 * **Jawab:**
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](week%2013/Foto/My_Numbers_05.PNG)
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
+  
+![Gambar Output Percobaan 1](week%2013/Foto/My_Numbers_05.PNG)
 
 * **Pertanyaan 6:**  Array myNumbers memiliki panjang yang berbeda untuk setiap barisnya. Apakah panjang
 array dapat dimodifikasi setelah diinstansiasi? Jelaskan.
@@ -462,9 +463,9 @@ myNumbers[0].length. Bagian mana yang berubah? Mengapa?
 * **Jawab:** Bagian yang berubah adalah nilai myNumbers.length yang bertambah dari 5 menjadi 7, sedangkan myNumbers.length tetap 3 (tidak
       berubah).
 #### Hasil Running / Screenshot Output
-      Berikut adalah contoh tampilan *output* setelah program dijalankan:
+Berikut adalah contoh tampilan *output* setelah program dijalankan:
   
-      ![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_07.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_07.PNG)
 
 ### Percobaan 4: Studi Kasus SIAKAD
 
