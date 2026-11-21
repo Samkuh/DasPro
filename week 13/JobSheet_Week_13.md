@@ -426,14 +426,14 @@ Jelaskan.
 * **Jawab:**
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_02.PNG)
 
 * **Pertanyaan 3:** Jalankan juga System.out.println(Arrays.deepToString(myNumbers));. Bandingkan
 hasilnya dengan Kode 16. Mengapa deepToString() diperlukan untuk array 2 dimensi?
 * **Jawab:**
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_03.PNG)
 
 * **Pertanyaan 4:**  Apa nilai default untuk elemen array dengan tipe data int?
     * **Jawab:** Nilai default untuk elemen array dengan tipe data int di Java adalah 0.
@@ -445,7 +445,7 @@ amati hasilnya.
    *  3 myNumbers[i].length);
 * **Jawab:**
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+      ![Gambar Output Percobaan 1](week%2013/Foto/My_Numbers_05.PNG)
 
 * **Pertanyaan 6:**  Array myNumbers memiliki panjang yang berbeda untuk setiap barisnya. Apakah panjang
 array dapat dimodifikasi setelah diinstansiasi? Jelaskan.
@@ -461,8 +461,10 @@ myNumbers[0].length. Bagian mana yang berubah? Mengapa?
    *  3 myNumbers[i].length);
 * **Jawab:** Bagian yang berubah adalah nilai myNumbers.length yang bertambah dari 5 menjadi 7, sedangkan myNumbers.length tetap 3 (tidak
       berubah).
+#### Hasil Running / Screenshot Output
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+  
+      ![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_07.PNG)
 
 ### Percobaan 4: Studi Kasus SIAKAD
 
