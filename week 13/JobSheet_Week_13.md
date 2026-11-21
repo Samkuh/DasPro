@@ -40,7 +40,6 @@ public class Bioskop {
         penonton[2][0] = "Eka";
         penonton[2][1] = "Farhan";
         penonton[3][0] = "Gisel";
-        penonton[3][1] = "Hana";
 
         System.out.println();
         System.out.printf("%s \t %s\n", penonton[0][0], penonton[0][1]);
@@ -60,16 +59,18 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 * **Pertanyaan 1:** Apakah pengisian elemen array harus dilakukan secara berurutan mulai dari indeks ke-0?
 Jelaskan!
-    * **Jawab:**
+    * **Jawab:** Tidak, pengisian elemen array tidak harus dilakukan secara berurutan mulai dari indeks ke-0. Kamu bisa mengisi elemen
+      pada indeks mana pun secara acak selama indeks tersebut masih berada dalam batas ukuran array yang telah dialokasikan.
  
 * **Pertanyaan 2:** Mengapa terdapat null pada daftar nama penonton? Jelaskan dari sisi nilai default array
-    * **Jawab:**
+    * **Jawab:** Nilai null muncul karena saat kita membuat array bertipe data objek (seperti String) dengan ukuran tertentu, namun belum
+      mengisi semua indeksnya sehingga ruang kosong tersebut otomatis di isi dengan defaultnya yaitu `null`
  
 * **Pertanyaan 3:** Lengkapi pengisian pada langkah 3 jika ada elemen yang belum terisi, lalu jalankan
 kembali program.
     * **Jawab:**
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
-      ![Gambar Output Percobaan 1](/week%2012/Foto/Array_Bilangan.PNG)
+      ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop.PNG)
       
 
 * **Pertanyaan 4:** Tambahkan kode berikut setelah langkah 4. Jelaskan fungsi dari penonton.length dan
