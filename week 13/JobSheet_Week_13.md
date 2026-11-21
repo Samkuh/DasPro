@@ -241,7 +241,9 @@ Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
 * **Pertanyaan 1:** Apakah pengisian elemen array dari Scanner harus dilakukan secara berurutan mulai dari
 indeks ke-0? Jelaskan!
-    * **Jawab:**
+    * **Jawab:** Tidak, pengisian elemen array menggunakan Scanner tidak harus dilakukan secara berurutan mulai dari indeks ke-0.
+    Pada kode Bioskop_With_Scanner_02, pengguna bebas memasukkan nomor baris (1 - 4) dan nomor kolom (1 - 2) secara acak sesuai keinginan,
+    misalnya langsung mengisi baris ke-3 kolom ke-2 terlebih dahulu.
 
 * **Pertanyaan 2:** Modifikasi program agar menampilkan menu berikut:
    *  1 Input data penonton
