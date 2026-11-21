@@ -55,7 +55,7 @@ public class Bioskop {
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
 
-![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_02.PNG)
 
 * **Pertanyaan 1:** Apakah pengisian elemen array harus dilakukan secara berurutan mulai dari indeks ke-0?
 Jelaskan!
@@ -82,35 +82,48 @@ penonton[0].length!
    *  5 System.out.println(penonton[3].length);
 
 * **Jawab:**
-      LABIB
+      `penonton.length` berfungsi untuk mengetahui jumlah baris pada array 2 dimensi, sedangkan `penonton[0].length` berfungsi untuk
+      mengetahui jumlah kolom pada baris pertama (indeks ke-0).
 * **Setelah Modifikasi**
 ```java
 
-import java.util.Scanner;
-import  java.util.Arrays;
-
-public class ArrayBilangan_02 {
+public class Bioskop {
 
     public static void main(String[] args) {
         
-        int[] bil = {5, 13, -7, 17};
+        String[][] penonton = new String[4][2];
 
-        for (int i = 0; i < bil.length; i++) {
-            System.out.println("Bil [ " + i + " ] = " + bil[i] + " | Double = " + (bil[i] * 2));
-        } 
+        penonton[0][0] = "Amin";
+        penonton[0][1] = "Bena";
+        penonton[1][0] = "Candra";
+        penonton[1][1] = "Dela";
+        penonton[2][0] = "Eka";
+        penonton[2][1] = "Farhan";
+        penonton[3][0] = "Gisel";
+        
 
-        for (int nilai : bil) {
-            System.out.println(nilai);
-        }
+        System.out.println();
+        System.out.printf("%s \t %s\n", penonton[0][0], penonton[0][1]);
+        System.out.printf("%s \t %s\n", penonton[1][0], penonton[1][1]);
+        System.out.printf("%s \t %s\n", penonton[2][0], penonton[2][1]);
+        System.out.printf("%s \t %s\n", penonton[3][0], penonton[3][1]);
+        System.out.println();
 
-        System.out.println(Arrays.toString(bil));
+        System.out.println("Jumlah Baris: " +penonton.length);
+        System.out.println("Jumlah Kolom ke 1: " + penonton[0].length);
+        System.out.println("Jumlah Kolom ke 2: " +penonton[1].length);
+        System.out.println("Jumlah Kolom ke 3: " +penonton[2].length);
+        System.out.println("Jumlah Kolom ke 4: " +penonton[3].length);
+
     }
 }
 
 ```
 * **Pertanyaan 5:** Apakah penonton[0].length, penonton[1].length, penonton[2].length, dan
 penonton[3].length memiliki nilai yang sama? Mengapa?
-    * **Jawab:**
+    * **Jawab:** Ya, keempatnya memiliki nilai yang sama, yaitu 2.
+Hal ini terjadi karena pada baris deklarasi `String[][] penonton = new String;`, ukuran array langsung ditentukan dalam bentuk matriks
+beraturan (persegi panjang) dengan 4 baris dan 2 kolom.
 
 * **Pertanyaan 6:** Modifikasi kode pada pertanyaan 4 untuk menampilkan panjang setiap baris
 menggunakan for loop. Compile, run, lalu amati hasilnya.
