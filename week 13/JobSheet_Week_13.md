@@ -145,6 +145,7 @@ menggunakan foreach loop. Compile, run, lalu amati hasilnya.
 
 #### Hasil Running / Screenshot Output
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
+
 ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_07.PNG)
  
 * **Pertanyaan 8:** Tambahkan kode untuk menampilkan nama penonton pada baris ke-3 (indeks 2)
