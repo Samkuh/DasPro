@@ -131,7 +131,7 @@ menggunakan for loop. Compile, run, lalu amati hasilnya.
    *  2 for (int i = 0; i < penonton.length; i++) {
    *  3 System.out.println("Panjang baris ke-" + (i + 1) + ": " +
    penonton[i].length);
-* **Jawab:**
+
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_06.PNG)
 
@@ -140,7 +140,7 @@ menggunakan foreach loop. Compile, run, lalu amati hasilnya.
    *  1 System.out.println(penonton.length);
    *  2 for (String[] barisPenonton : penonton) {
    *  3 System.out.println("Panjang baris: " + barisPenonton.length):
-* **Jawab:**
+
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_07.PNG)
  
@@ -149,7 +149,7 @@ menggunakan for loop. Compile, run, lalu amati hasilnya.
    *  1 System.out.println("Penonton pada baris ke-3: ");
    *  2 for (int i = 0; i < penonton[2].length; i++) {
    *  3 System.out.println(penonton[2][i]);
-* **Jawab:**
+
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_08.PNG)
   
@@ -158,7 +158,7 @@ run, lalu amati hasilnya.
    *  1 System.out.println("Penonton pada baris ke-3: ");
    *  2 for (String i : penonton[2]) {
    *  3 System.out.println(i);
-* **Jawab:**
+
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_09.PNG)
   
@@ -167,7 +167,7 @@ Gunakan String.join(), compile, run, lalu amati hasilnya.
    *  1 for (int i = 0; i < penonton.length; i++) {
    *  2 System.out.println("Penonton pada baris ke-" + (i + 1) + ": " + 
    *  3 String.join(", ", penonton[i]));
-* **Jawab:**
+
       Berikut adalah contoh tampilan *output* setelah program dijalankan:
       ![Gambar Output Percobaan 1](/week%2013/Foto/Bioskop_10.PNG) 
 
