@@ -5,7 +5,19 @@ public class Siakad_02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[][] nilai = new int[4][3];
+        int jumlahMhs, jmlMataKuliah;
+
+        System.out.println("\n--- JUMLAH MAHASISWA ---");
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        jumlahMhs = sc.nextInt();
+
+        System.out.println();
+
+        System.out.println("\n--- JUMLAH MATA KULIAH ---");
+        System.out.print("Masukkan Jumlah Mata Kuliah: ");
+        jmlMataKuliah = sc.nextInt();
+
+        int[][] nilai = new int[jumlahMhs][jmlMataKuliah];
 
         for (int i = 0; i < nilai.length; i++) {
             System.out.println();
@@ -35,5 +47,6 @@ public class Siakad_02 {
 
             System.out.println("Mata kuliah " + (j + 1) + ": " + totalPerMatkul / nilai.length);
         }
+        sc.close();
     }
 }
