@@ -446,7 +446,7 @@ amati hasilnya.
 * **Jawab:**
 Berikut adalah contoh tampilan *output* setelah program dijalankan:
   
-![Gambar Output Percobaan 1](week%2013/Foto/My_Numbers_05.PNG)
+![Gambar Output Percobaan 1](/week%2013/Foto/My_Numbers_05.PNG)
 
 * **Pertanyaan 6:**  Array myNumbers memiliki panjang yang berbeda untuk setiap barisnya. Apakah panjang
 array dapat dimodifikasi setelah diinstansiasi? Jelaskan.
