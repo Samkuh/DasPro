@@ -47,6 +47,7 @@ public class RekapLaundry_02 {
 
     static int[][] inputDataBerat() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("--- INPUT DATA BERAT ---");
         int beratCucian[][] = new int[4][6];
         for (int i = 0; i < 4; i++) {
             System.out.println();
